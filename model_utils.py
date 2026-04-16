@@ -1,6 +1,6 @@
 import os
-from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelWithLMHead, AutoModelForCausalLM
-import torch #type:ignore 
+from transformers import AutoModel, AutoTokenizer, AutoConfig
+import torch
 from transformers import BertModel, BertTokenizer, RobertaModel, RobertaTokenizer, XLNetModel, XLMModel, RobertaConfig, BertConfig
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM
