@@ -1010,8 +1010,8 @@ def random_mlp_attention_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_context_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
+    sentences = data_utils.get_standard_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
 
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -1035,7 +1035,7 @@ def random_mlp_attention_masking():
         top_mlp_dict = generate_random_mlp_components_by_layer_from_significant_file(
             significant_mlp_path, model, seed=seed
         )
-        rep_type = f"final_context_attention_head_masked_67_mlp_masked_67_random_run{run_idx + 1}"
+        rep_type = f"final_standard_attention_head_masked_67_mlp_masked_67_random_run{run_idx + 1}"
 
         print(
             "Random joint masking run %d/%d (seed=%s); head counts=%s; mlp counts=%s"
