@@ -57,12 +57,12 @@ import pandas as pd
 import os
 import model_utils
 import data_utils
-from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelWithLMHead, AutoModelForCausalLM
+from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelForCausalLM
 import torch 
 from transformers import BertModel, BertTokenizer, RobertaModel, RobertaTokenizer, XLNetModel, XLMModel, RobertaConfig, BertConfig
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM
+from transformers import AutoModelForMaskedLM
 import torch
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoModelForSequenceClassification
 import numpy as np
 import json
 import argparse
