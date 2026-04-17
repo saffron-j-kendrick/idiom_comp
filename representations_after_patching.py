@@ -629,7 +629,7 @@ def get_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_ma
 
 
 def load_significant_neurons(
-    path="top_67_heads_llama3b.json",
+    path="top_168_heads_llama3b.json",
 ):
     """Load JSON of (layer, head) pairs into {layer: [heads,...]} (0-based layers/heads)."""
     with open(path, "r") as f:
@@ -647,7 +647,7 @@ def load_significant_neurons(
             }
     return normalize_attention_heads_by_layer(top_heads)
 
-def load_significant_mlp_neurons(path= "top_67_mlp_components_llama3b.json"):
+def load_significant_mlp_neurons(path= "top_168_mlp_dimensions_llama3b.json"):
     """Load JSON of (layer, component) pairs into {layer: [components,...]}."""
     with open(path, "r") as f:
         top_mlp_neurons = json.load(f)
@@ -834,7 +834,7 @@ def attention_head_masking():
     top_mlp_dict = None
     # top_heads_dict = generate_random_heads_by_layer_from_significant_file("top_34_heads_llama3b.json", model, seed=42)
 
-    rep_type = f'final_word_literal_attention_head_masked_significant_67'
+    rep_type = f'final_word_literal_attention_head_masked_significant_168'
 
     get_final_word_token_from_layers(
         model_name,
@@ -952,8 +952,8 @@ def mlp_attention_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_standard_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
+    sentences = data_utils.get_context_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
     
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -967,7 +967,7 @@ def mlp_attention_masking():
     top_heads_dict = load_significant_neurons()
     top_mlp_dict = load_significant_mlp_neurons()
 
-    rep_type = f"final_standard_attention_head_masked_67_mlp_masked_67"
+    rep_type = f"final_context_attention_head_masked_168_mlp_masked_168"
 
     get_final_word_token_from_layers(
         model_name,
@@ -1010,8 +1010,8 @@ def random_mlp_attention_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_standard_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
+    sentences = data_utils.get_no_context_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_no_context_and()
 
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -1022,8 +1022,8 @@ def random_mlp_attention_masking():
     attention_mask = attention_mask.to(torch_device)
     model.to(torch_device)
 
-    significant_heads_path = "top_67_heads_llama3b.json"
-    significant_mlp_path = "top_67_mlp_components_llama3b.json"
+    significant_heads_path = "top_168_heads_llama3b.json"
+    significant_mlp_path = "top_168_mlp_dimensions_llama3b.json"
     num_random_runs = 5
     base_random_seed = 12042
 
@@ -1035,7 +1035,7 @@ def random_mlp_attention_masking():
         top_mlp_dict = generate_random_mlp_components_by_layer_from_significant_file(
             significant_mlp_path, model, seed=seed
         )
-        rep_type = f"final_standard_attention_head_masked_67_mlp_masked_67_random_run{run_idx + 1}"
+        rep_type = f"final_literal_attention_head_masked_168_mlp_masked_168_random_run{run_idx + 1}"
 
         print(
             "Random joint masking run %d/%d (seed=%s); head counts=%s; mlp counts=%s"
@@ -1067,4 +1067,4 @@ def random_mlp_attention_masking():
         )
 
 if __name__ == "__main__":
-    mlp_attention_masking()
+    random_mlp_attention_masking()
