@@ -419,7 +419,7 @@ def get_tokens_from_layers(
 def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=None, load_if_available=False, layers=None, torch_device="cuda", representations=["mean_pooled"], rep_loc='./data', save_attention=False):
 
     if representations == None:
-        representations = ["final_modifier_no_context"]
+        representations = ["final_word_no_context"]
 
 
     sentences = data_utils.get_no_context_sentences()
