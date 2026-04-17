@@ -437,8 +437,8 @@ else:
                         run_arrays = []
                         for run_idx in range(1, 6):
                             path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_67_mlp_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_67_mlp_masked_67_random_run{}.npy'
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_67_mlp_masked_67_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_67_mlp_masked_67_random_run{}.npy'
                             ).format(
                                 model_name.split('-')[0],
                                 layer,
@@ -530,6 +530,11 @@ selected_models = set(model_names)
 normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
 ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
 random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+
 
 label_map = {
     'standard': 'Standard',
