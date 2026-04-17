@@ -292,7 +292,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
                         row = {**row, **res}
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
@@ -376,7 +376,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
                         row = {**row, **res}
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
@@ -499,7 +499,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
                         row = {**row, **res}
