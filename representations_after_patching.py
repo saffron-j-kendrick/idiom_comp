@@ -952,8 +952,8 @@ def mlp_attention_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_context_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
+    sentences = data_utils.get_standard_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
     
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -967,7 +967,7 @@ def mlp_attention_masking():
     top_heads_dict = load_significant_neurons()
     top_mlp_dict = load_significant_mlp_neurons()
 
-    rep_type = f"final_context_attention_head_masked_67_mlp_masked_67"
+    rep_type = f"final_standard_attention_head_masked_67_mlp_masked_67"
 
     get_final_word_token_from_layers(
         model_name,
