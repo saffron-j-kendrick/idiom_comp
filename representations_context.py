@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=1, help='Batch size for extracting representations')
 parser.add_argument('--models', nargs='+', type=str, default=None, help='Models to use ("roberta-base", "xlnet-base-cased", and/or "xlm-mlm-xnli15-1024")')
 parser.add_argument('--layers', nargs='+', type=int, default=None, help='Which layers to use. Defaults to all excluding embedding. First layer indexed by 1')
-parser.add_argument('--device', type=str, default="cpu", help='"cuda" or "cpu"')
+parser.add_argument('--device', type=str, default="cuda", help='"cuda" or "cpu"')
 parser.add_argument('--representations', nargs='+', type=str, default=None, help='Representations to extract ("mean_pooled", "idiom_sentence")')
 parser.add_argument('--rep_loc', type=str, default="./data", help='Where to save representations')
 parser.add_argument('--save_attention', dest='save_attention', action='store_true', default=False)
@@ -460,7 +460,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence = data_utils.load_correct_form_context()
-            get_final_mod_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_modifier_context_combined', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_mod_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_modifier_context', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
 
         if "final_head_context" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
@@ -468,7 +468,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence = data_utils.load_correct_form_context()
-            get_final_head_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_head_context_combined', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_head_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_head_context', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
 
         if "final_word_context" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
@@ -476,7 +476,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
-            get_final_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_and, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_word_context_combined', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_and, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_word_context', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
         
         if "b_word_context" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
@@ -484,7 +484,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence_bs = data_utils.load_correct_form_context_bs()
-            get_b_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_bs, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='b_word_context_combined', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_b_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_bs, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='b_word_context', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
         
         if "mean_pooled" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
