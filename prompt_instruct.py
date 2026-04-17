@@ -30,6 +30,7 @@ generation = generator(
 
 
 # save the generation to a file
-with open('generation.txt', 'w') as f:
-    f.write(generation[0]['generated_text'])
-print(f"Generation saved to generation.txt")
+# get assistant message text from chat-style output
+assistant_text = generation[0]["generated_text"][-1]["content"]
+with open("generation.txt", "w") as f:
+  f.write(assistant_text)
