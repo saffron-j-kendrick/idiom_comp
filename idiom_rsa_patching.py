@@ -519,8 +519,9 @@ else:
 
 
 
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
+# 3-panel comparison figure:
+# panel 1 = standard, panel 2 = context, panel 3 = no context
+# each panel overlays normal vs ablation vs random ablation.
 normal_df = pd.read_csv('results/idiom_representations_normal.csv')
 ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
 random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
@@ -534,18 +535,16 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 # create directory for figures if it doesn't exist
 os.makedirs('figures', exist_ok=True)
 
-
-
 label_map = {
     'standard': 'Standard',
     'context': 'Context',
     'no_context': 'No Context',
 }
 
-rep_palette = {
-    'Standard': '#1E88E5',
-    'Context': '#43A047',
-    'No Context': '#F4511E',
+condition_palette = {
+    'Normal': '#1E88E5',
+    'Ablation': '#43A047',
+    'Random Ablation': '#F4511E',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -553,35 +552,38 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
+normal_df['Condition'] = 'Normal'
+ablation_df['Condition'] = 'Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-panels = [
-    ('Normal', normal_df),
-    ('Ablation', ablation_df),
-    ('Random Ablation', random_ablation_df),
-]
+panel_order = ['Standard', 'Context', 'No Context']
 
-for i, (title, df) in enumerate(panels):
+for i, rep_name in enumerate(panel_order):
     ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
     sns.lineplot(
-        data=df,
+        data=panel_df,
         x='layer',
         y=metric,
-        hue='Representation',
-        style='Representation',
+        hue='Condition',
+        style='Condition',
         markers=True,
         dashes=False,
-        palette=rep_palette,
+        palette=condition_palette,
         ax=ax,
     )
-    ax.set_title(title)
+    ax.set_title(rep_name)
     ax.set_xlabel('Layer')
     if i == 0:
         ax.set_ylabel('Correlation')
     else:
         ax.set_ylabel('')
     ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(df['layer'].unique()) if x % 4 == 0])
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
 
     legend = ax.get_legend()
     if i == 2 and legend is not None:
@@ -592,6 +594,9 @@ for i, (title, df) in enumerate(panels):
         legend.remove()
 
 fig.tight_layout()
-plt.savefig('figures/idioms_context_ablation_three_panel_comparison_67_mlp_masked_67.png', format='png')
-plt.savefig('figures/idioms_context_ablation_three_panel_comparison_67_mlp_masked_67.eps', format='eps')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.eps', format='eps')
 plt.show()
+
+
+
