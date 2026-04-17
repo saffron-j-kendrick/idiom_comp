@@ -351,15 +351,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_standard_attention_head_masked_67_mlp_masked_67/{}_layer_{}_final_standard_attention_head_masked_67_mlp_masked_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_standard_attention_head_masked_168_mlp_masked_168/{}_layer_{}_final_standard_attention_head_masked_168_mlp_masked_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_context_attention_head_masked_67_mlp_masked_67/{}_layer_{}_final_context_attention_head_masked_67_mlp_masked_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_context_attention_head_masked_168_mlp_masked_168/{}_layer_{}_final_context_attention_head_masked_168_mlp_masked_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_literal_attention_head_masked_67_mlp_masked_67/{}_layer_{}_final_literal_attention_head_masked_67_mlp_masked_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_literal_attention_head_masked_168_mlp_masked_168/{}_layer_{}_final_literal_attention_head_masked_168_mlp_masked_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -437,8 +437,8 @@ else:
                         run_arrays = []
                         for run_idx in range(1, 6):
                             path = (
-                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_67_mlp_masked_67_random_run{}/'
-                                '{}_layer_{}_final_standard_attention_head_masked_67_mlp_masked_67_random_run{}.npy'
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_168_mlp_masked_168_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_168_mlp_masked_168_random_run{}.npy'
                             ).format(
                                 model_name.split('-')[0],
                                 layer,
@@ -455,8 +455,8 @@ else:
                         run_arrays = []
                         for run_idx in range(1, 6):
                             path = (
-                                'data/representations/{}/layer_{}/final_context_attention_head_masked_67_mlp_masked_67_random_run{}/'
-                                '{}_layer_{}_final_context_attention_head_masked_67_mlp_masked_67_random_run{}.npy'
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_168_mlp_masked_168_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_168_mlp_masked_168_random_run{}.npy'
                             ).format(
                                 model_name.split('-')[0],
                                 layer,
@@ -473,8 +473,8 @@ else:
                         run_arrays = []
                         for run_idx in range(1, 6):
                             path = (
-                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_67_mlp_masked_67_random_run{}/'
-                                '{}_layer_{}_final_literal_attention_head_masked_67_mlp_masked_67_random_run{}.npy'
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_168_mlp_masked_168_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_168_mlp_masked_168_random_run{}.npy'
                             ).format(
                                 model_name.split('-')[0],
                                 layer,
@@ -594,8 +594,8 @@ for i, rep_name in enumerate(panel_order):
         legend.remove()
 
 fig.tight_layout()
-plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.eps', format='eps')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_168_mlp_masked_168.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_168_mlp_masked_168.eps', format='eps')
 plt.show()
 
 
