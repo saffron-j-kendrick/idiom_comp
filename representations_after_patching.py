@@ -1067,4 +1067,4 @@ def random_mlp_attention_masking():
         )
 
 if __name__ == "__main__":
-    random_mlp_attention_masking()
+    mlp_attention_masking()
