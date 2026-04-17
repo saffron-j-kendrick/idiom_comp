@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=1, help='Batch size for extracting representations')
 parser.add_argument('--models', nargs='+', type=str, default=None, help='Models to use ("roberta-base", "xlnet-base-cased", and/or "xlm-mlm-xnli15-1024")')
 parser.add_argument('--layers', nargs='+', type=int, default=None, help='Which layers to use. Defaults to all excluding embedding. First layer indexed by 1')
-parser.add_argument('--device', type=str, default="cpu", help='"cuda" or "cpu"')
+parser.add_argument('--device', type=str, default="cuda", help='"cuda" or "cpu"')
 parser.add_argument('--representations', nargs='+', type=str, default=None, help='Representations to extract ("mean_pooled", "idiom_sentence")')
 parser.add_argument('--rep_loc', type=str, default="./data", help='Where to save representations')
 parser.add_argument('--save_attention', dest='save_attention', action='store_true', default=False)
@@ -423,7 +423,7 @@ def get_tokens_from_layers(
 def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=None, load_if_available=False, layers=None, torch_device="cuda", representations=["mean_pooled"], rep_loc='./data', save_attention=False):
 
     if representations == None:
-        representations = ["final_modifier_standard"]
+        representations = ["final_head_standard"]
 
 
     sentences = data_utils.get_standard_sentences()
