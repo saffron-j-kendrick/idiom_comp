@@ -1,0 +1,149 @@
+I'd be happy to help you with that.
+
+**Lift a Finger**
+
+The idiom "lift a finger" means to take any action or make an effort to do something.
+
+Idiom1: 'The manager was furious that no one was willing to lift a finger, it was a huge'.
+Literal1: 'The manager was furious that no one was willing to lift a hand, it was a huge'.
+
+Idiom_answers = ['help', 'task','responsibility']
+Literal_answers = ['task', 'job', 'challenge']
+
+Next word continuations:
+
+Idiom1: huge problem, huge mess, huge mistake, huge deal, huge issue
+Literal1: huge task, huge job, huge challenge, huge responsibility, huge burden
+
+Idiom2: 'The team was struggling to lift a finger, it was a huge'.
+Literal2: 'The team was struggling to lift a hand, it was a huge'.
+
+Idiom_answers = ['help', 'task','responsibility']
+Literal_answers = ['task', 'job', 'challenge']
+
+Next word continuations:
+
+Idiom2: huge problem, huge mess, huge mistake, huge deal, huge issue
+Literal2: huge task, huge job, huge challenge, huge responsibility, huge burden
+
+Idiom3: 'The company was unwilling to lift a finger, it was a huge'.
+Literal3: 'The company was unwilling to lift a hand, it was a huge'.
+
+Idiom_answers = ['help', 'task','responsibility']
+Literal_answers = ['task', 'job', 'challenge']
+
+Next word continuations:
+
+Idiom3: huge problem, huge mess, huge mistake, huge deal, huge issue
+Literal3: huge task, huge job, huge challenge, huge responsibility, huge burden
+
+**Hit the Road**
+
+The idiom "hit the road" means to start traveling or begin a journey.
+
+Idiom1: 'After the concert, the band hit the road, it was a long'.
+Literal1: 'After the concert, the band hit the brakes, it was a long'.
+
+Idiom_answers = ['tour', 'journey', 'adventure']
+Literal_answers = ['stop', 'pause', 'halt']
+
+Next word continuations:
+
+Idiom1: long way, long drive, long trip, long haul, long ride
+Literal1: long stop, long pause, long halt, long break, long rest
+
+Idiom2: 'The family hit the road, it was a long'.
+Literal2: 'The family hit the brakes, it was a long'.
+
+Idiom_answers = ['tour', 'journey', 'adventure']
+Literal_answers = ['stop', 'pause', 'halt']
+
+Next word continuations:
+
+Idiom2: long way, long drive, long trip, long haul, long ride
+Literal2: long stop, long pause, long halt, long break, long rest
+
+Idiom3: 'The cyclist hit the road, it was a long'.
+Literal3: 'The cyclist hit the brakes, it was a long'.
+
+Idiom_answers = ['ride', 'journey', 'adventure']
+Literal_answers = ['stop', 'pause', 'halt']
+
+Next word continuations:
+
+Idiom3: long way, long ride, long trip, long haul, long journey
+Literal3: long stop, long pause, long halt, long break, long rest
+
+**Scratch the Surface**
+
+The idiom "scratch the surface" means to only briefly or superficially explore or discuss something.
+
+Idiom1: 'The documentary scratched the surface, it was a complex'.
+Literal1: 'The musician scratched the record, it was a complex'.
+
+Idiom_answers = ['issue', 'problem', 'topic']
+Literal_answers = ['sound', 'noise', 'track']
+
+Next word continuations:
+
+Idiom1: complex issue, complex problem, complex topic, complex theme, complex idea
+Literal1: complex sound, complex noise, complex track, complex rhythm, complex beat
+
+Idiom2: 'The article scratched the surface, it was a complex'.
+Literal2: 'The musician scratched the record, it was a complex'.
+
+Idiom_answers = ['issue', 'problem', 'topic']
+Literal_answers = ['sound', 'noise', 'track']
+
+Next word continuations:
+
+Idiom2: complex issue, complex problem, complex topic, complex theme, complex idea
+Literal2: complex sound, complex noise, complex track, complex rhythm, complex beat
+
+Idiom3: 'The teacher scratched the surface, it was a complex'.
+Literal3: 'The DJ scratched the record, it was a complex'.
+
+Idiom_answers = ['issue', 'problem', 'topic']
+Literal_answers = ['sound', 'noise', 'track']
+
+Next word continuations:
+
+Idiom3: complex issue, complex problem, complex topic, complex theme, complex idea
+Literal3: complex sound, complex noise, complex track, complex rhythm, complex beat
+
+**Bite the Dust**
+
+The idiom "bite the dust" means to die or be defeated.
+
+Idiom1: 'The old building was about to bite the dust, it was a historic'.
+Literal1: 'The pickle was about to bite the pickle, it was a historic'.
+
+Idiom_answers = ['death', 'demise', 'failure']
+Literal_answers = ['taste', 'flavor', 'texture']
+
+Next word continuations:
+
+Idiom1: historic landmark, historic site, historic event, historic moment, historic era
+Literal1: historic taste, historic flavor, historic texture, historic aroma, historic scent
+
+Idiom2: 'The company was about to bite the dust, it was a historic'.
+Literal2: 'The pickle was about to bite the pickle, it was a historic'.
+
+Idiom_answers = ['death', 'demise', 'failure']
+Literal_answers = ['taste', 'flavor', 'texture']
+
+Next word continuations:
+
+Idiom2: historic landmark, historic site, historic event, historic moment, historic era
+Literal2: historic taste, historic flavor, historic texture, historic aroma, historic scent
+
+Idiom3: 'The warrior was about to bite the dust, it was a historic'.
+Literal3: 'The pickle was about to bite the pickle, it was a historic'.
+
+Idiom_answers = ['death', 'demise', 'failure']
+Literal_answers = ['taste', 'flavor', 'texture']
+
+Next word continuations:
+
+Idiom3: historic landmark, historic site, historic event, historic moment, historic era
+Literal3: historic taste, historic flavor, historic texture, historic aroma, historic scent
