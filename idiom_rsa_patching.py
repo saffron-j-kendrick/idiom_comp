@@ -292,7 +292,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
                         row = {**row, **res}
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
@@ -376,7 +376,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
                         row = {**row, **res}
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
@@ -499,7 +499,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
                         row = {**row, **res}
@@ -560,6 +560,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Attention Head and MLP Ablation 25%')
 panel_order = ['Standard', 'Context', 'No Context']
 
 for i, rep_name in enumerate(panel_order):
@@ -593,7 +594,7 @@ for i, rep_name in enumerate(panel_order):
     elif legend is not None:
         legend.remove()
 
-fig.tight_layout()
+fig.tight_layout(rect=[0, 0, 1, 0.93])
 plt.savefig('figures/idioms_ablation_three_panel_comparison_168_mlp_masked_168.png', format='png')
 plt.savefig('figures/idioms_ablation_three_panel_comparison_168_mlp_masked_168.eps', format='eps')
 plt.show()
@@ -672,7 +673,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
                         row = {**row, **res}
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
@@ -795,7 +796,7 @@ else:
                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
                         row = {**row, **res}
@@ -856,6 +857,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Attention Head and MLP Ablation 10%')
 panel_order = ['Standard', 'Context', 'No Context']
 
 for i, rep_name in enumerate(panel_order):
@@ -889,7 +891,7 @@ for i, rep_name in enumerate(panel_order):
     elif legend is not None:
         legend.remove()
 
-fig.tight_layout()
+fig.tight_layout(rect=[0, 0, 1, 0.93])
 plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.png', format='png')
 plt.savefig('figures/idioms_ablation_three_panel_comparison_67_mlp_masked_67.eps', format='eps')
 plt.show()
