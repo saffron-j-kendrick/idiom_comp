@@ -629,7 +629,7 @@ def get_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_ma
 
 
 def load_significant_neurons(
-    path="top_168_heads_llama3b.json",
+    path="top_67_heads_llama3b.json",
 ):
     """Load JSON of (layer, head) pairs into {layer: [heads,...]} (0-based layers/heads)."""
     with open(path, "r") as f:
@@ -647,7 +647,7 @@ def load_significant_neurons(
             }
     return normalize_attention_heads_by_layer(top_heads)
 
-def load_significant_mlp_neurons(path= "top_168_mlp_dimensions_llama3b.json"):
+def load_significant_mlp_neurons(path= "top_67_mlp_dimensions_llama3b.json"):
     """Load JSON of (layer, component) pairs into {layer: [components,...]}."""
     with open(path, "r") as f:
         top_mlp_neurons = json.load(f)
@@ -834,7 +834,7 @@ def attention_head_masking():
     top_mlp_dict = None
     # top_heads_dict = generate_random_heads_by_layer_from_significant_file("top_34_heads_llama3b.json", model, seed=42)
 
-    rep_type = f'final_word_literal_attention_head_masked_significant_168'
+    rep_type = f'final_word_literal_attention_head_masked_significant_67'
 
     get_final_word_token_from_layers(
         model_name,
@@ -877,8 +877,8 @@ def random_attention_head_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_no_context_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_no_context_and()
+    sentences = data_utils.get_context_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
     
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -889,7 +889,7 @@ def random_attention_head_masking():
     attention_mask = attention_mask.to(torch_device)
     model.to(torch_device)
 
-    significant_path = "top_168_heads_llama3b.json"
+    significant_path = "top_67_heads_llama3b.json"
     num_random_runs = 5
     base_random_seed = 10042
 
@@ -899,7 +899,7 @@ def random_attention_head_masking():
             significant_path, model, seed=seed
         )
         top_mlp_dict = None
-        rep_type = f"final_word_literal_attention_head_masked_168_random_run{run_idx + 1}"
+        rep_type = f"final_word_context_attention_head_masked_67_random_run{run_idx + 1}"
 
         print(
             "Random head masking run %d/%d (seed=%s); layers -> head counts: %s"
