@@ -4,7 +4,8 @@ from IPython.display import clear_output
 import nnsight
 from nnsight import CONFIG
 from nnsight import LanguageModel, util
-from nnsight.tracing.graph.proxy import Proxy
+# from nnsight.tracing.graph.proxy import Proxy
+from nnsight.intervention.tracing.globals import Object
 import plotly.express as px
 import plotly.io as pio
 import numpy as np
@@ -14,24 +15,53 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import einops
 import pickle
-import cv2
 import pandas as pd
 import argparse
 import json
 import os
 import random
+import gc
 ### PARSER ARGUMENTS
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default="gpt2", help="Model to use: gpt2, llama-3.2-3b")
+parser.add_argument("--model", type=str, default="llama3b", help="Model to use: gpt2, llama-3.2-3b")
 parser.add_argument("--intervention", type=str, default="residual_stream", help="Intervention to use: residual_stream, attention_heads")
-parser.add_argument("--dataset", type=str, default="data/combined_dataset.json", help="Dataset to use: data/combined_dataset.json")
-parser.add_argument("--averaging", type=bool, default=False, help="Whether to average the intervention results over the dataset")
-parser.add_argument("--ablation", type=bool, default=False, help="Whether to run the ablation study")
-parser.add_argument("--random_ablation", type=bool, default=False, help="Whether to run the random ablation study")
-parser.add_argument("--top_k", type=int, default=10, help="Number of top heads to patch/zero")
-parser.add_argument("--clean_run_ablation", type=bool, default=False, help="Whether to run the clean run ablation study")
+parser.add_argument("--dataset", type=str, default="extended_dataset.json", help="Dataset to use: data/combined_dataset.json")
+parser.add_argument("--averaging", type=bool, default=True, help="Whether to average the intervention results over the dataset")
+parser.add_argument("--device", type=str, default="cpu", choices=["auto", "cpu"], help="Device placement: auto or cpu")
+parser.add_argument("--cache_dtype", type=str, default="bfloat16", choices=["float32", "float16", "bfloat16"], help="Precision for cached intervention tensors")
+parser.add_argument("--max_idioms", type=int, default=0, help="If >0, only process this many idioms from dataset")
+parser.add_argument("--max_pairs_per_idiom", type=int, default=0, help="If >0, only process this many pairs per idiom")
+parser.add_argument("--max_answers", type=int, default=3, help="Number of answer options per pair to evaluate")
+
+
 ### FUNCTIONS
+
+def _to_numpy(saved_or_tensor):
+    """Resolve nnsight-saved objects or tensors to a CPU numpy array."""
+    tensor = saved_or_tensor.value if hasattr(saved_or_tensor, "value") else saved_or_tensor
+    if isinstance(tensor, np.ndarray):
+        return tensor
+    if not torch.is_tensor(tensor):
+        tensor = torch.as_tensor(tensor)
+    return tensor.detach().cpu().numpy()
+
+def _to_scalar(saved_or_tensor):
+    """Resolve nnsight-saved objects or tensors to a Python float."""
+    tensor = saved_or_tensor.value if hasattr(saved_or_tensor, "value") else saved_or_tensor
+    if torch.is_tensor(tensor):
+        return tensor.detach().cpu().item()
+    if isinstance(tensor, np.ndarray):
+        return float(tensor.item())
+    return float(tensor)
+
+def _dtype_from_name(dtype_name: str):
+    dtype_map = {
+        "float32": torch.float32,
+        "float16": torch.float16,
+        "bfloat16": torch.bfloat16,
+    }
+    return dtype_map[dtype_name]
 
 def plot_ioi_patching_results(model, model_name,
                               ioi_patching_results,
@@ -52,7 +82,7 @@ def plot_ioi_patching_results(model, model_name,
         layer_values = []
         for result in layer_results:
             # Check if it's already a float/int or if it's a Proxy
-            if isinstance(result, Proxy):
+            if isinstance(result, Object):
                 layer_values.append(result.value)
             else:
                 layer_values.append(result)
@@ -108,7 +138,7 @@ def plot_ioi_patching_results_attention(model, model_name,
         layer_values = []
         for result in layer_results:
             # Check if it's already a float/int or if it's a Proxy
-            if isinstance(result, Proxy):
+            if isinstance(result, Object):
                 layer_values.append(result.value)
             else:
                 layer_values.append(result)
@@ -195,7 +225,7 @@ def residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal,
         print(f"clean logit diff {clean_logit_diff}")
     
     # Convert Proxy objects to numpy arrays after trace context exits
-    clean_hs_np = [act.value.detach().cpu().numpy() for act in clean_hs]
+    clean_hs_np = [_to_numpy(act) for act in clean_hs]
     for layer_idx, act in enumerate(clean_hs_np):
         np.save(f"data/clean_hidden_state_{layer_idx}_{model_name}.npy", act)
     
@@ -337,7 +367,7 @@ def average_residual_stream_patching(N_LAYERS, model_name, dataset):
                     
             
                 # Convert Proxy objects to numpy arrays after trace context exits
-                clean_hs_np = [act.value.detach().cpu().numpy() for act in clean_hs]
+                clean_hs_np = [_to_numpy(act) for act in clean_hs]
                 for layer_idx, act in enumerate(clean_hs_np):
                     np.save(f"data/clean_hidden_state_{layer_idx}_{model_name}.npy", act)
                 
@@ -428,10 +458,10 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
     """ Replaces the attention head at the end of each layer with the attention head from the clean prompt """
     batch = 1
     # clean run
+    z_hs = {}
     with model.trace() as tracer:
         with tracer.invoke(prompt_idiom) as invoker:
             clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-            z_hs = {}
             for layer_idx in range(N_LAYERS):
                 if model_name == "gpt2":
                     z = model.transformer.h[layer_idx].attn.c_proj.input
@@ -450,7 +480,7 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
     # Extract values from Proxy objects after trace context exits
     z_hs_np = {}
     for (layer_idx, head_idx), proxy_obj in z_hs.items():
-        z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+        z_hs_np[layer_idx, head_idx] = _to_numpy(proxy_obj)
     
     # Now pickle the actual numpy arrays
     z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
@@ -523,15 +553,19 @@ def run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
         attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom, prompt_literal, correct_answer_idx, incorrect_answer_idx, min_token_len)
 
 
-def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name):
+def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name, cache_dtype=torch.float32, max_idioms=0, max_pairs_per_idiom=0, max_answers=3):
     accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
     num_pairs = len(dataset)
 
     total_combinations = 0
-    for idiom_entry in dataset:
+    for idiom_idx, idiom_entry in enumerate(dataset):
+        if max_idioms > 0 and idiom_idx >= max_idioms:
+            break
         idiom_id = idiom_entry["id"]
         pairs = idiom_entry["pairs"]
-        for pair in pairs:
+        for pair_idx, pair in enumerate(pairs):
+            if max_pairs_per_idiom > 0 and pair_idx >= max_pairs_per_idiom:
+                break
             prompt_idiom = pair["prompt_idiom"]
             prompt_literal = pair["prompt_literal"]
             idiom_answers = pair["idiom_answers"]
@@ -541,7 +575,8 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
             literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
             min_token_len = min(len(idiom_tokens), len(literal_tokens))
             
-            for answer_idx in range(3):
+            n_answers = min(max_answers, len(idiom_answers), len(literal_answers))
+            for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
               
@@ -554,10 +589,10 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
 
 
                 # clean run
+                z_hs = {}
                 with model.trace() as tracer:
                     with tracer.invoke(prompt_idiom) as invoker:
                         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        z_hs = {}
                         for layer_idx in range(N_LAYERS):
                             if model_name == "gpt2":
                                 z = model.transformer.h[layer_idx].attn.c_proj.input
@@ -576,7 +611,7 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                 # Extract values from Proxy objects after trace context exits
                 z_hs_np = {}
                 for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+                    z_hs_np[layer_idx, head_idx] = _to_numpy(proxy_obj)
                 
                 # Now pickle the actual numpy arrays
                 z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
@@ -602,7 +637,7 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                 # Convert numpy arrays back to torch tensors
                 z_hs = {}
                 for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
+                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array).to(cache_dtype)
                 # Compute actual_seq_len outside trace context to avoid Proxy issues
                 # Get saved sequence length from z_hs (same for all heads in a layer)
                 sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
@@ -621,7 +656,7 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                     else:
                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
                 
-                patched_logits_dict = {}
+                patched_result_dict = {}
                 with model.trace() as tracer:
                     for layer_idx in range(N_LAYERS):
                         _attention_head_patching_intervention = []
@@ -634,13 +669,15 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
                                 z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                                z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
+                                z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx].to(z_corrupt.dtype)
                                 patched_logits = model.lm_head.output
                                 patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
                                 patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                                patched_result_saved = patched_result.save()
-                                patched_logits_dict[(layer_idx, head_idx)] = patched_logits[0, :min_token_len, :].save()
-                            accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
+                                patched_result_dict[(layer_idx, head_idx)] = patched_result.save()
+                for (layer_idx, head_idx), patched_result_saved in patched_result_dict.items():
+                    accumulated_results[layer_idx, head_idx] += _to_scalar(patched_result_saved)
+                del z_hs_np, z_hs, z_hs_prepared, patched_result_dict
+                gc.collect()
                 
     average_patching_results = accumulated_results / num_pairs
 
@@ -694,8 +731,14 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
 
 
 
-def run_average_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name):
-    average_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
+def run_average_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name, cache_dtype=torch.float32, max_idioms=0, max_pairs_per_idiom=0, max_answers=3):
+    average_patching_results = average_attention_head_patching(
+        N_LAYERS, N_HEADS, D_HEADS, dataset, model_name,
+        cache_dtype=cache_dtype,
+        max_idioms=max_idioms,
+        max_pairs_per_idiom=max_pairs_per_idiom,
+        max_answers=max_answers,
+    )
     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
     prompt_idiom = f"averaged_attention_head_patching_{model_name}_multiple"
     marginalised_layers = torch.mean(average_patching_results, dim=1)
@@ -809,7 +852,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                 clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
                 np.save(f"data/clean_logits_value_{model_name}.npy", clean_logits_value)
                 # Convert Proxy objects to numpy arrays after trace context exits
-                clean_mlp_np = [act.value.detach().cpu().numpy() for act in clean_mlp]
+                clean_mlp_np = [_to_numpy(act) for act in clean_mlp]
                 for layer_idx, act in enumerate(clean_mlp_np):
                     np.save(f"data/clean_mlp_{layer_idx}_{model_name}.npy", act)
                 
@@ -826,7 +869,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                     corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
 
                 if answer_idx == 0:
-                    corrupted_mlp_np = [act.value.detach().cpu().numpy() for act in corrupted_mlp]
+                    corrupted_mlp_np = [_to_numpy(act) for act in corrupted_mlp]
                     if mlp_dim_totals is None:
                         mlp_dim = clean_mlp_np[0].shape[-1]
                         mlp_dim_totals = np.zeros((N_LAYERS, mlp_dim))
@@ -991,632 +1034,632 @@ def run_average_mlp_patching(dataset, N_LAYERS, model_name):
 
 
 
-def top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
+# def top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
      
-    flat_results = averaged_patching_results.flatten()
-    top_values, top_indices = torch.topk(flat_results, k)
+#     flat_results = averaged_patching_results.flatten()
+#     top_values, top_indices = torch.topk(flat_results, k)
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+#     # Convert flat indices back to (layer, head) tuples
+#     top_heads = []
+#     for idx in top_indices:
+#         layer = idx.item() // N_HEADS
+#         head = idx.item() % N_HEADS
+#         top_heads.append((layer, head))
 
-    print(f"Top {k} heads to patch/zero: {top_heads}")
+#     print(f"Top {k} heads to patch/zero: {top_heads}")
 
-    accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
-    accumulated_kl_divs = torch.zeros((N_LAYERS, N_HEADS))
-    total_combinations = 0
+#     accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
+#     accumulated_kl_divs = torch.zeros((N_LAYERS, N_HEADS))
+#     total_combinations = 0
    
-    for idiom_entry in dataset:
-        idiom_id = idiom_entry["id"]
-        pairs = idiom_entry["pairs"]
+#     for idiom_entry in dataset:
+#         idiom_id = idiom_entry["id"]
+#         pairs = idiom_entry["pairs"]
 
-        for pair in pairs:
-            prompt_idiom = pair["prompt_idiom"]
-            prompt_literal = pair["prompt_literal"]
-            idiom_answers = pair["idiom_answers"]
-            literal_answers = pair["literal_answers"]
+#         for pair in pairs:
+#             prompt_idiom = pair["prompt_idiom"]
+#             prompt_literal = pair["prompt_literal"]
+#             idiom_answers = pair["idiom_answers"]
+#             literal_answers = pair["literal_answers"]
 
-            # tokens
-            idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-            literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-            min_token_len = min(len(idiom_tokens), len(literal_tokens))
+#             # tokens
+#             idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#             literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#             min_token_len = min(len(idiom_tokens), len(literal_tokens))
 
-            # For each pair, iterate through the 3 answer combinations
-            for answer_idx in range(3):
-                correct_answer = idiom_answers[answer_idx]
-                incorrect_answer = literal_answers[answer_idx]
+#             # For each pair, iterate through the 3 answer combinations
+#             for answer_idx in range(3):
+#                 correct_answer = idiom_answers[answer_idx]
+#                 incorrect_answer = literal_answers[answer_idx]
                 
-                correct_token = model.tokenizer.encode(correct_answer)[1]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
+#                 correct_token = model.tokenizer.encode(correct_answer)[1]
+#                 incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
 
-                correct_answer_idx = correct_token
-                incorrect_answer_idx = incorrect_token
+#                 correct_answer_idx = correct_token
+#                 incorrect_answer_idx = incorrect_token
                 
-                total_combinations += 1
+#                 total_combinations += 1
 
 
         
 
-                # clean run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_idiom) as invoker:
-                        clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        z_hs = {}
-                        for layer_idx in range(N_LAYERS):
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                            for head_idx in range(N_HEADS):
-                                z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
+#                 # clean run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_idiom) as invoker:
+#                         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#                         z_hs = {}
+#                         for layer_idx in range(N_LAYERS):
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                             for head_idx in range(N_HEADS):
+#                                 z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
                         
-                        clean_logits = model.lm_head.output
-                        clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"clean logit diff {clean_logit_diff}")
+#                         clean_logits = model.lm_head.output
+#                         clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"clean logit diff {clean_logit_diff}")
                 
-                # Extract values from Proxy objects after trace context exits
-                z_hs_np = {}
-                for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+#                 # Extract values from Proxy objects after trace context exits
+#                 z_hs_np = {}
+#                 for (layer_idx, head_idx), proxy_obj in z_hs.items():
+#                     z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
                 
-                # Now pickle the actual numpy arrays
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
-                pickle.dump(z_hs_np, z_hs_file)
-                z_hs_file.close()
+#                 # Now pickle the actual numpy arrays
+#                 z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
+#                 pickle.dump(z_hs_np, z_hs_file)
+#                 z_hs_file.close()
                 
 
-                # corrupted run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_literal) as invoker:
-                        corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                        corrupted_logits = model.lm_head.output
-                        corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"corrupt logit diff {corrupted_logit_diff}")
+#                 # corrupted run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_literal) as invoker:
+#                         corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#                         corrupted_logits = model.lm_head.output
+#                         corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"corrupt logit diff {corrupted_logit_diff}")
                 
                 
-                #patching
+#                 #patching
                 
-                #load pickle
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "rb")
-                z_hs_np = pickle.load(z_hs_file)
-                z_hs_file.close()
+#                 #load pickle
+#                 z_hs_file = open(f"z_hs_{model_name}.pkl", "rb")
+#                 z_hs_np = pickle.load(z_hs_file)
+#                 z_hs_file.close()
                 
-                # Convert numpy arrays back to torch tensors
-                z_hs = {}
-                for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
+#                 # Convert numpy arrays back to torch tensors
+#                 z_hs = {}
+#                 for (layer_idx, head_idx), np_array in z_hs_np.items():
+#                     z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
                 
-                # Compute actual_seq_len outside trace context to avoid Proxy issues
-                sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
-                if len(sample_z_hs.shape) == 2:
-                    saved_seq_len = sample_z_hs.shape[0]
-                else:
-                    saved_seq_len = sample_z_hs.shape[1]
-                actual_seq_len = min(saved_seq_len, min_token_len)
+#                 # Compute actual_seq_len outside trace context to avoid Proxy issues
+#                 sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
+#                 if len(sample_z_hs.shape) == 2:
+#                     saved_seq_len = sample_z_hs.shape[0]
+#                 else:
+#                     saved_seq_len = sample_z_hs.shape[1]
+#                 actual_seq_len = min(saved_seq_len, min_token_len)
                 
-                # Prepare z_hs tensors with proper shapes
-                z_hs_prepared = {}
-                for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
-                    if len(z_hs_tensor.shape) == 2:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
-                    else:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
+#                 # Prepare z_hs tensors with proper shapes
+#                 z_hs_prepared = {}
+#                 for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
+#                     if len(z_hs_tensor.shape) == 2:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
+#                     else:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
                 
-                patched_logits_dict = {}
+#                 patched_logits_dict = {}
                 
-                with model.trace() as tracer:
-                    for layer_idx in range(N_LAYERS):
-                        for head_idx in range(N_HEADS):
-                            with tracer.invoke(prompt_literal) as invoker:
-                                if model_name == "gpt2":
-                                    z = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name == "llama3b":
-                                    z = model.model.layers[layer_idx].self_attn.o_proj.input
-                                else:
-                                    raise ValueError(f"Invalid model: {model_name}")
-                                z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                                z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
-                                if (layer_idx, head_idx) in top_heads:
-                                    z_corrupt[:, :actual_seq_len, head_idx, :] = 0
+#                 with model.trace() as tracer:
+#                     for layer_idx in range(N_LAYERS):
+#                         for head_idx in range(N_HEADS):
+#                             with tracer.invoke(prompt_literal) as invoker:
+#                                 if model_name == "gpt2":
+#                                     z = model.transformer.h[layer_idx].attn.c_proj.input
+#                                 elif model_name == "llama3b":
+#                                     z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                                 else:
+#                                     raise ValueError(f"Invalid model: {model_name}")
+#                                 z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                                 z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
+#                                 if (layer_idx, head_idx) in top_heads:
+#                                     z_corrupt[:, :actual_seq_len, head_idx, :] = 0
 
 
-                                patched_logits = model.lm_head.output
-                                patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
-                                patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                                patched_result_saved = patched_result.save()
-                                patched_logits_dict[(layer_idx, head_idx)] = patched_logits[0, :min_token_len, :].save()
-                            accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
+#                                 patched_logits = model.lm_head.output
+#                                 patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
+#                                 patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+#                                 patched_result_saved = patched_result.save()
+#                                 patched_logits_dict[(layer_idx, head_idx)] = patched_logits[0, :min_token_len, :].save()
+#                             accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
                 
-    average_patching_results = accumulated_results / total_combinations
-    return average_patching_results
+#     average_patching_results = accumulated_results / total_combinations
+#     return average_patching_results
 
 
-def run_top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    average_patching_results = top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
-    x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
-    prompt_idiom = f"top_{k}_attention_head_ablation_{model_name}_multiple"
-    fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Top {k} {model_name} Attention Head Ablation across {len(dataset)} Idioms")
-    return fig
+# def run_top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     average_patching_results = top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
+#     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
+#     prompt_idiom = f"top_{k}_attention_head_ablation_{model_name}_multiple"
+#     fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Top {k} {model_name} Attention Head Ablation across {len(dataset)} Idioms")
+#     return fig
 
 
-def random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
+# def random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
      
-    flat_results = averaged_patching_results.flatten()
-    # top_values, top_indices = torch.topk(flat_results, k)
-    top_indices = torch.randperm(len(flat_results))[:k]
+#     flat_results = averaged_patching_results.flatten()
+#     # top_values, top_indices = torch.topk(flat_results, k)
+#     top_indices = torch.randperm(len(flat_results))[:k]
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+#     # Convert flat indices back to (layer, head) tuples
+#     top_heads = []
+#     for idx in top_indices:
+#         layer = idx.item() // N_HEADS
+#         head = idx.item() % N_HEADS
+#         top_heads.append((layer, head))
 
-    print(f"Random {k} heads to patch/zero: {top_heads}")
+#     print(f"Random {k} heads to patch/zero: {top_heads}")
 
-    accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
-    accumulated_kl_divs = torch.zeros((N_LAYERS, N_HEADS))
+#     accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
+#     accumulated_kl_divs = torch.zeros((N_LAYERS, N_HEADS))
 
-    total_combinations = 0
-    for idiom_entry in dataset:
-        idiom_id = idiom_entry["id"]
-        pairs = idiom_entry["pairs"]
+#     total_combinations = 0
+#     for idiom_entry in dataset:
+#         idiom_id = idiom_entry["id"]
+#         pairs = idiom_entry["pairs"]
         
-        # For each idiom, iterate through pairs
-        for pair in pairs:
-            prompt_idiom = pair["prompt_idiom"]
-            prompt_literal = pair["prompt_literal"]
-            idiom_answers = pair["idiom_answers"]
-            literal_answers = pair["literal_answers"]
+#         # For each idiom, iterate through pairs
+#         for pair in pairs:
+#             prompt_idiom = pair["prompt_idiom"]
+#             prompt_literal = pair["prompt_literal"]
+#             idiom_answers = pair["idiom_answers"]
+#             literal_answers = pair["literal_answers"]
 
-            # tokens
-            idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-            literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-            min_token_len = min(len(idiom_tokens), len(literal_tokens))
+#             # tokens
+#             idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#             literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#             min_token_len = min(len(idiom_tokens), len(literal_tokens))
 
-            # For each pair, iterate through the 3 answer combinations
-            for answer_idx in range(3):
-                correct_answer = idiom_answers[answer_idx]
-                incorrect_answer = literal_answers[answer_idx]
+#             # For each pair, iterate through the 3 answer combinations
+#             for answer_idx in range(3):
+#                 correct_answer = idiom_answers[answer_idx]
+#                 incorrect_answer = literal_answers[answer_idx]
                 
-                correct_token = model.tokenizer.encode(correct_answer)[1]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
+#                 correct_token = model.tokenizer.encode(correct_answer)[1]
+#                 incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
 
-                correct_answer_idx = correct_token
-                incorrect_answer_idx = incorrect_token
+#                 correct_answer_idx = correct_token
+#                 incorrect_answer_idx = incorrect_token
                 
-                total_combinations += 1
+#                 total_combinations += 1
 
 
-                # clean run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_idiom) as invoker:
-                        clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        z_hs = {}
-                        for layer_idx in range(N_LAYERS):
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                            for head_idx in range(N_HEADS):
-                                z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
+#                 # clean run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_idiom) as invoker:
+#                         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#                         z_hs = {}
+#                         for layer_idx in range(N_LAYERS):
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                             for head_idx in range(N_HEADS):
+#                                 z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
                         
-                        clean_logits = model.lm_head.output
-                        clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"clean logit diff {clean_logit_diff}")
+#                         clean_logits = model.lm_head.output
+#                         clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"clean logit diff {clean_logit_diff}")
                 
-                # Extract values from Proxy objects after trace context exits
-                z_hs_np = {}
-                for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+#                 # Extract values from Proxy objects after trace context exits
+#                 z_hs_np = {}
+#                 for (layer_idx, head_idx), proxy_obj in z_hs.items():
+#                     z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
                 
-                # Now pickle the actual numpy arrays
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
-                pickle.dump(z_hs_np, z_hs_file)
-                z_hs_file.close()
+#                 # Now pickle the actual numpy arrays
+#                 z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
+#                 pickle.dump(z_hs_np, z_hs_file)
+#                 z_hs_file.close()
 
-                # corrupted run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_literal) as invoker:
-                        corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                        corrupted_logits = model.lm_head.output
-                        corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"corrupt logit diff {corrupted_logit_diff}")
+#                 # corrupted run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_literal) as invoker:
+#                         corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#                         corrupted_logits = model.lm_head.output
+#                         corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"corrupt logit diff {corrupted_logit_diff}")
                 
                 
-                #patching
+#                 #patching
                 
-                #load pickle
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "rb")
-                z_hs_np = pickle.load(z_hs_file)
-                z_hs_file.close()
+#                 #load pickle
+#                 z_hs_file = open(f"z_hs_{model_name}.pkl", "rb")
+#                 z_hs_np = pickle.load(z_hs_file)
+#                 z_hs_file.close()
                 
-                # Convert numpy arrays back to torch tensors
-                z_hs = {}
-                for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
+#                 # Convert numpy arrays back to torch tensors
+#                 z_hs = {}
+#                 for (layer_idx, head_idx), np_array in z_hs_np.items():
+#                     z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
                 
-                # Compute actual_seq_len outside trace context to avoid Proxy issues
-                sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
-                if len(sample_z_hs.shape) == 2:
-                    saved_seq_len = sample_z_hs.shape[0]
-                else:
-                    saved_seq_len = sample_z_hs.shape[1]
-                actual_seq_len = min(saved_seq_len, min_token_len)
+#                 # Compute actual_seq_len outside trace context to avoid Proxy issues
+#                 sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
+#                 if len(sample_z_hs.shape) == 2:
+#                     saved_seq_len = sample_z_hs.shape[0]
+#                 else:
+#                     saved_seq_len = sample_z_hs.shape[1]
+#                 actual_seq_len = min(saved_seq_len, min_token_len)
                 
-                # Prepare z_hs tensors with proper shapes
-                z_hs_prepared = {}
-                for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
-                    if len(z_hs_tensor.shape) == 2:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
-                    else:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
+#                 # Prepare z_hs tensors with proper shapes
+#                 z_hs_prepared = {}
+#                 for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
+#                     if len(z_hs_tensor.shape) == 2:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
+#                     else:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
                 
-                patched_logits_dict = {}
+#                 patched_logits_dict = {}
                 
-                with model.trace() as tracer:
-                    for layer_idx in range(N_LAYERS):
-                        for head_idx in range(N_HEADS):
-                            with tracer.invoke(prompt_literal) as invoker:
-                                if model_name == "gpt2":
-                                    z = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name == "llama3b":
-                                    z = model.model.layers[layer_idx].self_attn.o_proj.input
-                                else:
-                                    raise ValueError(f"Invalid model: {model_name}")
-                                z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                                # Only patch the overlapping sequence length
-                                z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
-                                if (layer_idx, head_idx) in top_heads:
-                                    z_corrupt[:, :actual_seq_len, head_idx, :] = 0
-
-
-                                patched_logits = model.lm_head.output
-                                patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
-                                patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                                patched_result_saved = patched_result.save()
-                                patched_logits_dict[(layer_idx, head_idx)] = patched_logits[0, :min_token_len, :].save()
-                            accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
-                
-    average_patching_results = accumulated_results / total_combinations
-    return average_patching_results
+#                 with model.trace() as tracer:
+#                     for layer_idx in range(N_LAYERS):
+#                         for head_idx in range(N_HEADS):
+#                             with tracer.invoke(prompt_literal) as invoker:
+#                                 if model_name == "gpt2":
+#                                     z = model.transformer.h[layer_idx].attn.c_proj.input
+#                                 elif model_name == "llama3b":
+#                                     z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                                 else:
+#                                     raise ValueError(f"Invalid model: {model_name}")
+#                                 z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                                 # Only patch the overlapping sequence length
+#                                 z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
+#                                 if (layer_idx, head_idx) in top_heads:
+#                                     z_corrupt[:, :actual_seq_len, head_idx, :] = 0
 
 
-def run_random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    average_patching_results = random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
-    x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
-    prompt_idiom = f"random_{k}_attention_head_ablation_{model_name}_multiple"
-    fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Random {k} {model_name} Attention Head Ablation across {len(dataset)} Idioms")
-    return fig
+#                                 patched_logits = model.lm_head.output
+#                                 patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
+#                                 patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+#                                 patched_result_saved = patched_result.save()
+#                                 patched_logits_dict[(layer_idx, head_idx)] = patched_logits[0, :min_token_len, :].save()
+#                             accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
+                
+#     average_patching_results = accumulated_results / total_combinations
+#     return average_patching_results
 
 
-### need to only patch the top k heads and then print the logit difference
+# def run_random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     average_patching_results = random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
+#     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
+#     prompt_idiom = f"random_{k}_attention_head_ablation_{model_name}_multiple"
+#     fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Random {k} {model_name} Attention Head Ablation across {len(dataset)} Idioms")
+#     return fig
 
 
-def patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset)
+# ### need to only patch the top k heads and then print the logit difference
+
+
+# def patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset)
      
-    flat_results = averaged_patching_results.flatten()
-    top_values, top_indices = torch.topk(flat_results, k)
+#     flat_results = averaged_patching_results.flatten()
+#     top_values, top_indices = torch.topk(flat_results, k)
 
-    # Convert flat indices back to (layer, head) tuples
+#     # Convert flat indices back to (layer, head) tuples
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+#     # Convert flat indices back to (layer, head) tuples
+#     top_heads = []
+#     for idx in top_indices:
+#         layer = idx.item() // N_HEADS
+#         head = idx.item() % N_HEADS
+#         top_heads.append((layer, head))
 
-    print(f"Top {k} heads to patch/zero: {top_heads}")
+#     print(f"Top {k} heads to patch/zero: {top_heads}")
 
-    accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
-    # total_kl = torch.zeros((N_LAYERS, N_HEADS))
-    # kl_counts = torch.zeros((N_LAYERS, N_HEADS))
+#     accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
+#     # total_kl = torch.zeros((N_LAYERS, N_HEADS))
+#     # kl_counts = torch.zeros((N_LAYERS, N_HEADS))
     
-    total_combinations = 0
+#     total_combinations = 0
     
-    # Iterate through idioms
-    for idiom_entry in dataset:
-        idiom_id = idiom_entry["id"]
-        pairs = idiom_entry["pairs"]
+#     # Iterate through idioms
+#     for idiom_entry in dataset:
+#         idiom_id = idiom_entry["id"]
+#         pairs = idiom_entry["pairs"]
         
-        # For each idiom, iterate through pairs
-        for pair in pairs:
-            prompt_idiom = pair["prompt_idiom"]
-            prompt_literal = pair["prompt_literal"]
-            idiom_answers = pair["idiom_answers"]
-            literal_answers = pair["literal_answers"]
+#         # For each idiom, iterate through pairs
+#         for pair in pairs:
+#             prompt_idiom = pair["prompt_idiom"]
+#             prompt_literal = pair["prompt_literal"]
+#             idiom_answers = pair["idiom_answers"]
+#             literal_answers = pair["literal_answers"]
 
-            # tokens
-            idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-            literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-            min_token_len = min(len(idiom_tokens), len(literal_tokens))
+#             # tokens
+#             idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#             literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#             min_token_len = min(len(idiom_tokens), len(literal_tokens))
 
-            # For each pair, iterate through the 3 answer combinations
-            for answer_idx in range(3):
-                correct_answer = idiom_answers[answer_idx]
-                incorrect_answer = literal_answers[answer_idx]
+#             # For each pair, iterate through the 3 answer combinations
+#             for answer_idx in range(3):
+#                 correct_answer = idiom_answers[answer_idx]
+#                 incorrect_answer = literal_answers[answer_idx]
                 
-                correct_token = model.tokenizer.encode(correct_answer)[0]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
+#                 correct_token = model.tokenizer.encode(correct_answer)[0]
+#                 incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
 
-                correct_answer_idx = correct_token
-                incorrect_answer_idx = incorrect_token
+#                 correct_answer_idx = correct_token
+#                 incorrect_answer_idx = incorrect_token
                 
-                total_combinations += 1
+#                 total_combinations += 1
 
-                # clean run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_idiom) as invoker:
-                        clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        z_hs = {}
-                        for layer_idx in range(N_LAYERS):
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                            for head_idx in range(N_HEADS):
-                                z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
+#                 # clean run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_idiom) as invoker:
+#                         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#                         z_hs = {}
+#                         for layer_idx in range(N_LAYERS):
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                             for head_idx in range(N_HEADS):
+#                                 z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
                         
-                        clean_logits = model.lm_head.output.save()
-                        clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"clean logit diff {clean_logit_diff}")
-                clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
-                np.save(f"data/clean_logits_value.npy", clean_logits_value)
-                # Extract values from Proxy objects after trace context exits
-                z_hs_np = {}
-                for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+#                         clean_logits = model.lm_head.output.save()
+#                         clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"clean logit diff {clean_logit_diff}")
+#                 clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
+#                 np.save(f"data/clean_logits_value.npy", clean_logits_value)
+#                 # Extract values from Proxy objects after trace context exits
+#                 z_hs_np = {}
+#                 for (layer_idx, head_idx), proxy_obj in z_hs.items():
+#                     z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
                 
-                # Now pickle the actual numpy arrays
-                z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "wb")
-                pickle.dump(z_hs_np, z_hs_file)
-                z_hs_file.close()
+#                 # Now pickle the actual numpy arrays
+#                 z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "wb")
+#                 pickle.dump(z_hs_np, z_hs_file)
+#                 z_hs_file.close()
 
-                # corrupted run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_literal) as invoker:
-                        corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                        corrupted_logits = model.lm_head.output
-                        corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"corrupt logit diff {corrupted_logit_diff}")
+#                 # corrupted run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_literal) as invoker:
+#                         corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#                         corrupted_logits = model.lm_head.output
+#                         corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"corrupt logit diff {corrupted_logit_diff}")
                 
                 
-                #patching
-                #load pickle
-                z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "rb")
-                z_hs_np = pickle.load(z_hs_file)
-                z_hs_file.close()
+#                 #patching
+#                 #load pickle
+#                 z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "rb")
+#                 z_hs_np = pickle.load(z_hs_file)
+#                 z_hs_file.close()
                 
-                # Convert numpy arrays back to torch tensors
-                z_hs = {}
-                for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
+#                 # Convert numpy arrays back to torch tensors
+#                 z_hs = {}
+#                 for (layer_idx, head_idx), np_array in z_hs_np.items():
+#                     z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
                 
-                # Compute actual_seq_len outside trace context to avoid Proxy issues
-                sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
-                if len(sample_z_hs.shape) == 2:
-                    saved_seq_len = sample_z_hs.shape[0]
-                else:
-                    saved_seq_len = sample_z_hs.shape[1]
-                actual_seq_len = min(saved_seq_len, min_token_len)
+#                 # Compute actual_seq_len outside trace context to avoid Proxy issues
+#                 sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
+#                 if len(sample_z_hs.shape) == 2:
+#                     saved_seq_len = sample_z_hs.shape[0]
+#                 else:
+#                     saved_seq_len = sample_z_hs.shape[1]
+#                 actual_seq_len = min(saved_seq_len, min_token_len)
                 
-                # Prepare z_hs tensors with proper shapes
-                z_hs_prepared = {}
-                for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
-                    if len(z_hs_tensor.shape) == 2:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
-                    else:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
+#                 # Prepare z_hs tensors with proper shapes
+#                 z_hs_prepared = {}
+#                 for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
+#                     if len(z_hs_tensor.shape) == 2:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
+#                     else:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
                 
-                patched_logits_dict = {}
-                # Patch each selected head independently (one forward pass per head).
-                with model.trace() as tracer:
-                    for (layer_idx, head_idx) in top_heads:
-                        with tracer.invoke(prompt_literal) as invoker:
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_corrupt = einops.rearrange(
-                                z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS
-                            )
-                            z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
+#                 patched_logits_dict = {}
+#                 # Patch each selected head independently (one forward pass per head).
+#                 with model.trace() as tracer:
+#                     for (layer_idx, head_idx) in top_heads:
+#                         with tracer.invoke(prompt_literal) as invoker:
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_corrupt = einops.rearrange(
+#                                 z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS
+#                             )
+#                             z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
 
-                            patched_logits = model.lm_head.output.save()
-                            patched_logit_diff = (
-                                patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
-                            ).save()
-                            patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                            print(f"patched result ({layer_idx}, {head_idx}) {patched_result}")
-                            patched_result_saved = patched_result.save()
+#                             patched_logits = model.lm_head.output.save()
+#                             patched_logit_diff = (
+#                                 patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
+#                             ).save()
+#                             patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+#                             print(f"patched result ({layer_idx}, {head_idx}) {patched_result}")
+#                             patched_result_saved = patched_result.save()
 
-                            accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
-    average_patching_results = accumulated_results / total_combinations
-    return average_patching_results
+#                             accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
+#     average_patching_results = accumulated_results / total_combinations
+#     return average_patching_results
 
 
-def run_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    average_patching_results = patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
-    print(f"Average patching results: {average_patching_results}")
-    x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
-    prompt_idiom = f"top_{k}_heads_patching_only_{model_name}"
-    fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Only Patching Top {k} {model_name} Attention Head across {len(dataset)} Idioms")
-    return fig
+# def run_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     average_patching_results = patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
+#     print(f"Average patching results: {average_patching_results}")
+#     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
+#     prompt_idiom = f"top_{k}_heads_patching_only_{model_name}"
+#     fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Only Patching Top {k} {model_name} Attention Head across {len(dataset)} Idioms")
+#     return fig
 
-def random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
+# def random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     averaged_patching_results = average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name)
      
-    flat_results = averaged_patching_results.flatten()
-    # top_values, top_indices = torch.topk(flat_results, k)
-    top_indices = torch.randperm(len(flat_results))[:k]
+#     flat_results = averaged_patching_results.flatten()
+#     # top_values, top_indices = torch.topk(flat_results, k)
+#     top_indices = torch.randperm(len(flat_results))[:k]
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+#     # Convert flat indices back to (layer, head) tuples
+#     top_heads = []
+#     for idx in top_indices:
+#         layer = idx.item() // N_HEADS
+#         head = idx.item() % N_HEADS
+#         top_heads.append((layer, head))
 
-    print(f"Random {k} heads to patch/zero: {top_heads}")
+#     print(f"Random {k} heads to patch/zero: {top_heads}")
 
-    accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
-    # total_kl = torch.zeros((N_LAYERS, N_HEADS))
-    # kl_counts = torch.zeros((N_LAYERS, N_HEADS))
+#     accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
+#     # total_kl = torch.zeros((N_LAYERS, N_HEADS))
+#     # kl_counts = torch.zeros((N_LAYERS, N_HEADS))
 
 
-    total_combinations = 0
+#     total_combinations = 0
     
-    # Iterate through idioms
-    for idiom_entry in dataset:
-        idiom_id = idiom_entry["id"]
-        pairs = idiom_entry["pairs"]
+#     # Iterate through idioms
+#     for idiom_entry in dataset:
+#         idiom_id = idiom_entry["id"]
+#         pairs = idiom_entry["pairs"]
         
-        # For each idiom, iterate through pairs
-        for pair in pairs:
-            prompt_idiom = pair["prompt_idiom"]
-            prompt_literal = pair["prompt_literal"]
-            idiom_answers = pair["idiom_answers"]
-            literal_answers = pair["literal_answers"]
+#         # For each idiom, iterate through pairs
+#         for pair in pairs:
+#             prompt_idiom = pair["prompt_idiom"]
+#             prompt_literal = pair["prompt_literal"]
+#             idiom_answers = pair["idiom_answers"]
+#             literal_answers = pair["literal_answers"]
 
-            # tokens
-            idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-            literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-            min_token_len = min(len(idiom_tokens), len(literal_tokens))
+#             # tokens
+#             idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#             literal_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#             min_token_len = min(len(idiom_tokens), len(literal_tokens))
 
-            # For each pair, iterate through the 3 answer combinations
-            for answer_idx in range(3):
-                correct_answer = idiom_answers[answer_idx]
-                incorrect_answer = literal_answers[answer_idx]
+#             # For each pair, iterate through the 3 answer combinations
+#             for answer_idx in range(3):
+#                 correct_answer = idiom_answers[answer_idx]
+#                 incorrect_answer = literal_answers[answer_idx]
                 
-                correct_token = model.tokenizer.encode(correct_answer)[0]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
+#                 correct_token = model.tokenizer.encode(correct_answer)[0]
+#                 incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
 
-                correct_answer_idx = correct_token
-                incorrect_answer_idx = incorrect_token
+#                 correct_answer_idx = correct_token
+#                 incorrect_answer_idx = incorrect_token
                 
-                total_combinations += 1
+#                 total_combinations += 1
 
-                # clean run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_idiom) as invoker:
-                        clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        z_hs = {}
-                        for layer_idx in range(N_LAYERS):
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                            for head_idx in range(N_HEADS):
-                                z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
+#                 # clean run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_idiom) as invoker:
+#                         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
+#                         z_hs = {}
+#                         for layer_idx in range(N_LAYERS):
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
+#                             for head_idx in range(N_HEADS):
+#                                 z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
                         
-                        clean_logits = model.lm_head.output.save()
-                        clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"clean logit diff {clean_logit_diff}")
-                clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
-                np.save(f"data/clean_logits_value.npy", clean_logits_value)
-                # Extract values from Proxy objects after trace context exits
-                z_hs_np = {}
-                for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
+#                         clean_logits = model.lm_head.output.save()
+#                         clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"clean logit diff {clean_logit_diff}")
+#                 clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
+#                 np.save(f"data/clean_logits_value.npy", clean_logits_value)
+#                 # Extract values from Proxy objects after trace context exits
+#                 z_hs_np = {}
+#                 for (layer_idx, head_idx), proxy_obj in z_hs.items():
+#                     z_hs_np[layer_idx, head_idx] = proxy_obj.value.detach().cpu().numpy()
                 
-                # Now pickle the actual numpy arrays
-                z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "wb")
-                pickle.dump(z_hs_np, z_hs_file)
-                z_hs_file.close()
+#                 # Now pickle the actual numpy arrays
+#                 z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "wb")
+#                 pickle.dump(z_hs_np, z_hs_file)
+#                 z_hs_file.close()
 
-                # corrupted run
-                with model.trace() as tracer:
-                    with tracer.invoke(prompt_literal) as invoker:
-                        corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                        corrupted_logits = model.lm_head.output
-                        corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
-                        print(f"corrupt logit diff {corrupted_logit_diff}")
+#                 # corrupted run
+#                 with model.trace() as tracer:
+#                     with tracer.invoke(prompt_literal) as invoker:
+#                         corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
+#                         corrupted_logits = model.lm_head.output
+#                         corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
+#                         print(f"corrupt logit diff {corrupted_logit_diff}")
                 
                 
-                #patching
-                #load pickle
-                z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "rb")
-                z_hs_np = pickle.load(z_hs_file)
-                z_hs_file.close()
+#                 #patching
+#                 #load pickle
+#                 z_hs_file = open(f"z_hs_top_k_{model_name}.pkl", "rb")
+#                 z_hs_np = pickle.load(z_hs_file)
+#                 z_hs_file.close()
                 
-                # Convert numpy arrays back to torch tensors
-                z_hs = {}
-                for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
+#                 # Convert numpy arrays back to torch tensors
+#                 z_hs = {}
+#                 for (layer_idx, head_idx), np_array in z_hs_np.items():
+#                     z_hs[layer_idx, head_idx] = torch.from_numpy(np_array)
                 
-                # Compute actual_seq_len outside trace context to avoid Proxy issues
-                sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
-                if len(sample_z_hs.shape) == 2:
-                    saved_seq_len = sample_z_hs.shape[0]
-                else:
-                    saved_seq_len = sample_z_hs.shape[1]
-                actual_seq_len = min(saved_seq_len, min_token_len)
+#                 # Compute actual_seq_len outside trace context to avoid Proxy issues
+#                 sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
+#                 if len(sample_z_hs.shape) == 2:
+#                     saved_seq_len = sample_z_hs.shape[0]
+#                 else:
+#                     saved_seq_len = sample_z_hs.shape[1]
+#                 actual_seq_len = min(saved_seq_len, min_token_len)
                 
-                # Prepare z_hs tensors with proper shapes
-                z_hs_prepared = {}
-                for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
-                    if len(z_hs_tensor.shape) == 2:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
-                    else:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
+#                 # Prepare z_hs tensors with proper shapes
+#                 z_hs_prepared = {}
+#                 for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
+#                     if len(z_hs_tensor.shape) == 2:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
+#                     else:
+#                         z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
                 
-                patched_logits_dict = {}
-                # Patch each selected head independently (one forward pass per head).
-                with model.trace() as tracer:
-                    for (layer_idx, head_idx) in top_heads:
-                        with tracer.invoke(prompt_literal) as invoker:
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_corrupt = einops.rearrange(
-                                z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS
-                            )
-                            z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
+#                 patched_logits_dict = {}
+#                 # Patch each selected head independently (one forward pass per head).
+#                 with model.trace() as tracer:
+#                     for (layer_idx, head_idx) in top_heads:
+#                         with tracer.invoke(prompt_literal) as invoker:
+#                             if model_name == "gpt2":
+#                                 z = model.transformer.h[layer_idx].attn.c_proj.input
+#                             elif model_name == "llama3b":
+#                                 z = model.model.layers[layer_idx].self_attn.o_proj.input
+#                             else:
+#                                 raise ValueError(f"Invalid model: {model_name}")
+#                             z_corrupt = einops.rearrange(
+#                                 z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS
+#                             )
+#                             z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx]
 
-                            patched_logits = model.lm_head.output.save()
-                            patched_logit_diff = (
-                                patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
-                            ).save()
-                            patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                            print(f"patched result ({layer_idx}, {head_idx}) {patched_result}")
-                            patched_result_saved = patched_result.save()
+#                             patched_logits = model.lm_head.output.save()
+#                             patched_logit_diff = (
+#                                 patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
+#                             ).save()
+#                             patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+#                             print(f"patched result ({layer_idx}, {head_idx}) {patched_result}")
+#                             patched_result_saved = patched_result.save()
 
-                            accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
-    average_patching_results = accumulated_results / total_combinations
-    return average_patching_results
+#                             accumulated_results[layer_idx, head_idx] += patched_result_saved.item()
+#     average_patching_results = accumulated_results / total_combinations
+#     return average_patching_results
 
 
-def run_random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
-    average_patching_results = random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
-    print(f"Average patching results: {average_patching_results}")
-    x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
-    prompt_idiom = f"random_{k}_heads_patching_only_{model_name}"
-    fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Only Patching Random {k} {model_name} Attention Head across {len(dataset)} Idioms")
-    return fig
+# def run_random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name):
+#     average_patching_results = random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_name)
+#     print(f"Average patching results: {average_patching_results}")
+#     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
+#     prompt_idiom = f"random_{k}_heads_patching_only_{model_name}"
+#     fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Only Patching Random {k} {model_name} Attention Head across {len(dataset)} Idioms")
+#     return fig
 
 
 
@@ -1635,6 +1678,10 @@ def run_random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, k, model_nam
 if __name__ == "__main__":
     args = parser.parse_args()
     dataset = json.load(open(f"data/{args.dataset}"))
+    device_map = "cpu" if args.device == "cpu" else "auto"
+    cache_dtype = _dtype_from_name(args.cache_dtype)
+    # print device map
+    print(f"Device map: {device_map}")
    
     for idiom_entry in dataset:
         print("--------------------------------")
@@ -1647,7 +1694,7 @@ if __name__ == "__main__":
 
     if args.model == "gpt2":
         model_name = "gpt2"
-        model = LanguageModel("openai-community/gpt2", device_map="auto")
+        model = LanguageModel("openai-community/gpt2", device_map=device_map)
         N_LAYERS = len(model.transformer.h)
         N_HEADS = 12
         D_MODEL = 768
@@ -1656,15 +1703,23 @@ if __name__ == "__main__":
         
         if args.intervention == "residual_stream":
             if args.averaging:
+                print("Running average residual stream patching")
                 run_average_residual_stream_patching(dataset, N_LAYERS, model_name)
             else:
+                print("Running residual stream patching")
                 run_residual_stream_patching(dataset, N_LAYERS, model_name)
         elif args.intervention == "attention_head":
             if args.averaging:
-                run_average_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
-                if args.ablation:
-                    run_top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, args.top_k, model_name)
+                print("Running average attention head patching")
+                run_average_attention_head_patching(
+                    dataset, N_LAYERS, N_HEADS, D_HEADS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                )
             else:
+                print("Running attention head patching")
                 run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
         else:
             raise ValueError(f"Invalid intervention: {args.intervention}")
@@ -1676,34 +1731,34 @@ if __name__ == "__main__":
         access_token = os.environ.get('HF_TOKEN_LLAMA')
         if access_token is None:
             raise ValueError("HF_TOKEN_LLAMA is not set")
-        model = LanguageModel("meta-llama/Llama-3.2-3B", device_map="auto", token = access_token)
+        model = LanguageModel("meta-llama/Llama-3.2-3B", device_map=device_map, token = access_token)
         N_LAYERS = len(model.model.layers)
         N_HEADS = 24
         D_MODEL = 3072
         D_HEADS = D_MODEL // N_HEADS
         if args.intervention == "residual_stream":
             if args.averaging:
+                print("Running average residual stream patching")
                 run_average_residual_stream_patching(dataset, N_LAYERS, model_name)
             else:
+                print("Running residual stream patching")
                 run_residual_stream_patching(dataset, N_LAYERS, model_name)
         elif args.intervention == "mlp":
             if args.averaging:
+                print("Running average MLP patching")
                 run_average_mlp_patching(dataset, N_LAYERS, model_name)
         elif args.intervention == "attention_head":
             if args.averaging:
-                run_average_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
-                if args.ablation:
-                    if args.random_ablation:
-                        run_random_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, args.top_k, model_name)
-                    else:
-                        run_top_k_attention_head_ablation(dataset, N_LAYERS, N_HEADS, D_HEADS, args.top_k, model_name)
-                if args.clean_run_ablation:
-                    if args.random_ablation:
-                        run_random_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, args.top_k, model_name)
-                    else:
-                        run_patch_top_heads(dataset, N_LAYERS, N_HEADS, D_HEADS, args.top_k, model_name)
-            
+                print("Running average attention head patching")
+                run_average_attention_head_patching(
+                    dataset, N_LAYERS, N_HEADS, D_HEADS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                )
             else:
+                print("Running attention head patching")
                 run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
         else:
             raise ValueError(f"Invalid intervention: {args.intervention}")
