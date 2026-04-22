@@ -28,11 +28,13 @@ parser.add_argument("--model", type=str, default="llama3b", help="Model to use: 
 parser.add_argument("--intervention", type=str, default="residual_stream", help="Intervention to use: residual_stream, attention_heads")
 parser.add_argument("--dataset", type=str, default="extended_dataset.json", help="Dataset to use: data/combined_dataset.json")
 parser.add_argument("--averaging", type=bool, default=True, help="Whether to average the intervention results over the dataset")
-parser.add_argument("--device", type=str, default="cpu", choices=["auto", "cpu"], help="Device placement: auto or cpu")
+parser.add_argument("--device", type=str, default="cpu", choices=["auto", "cpu", "gpu"], help="Device placement: auto, cpu, or gpu")
 parser.add_argument("--cache_dtype", type=str, default="bfloat16", choices=["float32", "float16", "bfloat16"], help="Precision for cached intervention tensors")
 parser.add_argument("--max_idioms", type=int, default=0, help="If >0, only process this many idioms from dataset")
 parser.add_argument("--max_pairs_per_idiom", type=int, default=0, help="If >0, only process this many pairs per idiom")
 parser.add_argument("--max_answers", type=int, default=3, help="Number of answer options per pair to evaluate")
+parser.add_argument("--start_idiom", type=int, default=0, help="Start index in dataset for batched runs")
+parser.add_argument("--accumulator_path", type=str, default="", help="Path to .npz accumulation checkpoint for batched averaging")
 
 
 ### FUNCTIONS
@@ -62,6 +64,23 @@ def _dtype_from_name(dtype_name: str):
         "bfloat16": torch.bfloat16,
     }
     return dtype_map[dtype_name]
+
+def _load_accumulator(path, n_layers, n_heads):
+    if not path or not os.path.exists(path):
+        return torch.zeros((n_layers, n_heads)), 0
+    data = np.load(path)
+    acc = torch.from_numpy(data["accumulated_results"]).to(torch.float32)
+    total = int(data["total_combinations"])
+    return acc, total
+
+def _save_accumulator(path, accumulated_results, total_combinations):
+    if not path:
+        return
+    np.savez(
+        path,
+        accumulated_results=accumulated_results.detach().cpu().numpy(),
+        total_combinations=np.array(total_combinations, dtype=np.int64),
+    )
 
 def plot_ioi_patching_results(model, model_name,
                               ioi_patching_results,
@@ -553,14 +572,27 @@ def run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
         attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom, prompt_literal, correct_answer_idx, incorrect_answer_idx, min_token_len)
 
 
-def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_name, cache_dtype=torch.float32, max_idioms=0, max_pairs_per_idiom=0, max_answers=3):
-    accumulated_results = torch.zeros((N_LAYERS, N_HEADS))
-    num_pairs = len(dataset)
-
-    total_combinations = 0
+def average_attention_head_patching(
+    N_LAYERS,
+    N_HEADS,
+    D_HEADS,
+    dataset,
+    model_name,
+    cache_dtype=torch.float32,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
+    accumulated_results, total_combinations = _load_accumulator(accumulator_path, N_LAYERS, N_HEADS)
+    processed_idioms = 0
     for idiom_idx, idiom_entry in enumerate(dataset):
-        if max_idioms > 0 and idiom_idx >= max_idioms:
+        if idiom_idx < start_idiom:
+            continue
+        if max_idioms > 0 and processed_idioms >= max_idioms:
             break
+        processed_idioms += 1
         idiom_id = idiom_entry["id"]
         pairs = idiom_entry["pairs"]
         for pair_idx, pair in enumerate(pairs):
@@ -588,79 +620,32 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                 total_combinations += 1
 
 
-                # clean run
-                z_hs = {}
+                # clean / corrupted baseline runs
                 with model.trace() as tracer:
                     with tracer.invoke(prompt_idiom) as invoker:
-                        clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                        for layer_idx in range(N_LAYERS):
-                            if model_name == "gpt2":
-                                z = model.transformer.h[layer_idx].attn.c_proj.input
-                            elif model_name == "llama3b":
-                                z = model.model.layers[layer_idx].self_attn.o_proj.input
-                            else:
-                                raise ValueError(f"Invalid model: {model_name}")
-                            z_reshaped = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                            for head_idx in range(N_HEADS):
-                                z_hs[layer_idx, head_idx] = z_reshaped[:, :min_token_len, head_idx, :].save()
-                        
                         clean_logits = model.lm_head.output
                         clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
                         print(f"clean logit diff {clean_logit_diff}")
-                
-                # Extract values from Proxy objects after trace context exits
-                z_hs_np = {}
-                for (layer_idx, head_idx), proxy_obj in z_hs.items():
-                    z_hs_np[layer_idx, head_idx] = _to_numpy(proxy_obj)
-                
-                # Now pickle the actual numpy arrays
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "wb")
-                pickle.dump(z_hs_np, z_hs_file)
-                z_hs_file.close()
-
-                # corrupted run
-                with model.trace() as tracer:
                     with tracer.invoke(prompt_literal) as invoker:
-                        corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
                         corrupted_logits = model.lm_head.output
                         corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
                         print(f"corrupt logit diff {corrupted_logit_diff}")
-                
-                
-                #patching
-                attention_head_patching_intervention = []
-                #load pickle
-                z_hs_file = open(f"z_hs_{model_name}.pkl", "rb")
-                z_hs_np = pickle.load(z_hs_file)
-                z_hs_file.close()
-                
-                # Convert numpy arrays back to torch tensors
-                z_hs = {}
-                for (layer_idx, head_idx), np_array in z_hs_np.items():
-                    z_hs[layer_idx, head_idx] = torch.from_numpy(np_array).to(cache_dtype)
-                # Compute actual_seq_len outside trace context to avoid Proxy issues
-                # Get saved sequence length from z_hs (same for all heads in a layer)
-                sample_z_hs = z_hs[0, 0]  # Use first layer, first head as sample
-                if len(sample_z_hs.shape) == 2:
-                    saved_seq_len = sample_z_hs.shape[0]
-                else:
-                    saved_seq_len = sample_z_hs.shape[1]
-                # Use min_token_len as the current sequence length (it's already the min of idiom and literal)
-                actual_seq_len = min(saved_seq_len, min_token_len)
-                
-                # Prepare z_hs tensors with proper shapes
-                z_hs_prepared = {}
-                for (layer_idx, head_idx), z_hs_tensor in z_hs.items():
-                    if len(z_hs_tensor.shape) == 2:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor.unsqueeze(0)[:, :actual_seq_len, :]
-                    else:
-                        z_hs_prepared[layer_idx, head_idx] = z_hs_tensor[:, :actual_seq_len, :]
-                
-                patched_result_dict = {}
-                with model.trace() as tracer:
-                    for layer_idx in range(N_LAYERS):
-                        _attention_head_patching_intervention = []
-                        for head_idx in range(N_HEADS):
+
+                # Memory-lean streaming patching: process one head at a time.
+                for layer_idx in range(N_LAYERS):
+                    for head_idx in range(N_HEADS):
+                        with model.trace() as tracer:
+                            with tracer.invoke(prompt_idiom) as invoker:
+                                if model_name == "gpt2":
+                                    z_clean = model.transformer.h[layer_idx].attn.c_proj.input
+                                elif model_name == "llama3b":
+                                    z_clean = model.model.layers[layer_idx].self_attn.o_proj.input
+                                else:
+                                    raise ValueError(f"Invalid model: {model_name}")
+                                z_clean_head = einops.rearrange(
+                                    z_clean, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS
+                                )[:, :min_token_len, head_idx, :].save()
+
                             with tracer.invoke(prompt_literal) as invoker:
                                 if model_name == "gpt2":
                                     z = model.transformer.h[layer_idx].attn.c_proj.input
@@ -668,18 +653,25 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
                                     z = model.model.layers[layer_idx].self_attn.o_proj.input
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
+
                                 z_corrupt = einops.rearrange(z, 'b s (nh dh) -> b s nh dh', nh=N_HEADS, dh=D_HEADS)
-                                z_corrupt[:, :actual_seq_len, head_idx, :] = z_hs_prepared[layer_idx, head_idx].to(z_corrupt.dtype)
+                                clean_head_tensor = torch.from_numpy(_to_numpy(z_clean_head)).to(cache_dtype)
+                                if clean_head_tensor.ndim == 2:
+                                    clean_head_tensor = clean_head_tensor.unsqueeze(0)
+                                actual_seq_len = min(clean_head_tensor.shape[1], min_token_len)
+                                z_corrupt[:, :actual_seq_len, head_idx, :] = clean_head_tensor[:, :actual_seq_len, :].to(z_corrupt.dtype)
+
                                 patched_logits = model.lm_head.output
                                 patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]).save()
                                 patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
-                                patched_result_dict[(layer_idx, head_idx)] = patched_result.save()
-                for (layer_idx, head_idx), patched_result_saved in patched_result_dict.items():
-                    accumulated_results[layer_idx, head_idx] += _to_scalar(patched_result_saved)
-                del z_hs_np, z_hs, z_hs_prepared, patched_result_dict
-                gc.collect()
+                                accumulated_results[layer_idx, head_idx] += _to_scalar(patched_result.save())
+
+                        gc.collect()
+                _save_accumulator(accumulator_path, accumulated_results, total_combinations)
                 
-    average_patching_results = accumulated_results / num_pairs
+    if total_combinations == 0:
+        raise ValueError("No combinations were processed. Check start/max arguments.")
+    average_patching_results = accumulated_results / total_combinations
 
     flat_results = average_patching_results.flatten()
     top_values, top_indices = torch.topk(flat_results, 34)
@@ -731,13 +723,27 @@ def average_attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, dataset, model_n
 
 
 
-def run_average_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name, cache_dtype=torch.float32, max_idioms=0, max_pairs_per_idiom=0, max_answers=3):
+def run_average_attention_head_patching(
+    dataset,
+    N_LAYERS,
+    N_HEADS,
+    D_HEADS,
+    model_name,
+    cache_dtype=torch.float32,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
     average_patching_results = average_attention_head_patching(
         N_LAYERS, N_HEADS, D_HEADS, dataset, model_name,
         cache_dtype=cache_dtype,
         max_idioms=max_idioms,
         max_pairs_per_idiom=max_pairs_per_idiom,
         max_answers=max_answers,
+        start_idiom=start_idiom,
+        accumulator_path=accumulator_path,
     )
     x_labels = [f"Head {i+1}" for i in range(N_HEADS)]
     prompt_idiom = f"averaged_attention_head_patching_{model_name}_multiple"
@@ -1678,7 +1684,12 @@ def run_average_mlp_patching(dataset, N_LAYERS, model_name):
 if __name__ == "__main__":
     args = parser.parse_args()
     dataset = json.load(open(f"data/{args.dataset}"))
-    device_map = "cpu" if args.device == "cpu" else "auto"
+    if args.device == "cpu":
+        device_map = "cpu"
+    elif args.device == "gpu":
+        device_map = "cuda"
+    else:
+        device_map = "auto"
     cache_dtype = _dtype_from_name(args.cache_dtype)
     # print device map
     print(f"Device map: {device_map}")
@@ -1717,6 +1728,8 @@ if __name__ == "__main__":
                     max_idioms=args.max_idioms,
                     max_pairs_per_idiom=args.max_pairs_per_idiom,
                     max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
                 )
             else:
                 print("Running attention head patching")
@@ -1756,6 +1769,8 @@ if __name__ == "__main__":
                     max_idioms=args.max_idioms,
                     max_pairs_per_idiom=args.max_pairs_per_idiom,
                     max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
                 )
             else:
                 print("Running attention head patching")
