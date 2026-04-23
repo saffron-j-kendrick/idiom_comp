@@ -24,7 +24,7 @@ import gc
 ### PARSER ARGUMENTS
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default="llama3b", help="Model to use: gpt2, llama-3.2-3b")
+parser.add_argument("--model", type=str, default="llama3b", help="Model to use: gpt2, llama-3.2-3b, mistral7b")
 parser.add_argument("--intervention", type=str, default="residual_stream", help="Intervention to use: residual_stream, attention_heads")
 parser.add_argument("--dataset", type=str, default="extended_dataset.json", help="Dataset to use: data/combined_dataset.json")
 parser.add_argument("--averaging", type=bool, default=True, help="Whether to average the intervention results over the dataset")
@@ -65,6 +65,30 @@ def _dtype_from_name(dtype_name: str):
     }
     return dtype_map[dtype_name]
 
+def _find_delimiter_token_index(tokenizer, text, delimiter=","):
+    """Tokenizer-agnostic delimiter lookup using character offsets."""
+    char_idx = text.find(delimiter)
+    if char_idx == -1:
+        raise ValueError(f"Delimiter '{delimiter}' not found in text.")
+
+    encoded = tokenizer(
+        text,
+        return_offsets_mapping=True,
+        add_special_tokens=True,
+    )
+    offsets = encoded.get("offset_mapping")
+    if offsets is None:
+        raise ValueError("Tokenizer did not return offset mapping.")
+
+    for tok_idx, (start, end) in enumerate(offsets):
+        # Skip special tokens that often map to (0, 0)
+        if start == end:
+            continue
+        if start <= char_idx < end:
+            return tok_idx
+
+    raise ValueError(f"Could not map delimiter '{delimiter}' to token index.")
+
 def _load_accumulator(path, n_layers, n_heads):
     if not path or not os.path.exists(path):
         return torch.zeros((n_layers, n_heads)), 0
@@ -82,6 +106,24 @@ def _save_accumulator(path, accumulated_results, total_combinations):
         total_combinations=np.array(total_combinations, dtype=np.int64),
     )
 
+def _load_residual_accumulator(path, n_layers, window_size):
+    if not path or not os.path.exists(path):
+        return np.zeros((n_layers, window_size)), np.zeros((n_layers, window_size))
+    data = np.load(path)
+    if "total_results" in data and "counts" in data:
+        return data["total_results"], data["counts"]
+    # Backward compatibility: no valid residual accumulator content
+    return np.zeros((n_layers, window_size)), np.zeros((n_layers, window_size))
+
+def _save_residual_accumulator(path, total_results, counts):
+    if not path:
+        return
+    np.savez(
+        path,
+        total_results=total_results,
+        counts=counts,
+    )
+
 def plot_ioi_patching_results(model, model_name,
                               ioi_patching_results,
                               x_labels,
@@ -89,7 +131,7 @@ def plot_ioi_patching_results(model, model_name,
                               plot_title="Normalized Logit Difference"):
     if model_name == "gpt2":
         N_LAYERS = len(model.transformer.h)
-    elif model_name == "llama3b":
+    elif model_name == "llama3b" or model_name == "mistral7b":
         N_LAYERS = len(model.model.layers)
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -145,7 +187,7 @@ def plot_ioi_patching_results_attention(model, model_name,
 
     if model_name == "gpt2":
         N_LAYERS = len(model.transformer.h)
-    elif model_name == "llama3b":
+    elif model_name == "llama3b" or model_name == "mistral7b":
         N_LAYERS = len(model.model.layers)
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -200,7 +242,7 @@ def visualize_attention(model, model_name, prompt, layer, head, prompt_idiom):
         # in the output tuple of the GPT2Attention module.
         if model_name == "gpt2":
             attn_weights = model.transformer.h[layer].attn.output[1][0, head].save()
-        elif model_name == "llama3b":
+        elif model_name == "llama3b" or model_name == "mistral7b":
             attn_weights = model.model.layers[layer].self_attn.output[1][0, head].save()
         else:
             raise ValueError(f"Invalid model: {model_name}")
@@ -235,7 +277,7 @@ def residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal,
         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
         if model_name == "gpt2":
             clean_hs = [model.transformer.h[i].output[0].save() for i in range(N_LAYERS)]
-        elif model_name == "llama3b":
+        elif model_name == "llama3b" or model_name == "mistral7b":
             clean_hs = [model.model.layers[i].output[0].save() for i in range(N_LAYERS)]
         else:
             raise ValueError(f"Invalid model: {model_name}")
@@ -263,7 +305,7 @@ def residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal,
             with model.trace(prompt_literal) as tracer:
                 if model_name == "gpt2":
                     model.transformer.h[layer_idx].output[0][:, token_idx, :] = clean_hs[:, token_idx, :]
-                elif model_name == "llama3b":
+                elif model_name == "llama3b" or model_name == "mistral7b":
                     model.model.layers[layer_idx].output[0][ token_idx, :] = clean_hs[ token_idx, :]
                 else:
                     raise ValueError(f"Invalid model: {model_name}")
@@ -307,7 +349,17 @@ def run_residual_stream_patching(dataset, N_LAYERS, model_name):
         residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal, correct_answer_idx, incorrect_answer_idx, min_token_len)
 
 
-def average_residual_stream_patching(N_LAYERS, model_name, dataset):
+def average_residual_stream_patching(
+    N_LAYERS,
+    model_name,
+    dataset,
+    cache_dtype=torch.bfloat16,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
     """ Replaces the residual stream at the end of each layer with the residual stream from the clean prompt and plot the averaged results"""
     
     
@@ -315,8 +367,7 @@ def average_residual_stream_patching(N_LAYERS, model_name, dataset):
     AFTER = 4
     WINDOW_SIZE = BEFORE + AFTER + 1
 
-    total_results = np.zeros((N_LAYERS, WINDOW_SIZE))
-    counts = np.zeros((N_LAYERS, WINDOW_SIZE))
+    total_results, counts = _load_residual_accumulator(accumulator_path, N_LAYERS, WINDOW_SIZE)
     
 
 
@@ -325,10 +376,18 @@ def average_residual_stream_patching(N_LAYERS, model_name, dataset):
     #     prompt_literal = pair["prompt_literal"]
     #     correct_answer = pair["correct_answer"]
     #     incorrect_answer = pair["incorrect_answer"]
-    for idiom_entry in dataset:
+    processed_idioms = 0
+    for idiom_idx, idiom_entry in enumerate(dataset):
+        if idiom_idx < start_idiom:
+            continue
+        if max_idioms > 0 and processed_idioms >= max_idioms:
+            break
+        processed_idioms += 1
         idiom_id = idiom_entry["id"]
         pairs = idiom_entry["pairs"]
-        for pair in pairs:
+        for pair_idx, pair in enumerate(pairs):
+            if max_pairs_per_idiom > 0 and pair_idx >= max_pairs_per_idiom:
+                break
             prompt_idiom = pair["prompt_idiom"]
             prompt_literal = pair["prompt_literal"]
             idiom_answers = pair["idiom_answers"]
@@ -342,93 +401,88 @@ def average_residual_stream_patching(N_LAYERS, model_name, dataset):
             min_token_len = min(len(idiom_tokens), len(literal_tokens))
             print(min_token_len)
 
-            if model_name == "gpt2":
-                and_token = model.tokenizer.encode(",")[0]
-            else:
-                and_token = model.tokenizer.encode(",")[1]
-                print(f"and token {and_token}")
-
-            # Find position of "and"
+            # Find delimiter token position in a tokenizer-agnostic way
             try:
-                if model_name == "gpt2":
-                    and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                elif model_name == "llama3b":
-                    and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                    print(f"and token idx {and_token_idx}")
-                else:
-                    raise ValueError(f"Invalid model: {model_name}")
+                and_token_idx = _find_delimiter_token_index(model.tokenizer, prompt_literal, delimiter=",")
+                print(f"comma token idx {and_token_idx}")
             except (RuntimeError, ValueError, IndexError):
-                print(f"Skipping {pair['id']}: 'and' not found.")
+                print(f"Skipping idiom={idiom_id}, pair_idx={pair_idx}: comma delimiter not found.")
                 continue
 
 
-            for answer_idx in range(3):
+            n_answers = min(max_answers, len(idiom_answers), len(literal_answers))
+            for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-                correct_token = model.tokenizer.encode(correct_answer)[1]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
+                if model_name == "gpt2":
+                    correct_token = model.tokenizer.encode(correct_answer)[0]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
+                else:
+                    correct_token = model.tokenizer.encode(correct_answer)[1]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
                 correct_answer_idx = correct_token
                 incorrect_answer_idx = incorrect_token
 
             
             
-                # clean run
-                with model.trace(prompt_idiom) as tracer:
-                    clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                    if model_name == "gpt2":
-                        clean_hs = [model.transformer.h[i].output[0].save() for i in range(N_LAYERS)]
-                    elif model_name == "llama3b":
-                        clean_hs = [model.model.layers[i].output[0].save() for i in range(N_LAYERS)]
-                    else:
-                        raise ValueError(f"Invalid model: {model_name}")
-                    clean_logits = model.lm_head.output
-                    clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                    
-            
-                # Convert Proxy objects to numpy arrays after trace context exits
-                clean_hs_np = [_to_numpy(act) for act in clean_hs]
-                for layer_idx, act in enumerate(clean_hs_np):
-                    np.save(f"data/clean_hidden_state_{layer_idx}_{model_name}.npy", act)
-                
-                # # Extract the actual tensor value from the saved Proxy
-                # clean_logit_diff_value = clean_logit_diff.value.item()
-                
-                # corrupted run
-                with model.trace(prompt_literal) as tracer:
-                    corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                    corrupted_logits = model.lm_head.output
-                    corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
-                    print(f"corrupt logit diff {corrupted_logit_diff}")
+                # clean/corrupt baseline run (single pass)
+                with model.trace() as tracer:
+                    with tracer.invoke(prompt_idiom):
+                        clean_logits = model.lm_head.output
+                        clean_logit_diff = (
+                            clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]
+                        ).save()
+                    with tracer.invoke(prompt_literal):
+                        corrupted_logits = model.lm_head.output
+                        corrupted_logit_diff = (
+                            corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]
+                        ).save()
+                        print(f"corrupt logit diff {corrupted_logit_diff}")
 
-                # # Extract the actual tensor value from the saved Proxy
-                # corrupted_logit_diff_value = corrupted_logit_diff.value.item()
-
-                # patching within the window
-                
+                # Streaming patching: materialize one layer clean residual at a time
                 for layer_idx in range(N_LAYERS):
-                    clean_hs_np = np.load(f"data/clean_hidden_state_{layer_idx}_{model_name}.npy")
-                    clean_hs = torch.from_numpy(clean_hs_np)
-                    
+                    with model.trace(prompt_idiom):
+                        if model_name == "gpt2":
+                            clean_layer_saved = model.transformer.h[layer_idx].output[0].save()
+                        elif model_name in ("llama3b", "mistral7b"):
+                            clean_layer_saved = model.model.layers[layer_idx].output[0].save()
+                        else:
+                            raise ValueError(f"Invalid model: {model_name}")
+
+                    clean_hs = torch.from_numpy(_to_numpy(clean_layer_saved)).to(cache_dtype)
+
                     for offset in range(-BEFORE, AFTER + 1):
                         token_idx = and_token_idx + offset
                         matrix_col = offset + BEFORE
-                        if 0<= token_idx < min_token_len:
-
-                            with model.trace(prompt_literal) as tracer:
+                        if 0 <= token_idx < min_token_len:
+                            with model.trace(prompt_literal):
                                 if model_name == "gpt2":
-                                    model.transformer.h[layer_idx].output[0][:, token_idx, :] = clean_hs[:, token_idx, :]
-                                elif model_name == "llama3b":
-                                    model.model.layers[layer_idx].output[0][ token_idx, :] = clean_hs[ token_idx, :]
+                                    layer_out = model.transformer.h[layer_idx].output[0]
+                                    layer_out[:, token_idx, :] = clean_hs[:, token_idx, :].to(layer_out.dtype)
+                                elif model_name in ("llama3b", "mistral7b"):
+                                    layer_out = model.model.layers[layer_idx].output[0]
+                                    if clean_hs.ndim == 3:
+                                        layer_out[token_idx, :] = clean_hs[0, token_idx, :].to(layer_out.dtype)
+                                    else:
+                                        layer_out[token_idx, :] = clean_hs[token_idx, :].to(layer_out.dtype)
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
+
                                 patched_logits = model.lm_head.output
-                                patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx])
-                                patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+                                patched_logit_diff = (
+                                    patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
+                                )
+                                patched_result = (
+                                    (patched_logit_diff - corrupted_logit_diff)
+                                    / (clean_logit_diff - corrupted_logit_diff)
+                                )
                                 patched_result_saved = patched_result.save()
-                            
-                            # Extract the value after the trace context exits
-                            total_results[layer_idx, matrix_col] += patched_result_saved.item()
+
+                            total_results[layer_idx, matrix_col] += _to_scalar(patched_result_saved)
                             counts[layer_idx, matrix_col] += 1
+                    del clean_hs
+                    gc.collect()
+                _save_residual_accumulator(accumulator_path, total_results, counts)
         
     return total_results, counts
         
@@ -436,21 +490,43 @@ def average_residual_stream_patching(N_LAYERS, model_name, dataset):
 
 
 
-def run_average_residual_stream_patching(dataset, N_LAYERS, model_name):
+def run_average_residual_stream_patching(
+    dataset,
+    N_LAYERS,
+    model_name,
+    cache_dtype=torch.bfloat16,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
     
-        total_results, counts = average_residual_stream_patching(N_LAYERS, model_name, dataset)
+        total_results, counts = average_residual_stream_patching(
+            N_LAYERS,
+            model_name,
+            dataset,
+            cache_dtype=cache_dtype,
+            max_idioms=max_idioms,
+            max_pairs_per_idiom=max_pairs_per_idiom,
+            max_answers=max_answers,
+            start_idiom=start_idiom,
+            accumulator_path=accumulator_path,
+        )
         avg_results = np.divide(total_results, counts, out=np.zeros_like(total_results), where=counts!=0)
         # Use first idiom's first pair for labels
         prompt_idiom = dataset[0]["pairs"][0]["prompt_idiom"]
         
         idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-        if model_name == "gpt2":
-            and_token = model.tokenizer.encode(",")[0]
-        else:
-            and_token = model.tokenizer.encode(",")[1]
-        and_token_idx = (idiom_tokens == and_token).nonzero(as_tuple=True)[0].item()
+        try:
+            and_token_idx = _find_delimiter_token_index(model.tokenizer, prompt_idiom, delimiter=",")
+        except ValueError:
+            # Fallback: center the label window near sentence end if comma mapping fails.
+            and_token_idx = min(len(idiom_tokens) - 1, 8)
 
-        labels = [model.tokenizer.decode(token) for token in idiom_tokens[and_token_idx-8:and_token_idx+5]]
+        label_start = max(0, and_token_idx - 8)
+        label_end = min(len(idiom_tokens), and_token_idx + 5)
+        labels = [model.tokenizer.decode(token) for token in idiom_tokens[label_start:label_end]]
         # Calculate the absolute maximum to make the scale symmetric
         y_labels = list(range(1, N_LAYERS + 1))
         plt.figure(figsize=(12, 8))
@@ -484,7 +560,7 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
             for layer_idx in range(N_LAYERS):
                 if model_name == "gpt2":
                     z = model.transformer.h[layer_idx].attn.c_proj.input
-                elif model_name == "llama3b":
+                elif model_name in ("llama3b", "mistral7b"):
                     z = model.model.layers[layer_idx].self_attn.o_proj.input
                 else:
                     raise ValueError(f"Invalid model: {model_name}")
@@ -534,7 +610,7 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
                 with tracer.invoke(prompt_literal) as invoker:
                     if model_name == "gpt2":
                         z = model.transformer.h[layer_idx].attn.c_proj.input
-                    elif model_name == "llama3b":
+                    elif model_name in ("llama3b", "mistral7b"):
                         z = model.model.layers[layer_idx].self_attn.o_proj.input
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -638,7 +714,7 @@ def average_attention_head_patching(
                             with tracer.invoke(prompt_idiom) as invoker:
                                 if model_name == "gpt2":
                                     z_clean = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name == "llama3b":
+                                elif model_name in ("llama3b", "mistral7b"):
                                     z_clean = model.model.layers[layer_idx].self_attn.o_proj.input
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -649,7 +725,7 @@ def average_attention_head_patching(
                             with tracer.invoke(prompt_literal) as invoker:
                                 if model_name == "gpt2":
                                     z = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name == "llama3b":
+                                elif model_name in ("llama3b", "mistral7b"):
                                     z = model.model.layers[layer_idx].self_attn.o_proj.input
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -825,7 +901,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
             try:
                 if model_name == "gpt2":
                     and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                elif model_name == "llama3b":
+                elif model_name in ("llama3b", "mistral7b"):
                     and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
                     print(f"and token idx {and_token_idx}")
                 else:
@@ -848,7 +924,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                     clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
                     if model_name == "gpt2":
                         clean_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name == "llama3b":
+                    elif model_name in ("llama3b", "mistral7b"):
                         clean_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -867,7 +943,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                     corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
                     if model_name == "gpt2":
                         corrupted_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name == "llama3b":
+                    elif model_name in ("llama3b", "mistral7b"):
                         corrupted_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -902,7 +978,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                             with model.trace(prompt_literal) as tracer:
                                 if model_name == "gpt2":
                                     model.transformer.h[layer_idx].mlp.c_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
-                                elif model_name == "llama3b":
+                                elif model_name in ("llama3b", "mistral7b"):
                                     model.model.layers[layer_idx].mlp.down_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -1009,7 +1085,7 @@ def run_average_mlp_patching(dataset, N_LAYERS, model_name):
     idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
     if model_name == "gpt2":
         and_token = model.tokenizer.encode(",")[0]
-    elif model_name == "llama3b":
+    elif model_name in ("llama3b", "mistral7b"):
         and_token = model.tokenizer.encode(",")[1]
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -1715,7 +1791,15 @@ if __name__ == "__main__":
         if args.intervention == "residual_stream":
             if args.averaging:
                 print("Running average residual stream patching")
-                run_average_residual_stream_patching(dataset, N_LAYERS, model_name)
+                run_average_residual_stream_patching(
+                    dataset, N_LAYERS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
             else:
                 print("Running residual stream patching")
                 run_residual_stream_patching(dataset, N_LAYERS, model_name)
@@ -1752,7 +1836,63 @@ if __name__ == "__main__":
         if args.intervention == "residual_stream":
             if args.averaging:
                 print("Running average residual stream patching")
-                run_average_residual_stream_patching(dataset, N_LAYERS, model_name)
+                run_average_residual_stream_patching(
+                    dataset, N_LAYERS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
+            else:
+                print("Running residual stream patching")
+                run_residual_stream_patching(dataset, N_LAYERS, model_name)
+        elif args.intervention == "mlp":
+            if args.averaging:
+                print("Running average MLP patching")
+                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+        elif args.intervention == "attention_head":
+            if args.averaging:
+                print("Running average attention head patching")
+                run_average_attention_head_patching(
+                    dataset, N_LAYERS, N_HEADS, D_HEADS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
+            else:
+                print("Running attention head patching")
+                run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
+        else:
+            raise ValueError(f"Invalid intervention: {args.intervention}")
+    elif args.model == "mistral7b":
+        model_name = "mistral7b"
+        # token
+
+        access_token = os.environ.get('HF_TOKEN_LLAMA')
+        if access_token is None:
+            raise ValueError("HF_TOKEN_LLAMA is not set")
+        model = LanguageModel("mistralai/Mistral-7B-v0.1", device_map=device_map, token = access_token)
+        N_LAYERS = len(model.model.layers)
+        N_HEADS = 32
+        D_MODEL = 4096
+        D_HEADS = D_MODEL // N_HEADS
+        if args.intervention == "residual_stream":
+            if args.averaging:
+                print("Running average residual stream patching")
+                run_average_residual_stream_patching(
+                    dataset, N_LAYERS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
             else:
                 print("Running residual stream patching")
                 run_residual_stream_patching(dataset, N_LAYERS, model_name)
