@@ -214,11 +214,9 @@ def get_custom_outlined_mask(size=8):
     # 1. Initialize empty mask
     mask = np.zeros((size, size), dtype=bool)
     
-    # 2. Define the top section of the shape (Rows 4-5, Cols 0-3)
-    mask[4:6, 0:4] = True
-    
-    # 3. Define the bottom section of the shape (Rows 6-7, Cols 0-5)
-    mask[6:8, 0:6] = True
+    # 2. Keep only the bottom row across the first six columns.
+    # Use min(size, 6) so this remains safe for non-8 inputs.
+    mask[size - 1, :min(size, 6)] = True
     
     # 4. Remove diagonal and upper triangle to be safe 
     # (Though in an 8x8, these specific coordinates already avoid the diagonal)
