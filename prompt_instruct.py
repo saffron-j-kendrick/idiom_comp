@@ -1,6 +1,10 @@
 import os
 import torch
 from transformers import pipeline
+from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelWithLMHead, AutoModelForCausalLM
+from transformers import BertModel, BertTokenizer, RobertaModel, RobertaTokenizer, XLNetModel, XLMModel, RobertaConfig, BertConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM
+
 
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -34,3 +38,42 @@ generation = generator(
 assistant_text = generation[0]["generated_text"][-1]["content"]
 with open("generation.txt", "w") as f:
   f.write(assistant_text)
+
+
+
+
+# dev_model_configs = {'mistralai/Mistral-7B-v0.1' : (AutoConfig.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), "mistralai/Mistral-7B-v0.1")}
+
+# def load_model(name, all_hidden_states=True):
+#     configuration_class, model_class, tokeniser_class, weights = dev_model_configs[name]
+#     model, tokeniser = load_model_from_classes(configuration_class, model_class, tokeniser_class, weights, all_hidden_states)
+#     return model, tokeniser
+
+# def load_model_from_classes(configuration_class, model_class, tokeniser_class, weights, all_hidden_states=True):
+#     config = configuration_class.from_pretrained(weights, output_hidden_states=all_hidden_states)
+#     model = model_class.from_pretrained(weights, config=config)
+#     model = model.to(device)
+        
+#     tokeniser = tokeniser_class.from_pretrained(weights)
+    
+#     return model, tokeniser
+
+
+
+
+
+# models = dev_model_configs.keys()
+# print(models)
+# for model_name in models:
+#     model, tokeniser = load_model(model_name)
+
+#     if tokeniser.pad_token is None:
+#             if tokeniser.eos_token:
+#                 tokeniser.pad_token = tokeniser.eos_token
+#             else:
+#                 tokeniser.add_special_tokens({'pad_token': '<pad>'})
+
+
+#     print(model)
+
+
