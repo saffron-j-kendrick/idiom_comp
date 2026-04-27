@@ -1,0 +1,184 @@
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a big
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it turned into a
+  Literal prompt: The designer was ready to make a sketch, it turned into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+--------------------------------
+Idiom: kick_the_bucket
+  Idiom prompt: The old man was so tired when he kicked the bucket, it was a sad
+  Literal prompt: The old man was so tired when he kicked the football, it was a sad
+  Idiom prompt: The athlete was so exhausted that he kicked the bucket, it was a sad
+  Literal prompt: The athlete was so exhausted that he kicked the football, it was a sad
+  Idiom prompt: The team were winning when the lead scorer kicked the bucket, so it was very
+  Literal prompt: The team were winning when the lead scorer kicked the football, so it was very
+--------------------------------
+--------------------------------
+Idiom: cut_a_rug
+  Idiom prompt: The party was getting wild as she cut a rug, it was a great
+  Literal prompt: The party was getting wild as she cut a slice, it was a great
+  Idiom prompt: The band was so good that they got the crowd to cut a rug, it was a great
+  Literal prompt: The band was so good that they got the crowd to cut a slice, it was a great
+  Idiom prompt: The couple's energetic dance moves had everyone cutting a rug, it was a great
+  Literal prompt: The couple's energetic dance moves had everyone cutting a slice, it was a great
+--------------------------------
+--------------------------------
+Idiom: cut_the_mustard
+You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  Idiom prompt: The chef was under pressure to create a new dish but he cut the mustard, it was a big
+  Literal prompt: The chef was under pressure to create a new dish but he cut the stem, it was a big
+  Idiom prompt: The team was struggling to complete the task but in the final quarter they cut the mustard, it was a big
+  Literal prompt: The team was struggling to complete the task but in the final quarter they cut the stem, it was a big
+  Idiom prompt: The new employee was nervous to meet his first target but he cut the mustard, it was a big
+  Literal prompt: The new employee was nervous to meet his first target but he cut the stem, it was a big
+--------------------------------
+--------------------------------
+Idiom: hit_the_jackpot
+  Idiom prompt: The programmer's code struggled at first but then it hit the jackpot, it was a big
+  Literal prompt: The programmer's code struggled at first but then it hit the button, it was a big
+  Idiom prompt: After years of trying, the musician wrote his piece and then hit the jackpot, it was a big
+  Literal prompt: After years of trying, the musician wrote his piece and then hit the button, it was a big
+  Idiom prompt: The engineer's new design hit the jackpot, it was a big
+  Literal prompt: The engineer's new design hit the button, it was a big
+--------------------------------
+--------------------------------
+Idiom: call_the_shots
+  Idiom prompt: As a lifeguard she had to call the shots, it was a huge
+  Literal prompt: As a lifeguard she had to call the police, it was a huge
+  Idiom prompt: The coach had to make a choice and call the shots, it was a difficult
+  Literal prompt: The coach had to make a choice and call the police, it was a difficult
+  Idiom prompt: The project manager had the final say and called the shots, it was a big
+  Literal prompt: The project manager had the final say and called the police, it was a big
+--------------------------------
+--------------------------------
+Idiom: get_a_grip
+  Idiom prompt: After the accident she took a few deep breaths and got a grip, it was a big
+  Literal prompt: After the accident she took a few deep breaths and got a rope, it was a big
+  Idiom prompt: The athlete was emotional but the coach told him to get a grip, it was an important
+  Literal prompt: The athlete was emotional but the coach told him to get a rope, it was an important
+  Idiom prompt: They were arguing about something when he told her to get a grip, it was a silly
+  Literal prompt: They were arguing about something when he told her to get a rope, it was a silly
+--------------------------------
+--------------------------------
+Idiom: hit_the_road
+  Idiom prompt: After the concert the band decided to hit the road, it was a long
+  Literal prompt: After the concert the band decided to hit the brakes, it was a long
+  Idiom prompt: After lots of preparation the cyclist was ready to hit the road, it was a long
+  Literal prompt: After lots of preparation the cyclist was ready to hit the brakes, it was a long
+  Idiom prompt: The family were ready to go on holiday and they hit the road, it was a big
+  Literal prompt: The family were ready to go on holiday and they hit the brakes, it was a big
+--------------------------------
+--------------------------------
+Idiom: scratch_the_surface
+  Idiom prompt: The presenter was only able to scratch the surface, it was a big
+  Literal prompt: The presenter was only able to scratch the record, it was a big
+  Idiom prompt: The DJ they hired was famous but by the end he had only scratched the surface, it was a big
+  Literal prompt: The DJ they hired was famous but by the end he had only scratched the record, it was a big
+  Idiom prompt: The cleaner had to look after the archives and only scratched the surface, it was a huge
+  Literal prompt: The cleaner had to look after the archives and only scratched the record, it was a huge
+--------------------------------
+--------------------------------
+Idiom: bite_the_dust
+  Idiom prompt: The old company was about to bite the dust, it was a big
+  Literal prompt: The old company was about to bite the pickle, it was a big
+  Idiom prompt: The man with the winning streak was about to bite the dust, it was a big
+  Literal prompt: The man with the winning streak was about to bite the pickle, it was a big
+  Idiom prompt: The boastful leader had lost the election and bit the dust, it was a big
+  Literal prompt: The boastful leader had lost the election and bit the dust, it was a big
+--------------------------------
+--------------------------------
+Idiom: lift_a_finger
+  Idiom prompt: The team was struggling to lift a finger, it was a huge
+  Literal prompt: The team was struggling to lift a bag, it was a huge
+  Idiom prompt: The mum was sad that noone would lift a finger, it was a huge
+  Literal prompt: The mum was sad that noone would lift a bag, it was a huge
+  Idiom prompt: The manager was furious that no one was willing to lift a finger, it was a big
+  Literal prompt: The manager was furious that no one was willing to lift a bag, it was a big
+--------------------------------
+Running average attention head patching
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.86s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.10s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.52s/it]

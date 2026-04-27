@@ -536,15 +536,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -552,8 +552,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -561,7 +561,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head and MLP Ablation 25%, outlined region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -833,15 +833,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -849,8 +849,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -858,7 +858,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head and MLP Ablation 10%, outlined region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -1211,15 +1211,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -1227,8 +1227,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -1236,7 +1236,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head Ablation 10%, outlined region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -1580,15 +1580,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -1596,8 +1596,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -1605,7 +1605,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head Ablation 25%, outlined region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -1957,15 +1957,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -1973,8 +1973,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -1982,7 +1982,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head and MLP Ablation 25%, full region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -2254,15 +2254,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -2270,8 +2270,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -2279,7 +2279,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head and MLP Ablation 10%, full region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -2632,15 +2632,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -2648,8 +2648,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -2657,7 +2657,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head Ablation 10%, full region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]
@@ -3001,15 +3001,15 @@ random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selecte
 os.makedirs('figures', exist_ok=True)
 
 label_map = {
-    'standard': 'Standard',
-    'context': 'Context',
-    'no_context': 'No Context',
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
 }
 
 condition_palette = {
-    'Normal': '#1E88E5',
-    'Ablation': '#43A047',
-    'Random Ablation': '#F4511E',
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
 }
 
 for df in (normal_df, ablation_df, random_ablation_df):
@@ -3017,8 +3017,8 @@ for df in (normal_df, ablation_df, random_ablation_df):
     # drop any rows with unexpected representation labels
     df.dropna(subset=['Representation'], inplace=True)
 
-normal_df['Condition'] = 'Normal'
-ablation_df['Condition'] = 'Ablation'
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
 random_ablation_df['Condition'] = 'Random Ablation'
 
 plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
@@ -3026,7 +3026,7 @@ plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=T
 metric = 'same_relation_group_rdm_corr'
 fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
 fig.suptitle('Attention Head Ablation 25%, full region')
-panel_order = ['Standard', 'Context', 'No Context']
+panel_order = ['Neutral', 'Figurative', 'Literal']
 
 for i, rep_name in enumerate(panel_order):
     ax = axes[i]

@@ -1,0 +1,545 @@
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a big
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it turned into a
+  Literal prompt: The designer was ready to make a sketch, it turned into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+--------------------------------
+Idiom: kick_the_bucket
+  Idiom prompt: The old man was so tired when he kicked the bucket, it was a sad
+  Literal prompt: The old man was so tired when he kicked the football, it was a sad
+  Idiom prompt: The athlete was so exhausted that he kicked the bucket, it was a sad
+  Literal prompt: The athlete was so exhausted that he kicked the football, it was a sad
+  Idiom prompt: The team were winning when the lead scorer kicked the bucket, so it was very
+  Literal prompt: The team were winning when the lead scorer kicked the football, so it was very
+--------------------------------
+--------------------------------
+Idiom: cut_a_rug
+  Idiom prompt: The party was getting wild as she cut a rug, it was a great
+  Literal prompt: The party was getting wild as she cut a slice, it was a great
+  Idiom prompt: The band was so good that they got the crowd to cut a rug, it was a great
+  Literal prompt: The band was so good that they got the crowd to cut a slice, it was a great
+  Idiom prompt: The couple's energetic dance moves had everyone cutting a rug, it was a great
+  Literal prompt: The couple's energetic dance moves had everyone cutting a slice, it was a great
+--------------------------------
+--------------------------------
+Idiom: cut_the_mustard
+You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  Idiom prompt: The chef was under pressure to create a new dish but he cut the mustard, it was a big
+  Literal prompt: The chef was under pressure to create a new dish but he cut the stem, it was a big
+  Idiom prompt: The team was struggling to complete the task but in the final quarter they cut the mustard, it was a big
+  Literal prompt: The team was struggling to complete the task but in the final quarter they cut the stem, it was a big
+  Idiom prompt: The new employee was nervous to meet his first target but he cut the mustard, it was a big
+  Literal prompt: The new employee was nervous to meet his first target but he cut the stem, it was a big
+--------------------------------
+--------------------------------
+Idiom: hit_the_jackpot
+  Idiom prompt: The programmer's code struggled at first but then it hit the jackpot, it was a big
+  Literal prompt: The programmer's code struggled at first but then it hit the button, it was a big
+  Idiom prompt: After years of trying, the musician wrote his piece and then hit the jackpot, it was a big
+  Literal prompt: After years of trying, the musician wrote his piece and then hit the button, it was a big
+  Idiom prompt: The engineer's new design hit the jackpot, it was a big
+  Literal prompt: The engineer's new design hit the button, it was a big
+--------------------------------
+--------------------------------
+Idiom: call_the_shots
+  Idiom prompt: As a lifeguard she had to call the shots, it was a huge
+  Literal prompt: As a lifeguard she had to call the police, it was a huge
+  Idiom prompt: The coach had to make a choice and call the shots, it was a difficult
+  Literal prompt: The coach had to make a choice and call the police, it was a difficult
+  Idiom prompt: The project manager had the final say and called the shots, it was a big
+  Literal prompt: The project manager had the final say and called the police, it was a big
+--------------------------------
+--------------------------------
+Idiom: get_a_grip
+  Idiom prompt: After the accident she took a few deep breaths and got a grip, it was a big
+  Literal prompt: After the accident she took a few deep breaths and got a rope, it was a big
+  Idiom prompt: The athlete was emotional but the coach told him to get a grip, it was an important
+  Literal prompt: The athlete was emotional but the coach told him to get a rope, it was an important
+  Idiom prompt: They were arguing about something when he told her to get a grip, it was a silly
+  Literal prompt: They were arguing about something when he told her to get a rope, it was a silly
+--------------------------------
+--------------------------------
+Idiom: hit_the_road
+  Idiom prompt: After the concert the band decided to hit the road, it was a long
+  Literal prompt: After the concert the band decided to hit the brakes, it was a long
+  Idiom prompt: After lots of preparation the cyclist was ready to hit the road, it was a long
+  Literal prompt: After lots of preparation the cyclist was ready to hit the brakes, it was a long
+  Idiom prompt: The family were ready to go on holiday and they hit the road, it was a big
+  Literal prompt: The family were ready to go on holiday and they hit the brakes, it was a big
+--------------------------------
+--------------------------------
+Idiom: scratch_the_surface
+  Idiom prompt: The presenter was only able to scratch the surface, it was a big
+  Literal prompt: The presenter was only able to scratch the record, it was a big
+  Idiom prompt: The DJ they hired was famous but by the end he had only scratched the surface, it was a big
+  Literal prompt: The DJ they hired was famous but by the end he had only scratched the record, it was a big
+  Idiom prompt: The cleaner had to look after the archives and only scratched the surface, it was a huge
+  Literal prompt: The cleaner had to look after the archives and only scratched the record, it was a huge
+--------------------------------
+--------------------------------
+Idiom: bite_the_dust
+  Idiom prompt: The old company was about to bite the dust, it was a big
+  Literal prompt: The old company was about to bite the pickle, it was a big
+  Idiom prompt: The man with the winning streak was about to bite the dust, it was a big
+  Literal prompt: The man with the winning streak was about to bite the pickle, it was a big
+  Idiom prompt: The boastful leader had lost the election and bit the dust, it was a big
+  Literal prompt: The boastful leader had lost the election and bit the dust, it was a big
+--------------------------------
+--------------------------------
+Idiom: lift_a_finger
+  Idiom prompt: The team was struggling to lift a finger, it was a huge
+  Literal prompt: The team was struggling to lift a bag, it was a huge
+  Idiom prompt: The mum was sad that noone would lift a finger, it was a huge
+  Literal prompt: The mum was sad that noone would lift a bag, it was a huge
+  Idiom prompt: The manager was furious that no one was willing to lift a finger, it was a big
+  Literal prompt: The manager was furious that no one was willing to lift a bag, it was a big
+--------------------------------
+Running average attention head patching
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.42s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.68s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.79s/it]
+clean logit diff -1.4767265319824219
+corrupt logit diff -2.449605941772461
+clean logit diff 2.9268569946289062
+corrupt logit diff 0.4250154495239258
+clean logit diff -0.28055477142333984
+corrupt logit diff -1.123270034790039
+clean logit diff -3.3274192810058594
+corrupt logit diff -3.5430374145507812
+clean logit diff 0.5495672225952148
+corrupt logit diff 2.009389877319336
+clean logit diff -1.7723875045776367
+corrupt logit diff -0.8282833099365234
+clean logit diff -1.1143436431884766
+corrupt logit diff -2.2498083114624023
+clean logit diff 0.47648143768310547
+corrupt logit diff -2.6800074577331543
+clean logit diff -1.7283010482788086
+corrupt logit diff -1.4348230361938477
+clean logit diff -0.4863147735595703
+corrupt logit diff -3.1347808837890625
+clean logit diff 2.033473014831543
+corrupt logit diff 0.8972253799438477
+clean logit diff 3.5967063903808594
+corrupt logit diff 0.6619253158569336
+clean logit diff 0.7754974365234375
+corrupt logit diff 1.1685476303100586
+clean logit diff -0.9183731079101562
+corrupt logit diff -1.9088201522827148
+clean logit diff 0.23454666137695312
+corrupt logit diff -0.1951885223388672
+clean logit diff -3.187082290649414
+corrupt logit diff -3.5750274658203125
+clean logit diff 0.9375219345092773
+corrupt logit diff -1.4428138732910156
+clean logit diff 2.032952308654785
+corrupt logit diff 1.9516592025756836
+clean logit diff 2.483389377593994
+corrupt logit diff -0.35719728469848633
+clean logit diff 0.14254188537597656
+corrupt logit diff -2.200502395629883
+clean logit diff -0.023430824279785156
+corrupt logit diff -1.8901586532592773
+clean logit diff 2.0570898056030273
+corrupt logit diff -0.8471965789794922
+clean logit diff 7.600605487823486
+corrupt logit diff 5.839738845825195
+clean logit diff 3.0091066360473633
+corrupt logit diff 0.2217702865600586
+clean logit diff 0.5292720794677734
+corrupt logit diff -4.624843597412109
+clean logit diff 6.935907363891602
+corrupt logit diff 2.296215534210205
+clean logit diff 3.576374053955078
+corrupt logit diff 0.7962279319763184
+clean logit diff 2.520033836364746
+corrupt logit diff 4.2465314865112305
+clean logit diff 2.2525291442871094
+corrupt logit diff 2.5896968841552734
+clean logit diff 1.1622304916381836
+corrupt logit diff 3.2966184616088867
+clean logit diff 0.15481948852539062
+corrupt logit diff 0.016958236694335938
+clean logit diff 2.4472312927246094
+corrupt logit diff 1.039423942565918
+clean logit diff 2.852015495300293
+corrupt logit diff 1.1555957794189453
+clean logit diff 2.1419315338134766
+corrupt logit diff 1.1920604705810547
+clean logit diff 1.6623659133911133
+corrupt logit diff -0.5139083862304688
+clean logit diff -1.2779450416564941
+corrupt logit diff -2.731586456298828
+clean logit diff -2.064298629760742
+corrupt logit diff -4.926752090454102
+clean logit diff -0.6272649765014648
+corrupt logit diff -3.865777015686035
+clean logit diff 0.2281789779663086
+corrupt logit diff -2.6611385345458984
+clean logit diff -1.4973750114440918
+corrupt logit diff -3.2629470825195312
+clean logit diff -1.0562872886657715
+corrupt logit diff -1.846799373626709
+clean logit diff -1.4382257461547852
+corrupt logit diff -0.9099369049072266
+clean logit diff -1.0966110229492188
+corrupt logit diff -2.984910011291504
+clean logit diff -1.8824167251586914
+corrupt logit diff -2.62392520904541
+clean logit diff -1.9775795936584473
+corrupt logit diff -3.7238879203796387
+clean logit diff 4.015210151672363
+corrupt logit diff 0.5258016586303711
+clean logit diff 4.0882649421691895
+corrupt logit diff 1.052286148071289
+clean logit diff 5.777160167694092
+corrupt logit diff 0.8414430618286133
+clean logit diff -1.0238838195800781
+corrupt logit diff -3.0524721145629883
+clean logit diff 4.34213924407959
+corrupt logit diff 1.6281766891479492
+clean logit diff 0.4729499816894531
+corrupt logit diff 0.16483592987060547
+clean logit diff 0.7672510147094727
+corrupt logit diff -4.088422775268555
+clean logit diff 1.9308266639709473
+corrupt logit diff 1.848611831665039
+clean logit diff 1.586216926574707
+corrupt logit diff -4.985124111175537
+clean logit diff 5.8608293533325195
+corrupt logit diff 3.051471710205078
+clean logit diff -3.103043556213379
+corrupt logit diff -3.168084144592285
+clean logit diff 3.0058674812316895
+corrupt logit diff 1.8657245635986328
+clean logit diff 4.898558139801025
+corrupt logit diff 2.792877197265625
+clean logit diff -1.5485315322875977
+corrupt logit diff -3.3847808837890625
+clean logit diff 0.7654891014099121
+corrupt logit diff -2.797088623046875
+clean logit diff 3.5379819869995117
+corrupt logit diff -1.0708427429199219
+clean logit diff -0.1734633445739746
+corrupt logit diff -3.3952112197875977
+clean logit diff -0.234130859375
+corrupt logit diff -1.0874404907226562
+clean logit diff 6.617156028747559
+corrupt logit diff 2.8098883628845215
+clean logit diff 9.694157600402832
+corrupt logit diff 6.567508220672607
+clean logit diff 3.9495091438293457
+corrupt logit diff 3.870547294616699
+clean logit diff 2.5774054527282715
+corrupt logit diff 3.1799397468566895
+clean logit diff 4.67734432220459
+corrupt logit diff 2.0216779708862305
+clean logit diff 5.4862470626831055
+corrupt logit diff 4.933101654052734
+clean logit diff 3.4949913024902344
+corrupt logit diff 2.0210728645324707
+clean logit diff 5.589542388916016
+corrupt logit diff 5.03264045715332
+clean logit diff 2.159188747406006
+corrupt logit diff 1.2596039772033691
+clean logit diff 5.305427551269531
+corrupt logit diff -2.1765060424804688
+clean logit diff 10.859884262084961
+corrupt logit diff 4.959815502166748
+clean logit diff 4.9704413414001465
+corrupt logit diff -0.10813093185424805
+clean logit diff 4.693718910217285
+corrupt logit diff -1.2788610458374023
+clean logit diff 0.7907309532165527
+corrupt logit diff -1.8263792991638184
+clean logit diff 4.917338848114014
+corrupt logit diff 0.10218667984008789
+clean logit diff 0.6472206115722656
+corrupt logit diff -3.627028465270996
+clean logit diff 2.6408472061157227
+corrupt logit diff -3.9450082778930664
+clean logit diff 8.870695114135742
+corrupt logit diff 3.229152202606201
+clean logit diff 4.24089241027832
+corrupt logit diff -6.644656181335449
+clean logit diff 2.8498597145080566
+corrupt logit diff -5.68568754196167
+clean logit diff 2.6159486770629883
+corrupt logit diff -7.269805908203125
+clean logit diff 5.269388675689697
+corrupt logit diff -2.8430261611938477
+clean logit diff 4.456258296966553
+corrupt logit diff -0.3271002769470215
+clean logit diff 5.113346576690674
+corrupt logit diff -4.903965473175049
+clean logit diff 5.768673896789551
+corrupt logit diff 0.1465158462524414
+clean logit diff 4.96004581451416
+corrupt logit diff -3.111903190612793
+clean logit diff 6.549980640411377
+corrupt logit diff 1.5734596252441406
+clean logit diff 5.212911605834961
+corrupt logit diff 1.099130630493164
+clean logit diff 3.6851487159729004
+corrupt logit diff 0.9363713264465332
+clean logit diff 5.659281253814697
+corrupt logit diff 1.4695358276367188
+clean logit diff 6.357566833496094
+corrupt logit diff 4.346256256103516
+clean logit diff -0.9580745697021484
+corrupt logit diff -5.522297382354736
+clean logit diff 2.8012590408325195
+corrupt logit diff -3.1753273010253906
+clean logit diff 0.49228668212890625
+corrupt logit diff -0.7657098770141602
+clean logit diff 4.6454644203186035
+corrupt logit diff 2.6242456436157227
+clean logit diff 2.534740924835205
+corrupt logit diff -2.713372230529785
+clean logit diff 6.525715351104736
+corrupt logit diff 2.299332618713379
+clean logit diff 6.942292213439941
+corrupt logit diff 4.597835063934326
+clean logit diff 3.6552443504333496
+corrupt logit diff -0.24765968322753906
+clean logit diff 0.2628917694091797
+corrupt logit diff 1.4393997192382812
+clean logit diff 1.0040349960327148
+corrupt logit diff -0.8364639282226562
+clean logit diff -2.0889134407043457
+corrupt logit diff -1.753103256225586
+clean logit diff -3.271416664123535
+corrupt logit diff -2.7646913528442383
+clean logit diff 4.135708808898926
+corrupt logit diff -3.955303192138672
+clean logit diff 7.184639930725098
+corrupt logit diff 0.2939176559448242
+clean logit diff -1.812391757965088
+corrupt logit diff -7.013582229614258
+clean logit diff 2.856194496154785
+corrupt logit diff 3.5167131423950195
+clean logit diff 0.9976749420166016
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+corrupt logit diff 2.383833885192871
+clean logit diff 3.304332733154297
+corrupt logit diff 0.6051616668701172
+clean logit diff 3.613438606262207
+corrupt logit diff -1.938857078552246
+clean logit diff 4.031831741333008
+corrupt logit diff 3.1278133392333984
+clean logit diff 7.01732063293457
+corrupt logit diff 1.9313163757324219
+clean logit diff 2.777881622314453
+corrupt logit diff 1.6673049926757812
+clean logit diff 3.7957067489624023
+corrupt logit diff 3.609250068664551
+clean logit diff 3.0552029609680176
+corrupt logit diff 2.843109607696533
+clean logit diff 3.6395697593688965
+corrupt logit diff 4.347609519958496
+clean logit diff 7.735237121582031
+corrupt logit diff 6.110846996307373
+clean logit diff 0.7843151092529297
+corrupt logit diff 3.629425525665283
+clean logit diff 6.5014848709106445
+corrupt logit diff 4.182830810546875
+clean logit diff 3.1759066581726074
+corrupt logit diff 1.7835745811462402
+clean logit diff 3.9203438758850098
+corrupt logit diff 0.718597412109375
+clean logit diff -1.0209665298461914
+corrupt logit diff -0.8933992385864258
+clean logit diff -0.83978271484375
+corrupt logit diff -6.090859413146973
+clean logit diff 5.301698207855225
+corrupt logit diff 1.3161306381225586
+clean logit diff 1.987508773803711
+corrupt logit diff 1.4802331924438477
+clean logit diff 9.306777954101562
+corrupt logit diff 5.368767738342285
+clean logit diff 5.815539836883545
+corrupt logit diff 5.797967910766602
+clean logit diff -0.41294384002685547
+corrupt logit diff -1.6099696159362793
+clean logit diff 7.056570053100586
+corrupt logit diff 3.573575496673584
+clean logit diff 5.986517429351807
+corrupt logit diff 1.2053604125976562
+clean logit diff 1.6272997856140137
+corrupt logit diff -2.443413257598877
+clean logit diff -2.457998752593994
+corrupt logit diff -4.582423686981201
+clean logit diff -1.1391477584838867
+corrupt logit diff -3.0159854888916016
+clean logit diff 12.236576080322266
+corrupt logit diff 7.453845024108887
+clean logit diff 9.549848556518555
+corrupt logit diff 3.6663942337036133
+clean logit diff 5.861928939819336
+corrupt logit diff 0.49580812454223633
+clean logit diff 1.4501667022705078
+corrupt logit diff 1.3989486694335938
+clean logit diff 4.4577836990356445
+corrupt logit diff 3.683598518371582
+clean logit diff 8.11689567565918
+corrupt logit diff 6.129356861114502
+clean logit diff 10.648859024047852
+corrupt logit diff 8.928110122680664
+clean logit diff 7.353920936584473
+corrupt logit diff 6.822559356689453
+clean logit diff 3.628251075744629
+corrupt logit diff 3.3947250843048096
+clean logit diff 7.437768936157227
+corrupt logit diff 4.948469161987305
+clean logit diff 4.618559837341309
+corrupt logit diff 2.9019603729248047
+clean logit diff 1.9328198432922363
+corrupt logit diff 0.06929445266723633
+clean logit diff 9.40986442565918
+corrupt logit diff 1.59332275390625
+clean logit diff 8.479561805725098
+corrupt logit diff 0.5989952087402344
+clean logit diff 12.325011253356934
+corrupt logit diff 4.5061259269714355
+clean logit diff 6.976245880126953
+corrupt logit diff 0.947596549987793
+clean logit diff 5.5948028564453125
+corrupt logit diff 4.636610984802246
+clean logit diff 2.289719581604004
+corrupt logit diff -4.990533351898193
+clean logit diff 1.4077520370483398
+corrupt logit diff 0.0906057357788086
+clean logit diff 3.2894840240478516
+corrupt logit diff 3.600606918334961
+clean logit diff 1.7618117332458496
+corrupt logit diff 0.14301204681396484
+clean logit diff 6.605010509490967
+corrupt logit diff -2.7016849517822266
+clean logit diff 5.234742164611816
+corrupt logit diff -0.4746541976928711
+clean logit diff 4.752142906188965
+corrupt logit diff -0.11551666259765625
+clean logit diff 7.747777938842773
+corrupt logit diff 5.400245189666748
+clean logit diff 5.487821102142334
+corrupt logit diff 3.8810768127441406
+clean logit diff 3.1285367012023926
+corrupt logit diff 0.779280424118042
+clean logit diff 9.895917892456055
+corrupt logit diff 8.367363929748535
+clean logit diff 5.8034162521362305
+corrupt logit diff 4.206676483154297
+clean logit diff 9.303060531616211
+corrupt logit diff 3.49879789352417
+clean logit diff 10.05473518371582
+corrupt logit diff 10.05473518371582
+clean logit diff 6.837905406951904
+corrupt logit diff 6.837905406951904
+clean logit diff 8.771517753601074
+corrupt logit diff 8.771517753601074
+clean logit diff -4.632015228271484
+corrupt logit diff -4.339848518371582
+clean logit diff 2.1895275115966797
+corrupt logit diff 1.2106895446777344
+clean logit diff 5.772027969360352
+corrupt logit diff -0.25250720977783203
+clean logit diff -1.224308967590332
+corrupt logit diff -0.198516845703125
+clean logit diff 1.642188549041748
+corrupt logit diff 1.4125604629516602
+clean logit diff 0.021033287048339844
+corrupt logit diff -1.2899818420410156
+clean logit diff -4.424577236175537
+corrupt logit diff -1.3209362030029297
+clean logit diff 0.36792850494384766
+corrupt logit diff 1.2134437561035156
+clean logit diff -1.1411972045898438
+corrupt logit diff 0.02147054672241211
+Top 34 heads to patch/zero: [(0, 0), (0, 17), (0, 30), (19, 0), (15, 30), (2, 5), (6, 13), (18, 18), (17, 7), (3, 0), (1, 9), (5, 20), (4, 28), (14, 14), (17, 20), (3, 4), (20, 26), (16, 0), (14, 8), (0, 16), (16, 9), (14, 4), (8, 16), (5, 0), (13, 4), (10, 19), (3, 26), (0, 29), (13, 19), (16, 8), (7, 4), (4, 10), (12, 0), (18, 16)]
+Top 67 heads to patch/zero: [(0, 0), (0, 17), (0, 30), (19, 0), (15, 30), (2, 5), (6, 13), (18, 18), (17, 7), (3, 0), (1, 9), (5, 20), (4, 28), (14, 14), (17, 20), (3, 4), (20, 26), (16, 0), (14, 8), (0, 16), (16, 9), (14, 4), (8, 16), (5, 0), (13, 4), (10, 19), (3, 26), (0, 29), (13, 19), (16, 8), (7, 4), (4, 10), (12, 0), (18, 16), (17, 11), (7, 8), (17, 2), (4, 7), (18, 4), (8, 20), (9, 29), (3, 13), (25, 14), (15, 4), (11, 17), (15, 17), (3, 9), (19, 7), (5, 3), (1, 8), (17, 13), (8, 7), (9, 21), (17, 14), (4, 4), (15, 2), (5, 9), (9, 22), (12, 19), (20, 16), (7, 3), (13, 12), (16, 31), (9, 6), (11, 31), (8, 14), (6, 14)]
+Top 168 heads to patch/zero: [(0, 0), (0, 17), (0, 30), (19, 0), (15, 30), (2, 5), (6, 13), (18, 18), (17, 7), (3, 0), (1, 9), (5, 20), (4, 28), (14, 14), (17, 20), (3, 4), (20, 26), (16, 0), (14, 8), (0, 16), (16, 9), (14, 4), (8, 16), (5, 0), (13, 4), (10, 19), (3, 26), (0, 29), (13, 19), (16, 8), (7, 4), (4, 10), (12, 0), (18, 16), (17, 11), (7, 8), (17, 2), (4, 7), (18, 4), (8, 20), (9, 29), (3, 13), (25, 14), (15, 4), (11, 17), (15, 17), (3, 9), (19, 7), (5, 3), (1, 8), (17, 13), (8, 7), (9, 21), (17, 14), (4, 4), (15, 2), (5, 9), (9, 22), (12, 19), (20, 16), (7, 3), (13, 12), (16, 31), (9, 6), (11, 31), (8, 14), (6, 14), (19, 5), (8, 4), (2, 0), (14, 26), (7, 2), (13, 15), (6, 8), (1, 24), (0, 23), (21, 21), (16, 26), (8, 23), (18, 11), (7, 0), (3, 8), (12, 18), (10, 11), (2, 7), (0, 24), (7, 20), (7, 26), (21, 28), (4, 5), (15, 12), (16, 4), (30, 19), (13, 7), (1, 21), (4, 29), (1, 6), (7, 11), (17, 18), (3, 16), (17, 6), (21, 29), (11, 22), (9, 28), (15, 23), (0, 26), (14, 1), (13, 21), (12, 28), (17, 0), (25, 13), (19, 26), (1, 25), (2, 13), (11, 26), (10, 7), (6, 25), (29, 18), (5, 31), (5, 2), (15, 22), (1, 26), (9, 19), (11, 10), (15, 13), (8, 3), (4, 17), (4, 12), (2, 24), (6, 10), (13, 22), (4, 31), (28, 1), (15, 29), (6, 4), (8, 25), (16, 12), (15, 21), (12, 27), (3, 23), (10, 15), (29, 17), (11, 27), (10, 9), (7, 16), (6, 6), (17, 1), (9, 24), (3, 12), (17, 17), (11, 28), (13, 9), (14, 7), (13, 2), (2, 25), (15, 20), (2, 18), (10, 27), (6, 5), (4, 2), (12, 29), (10, 29), (20, 27), (20, 20), (1, 14), (14, 6), (28, 2), (27, 14)]

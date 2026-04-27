@@ -1,0 +1,543 @@
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a big
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it turned into a
+  Literal prompt: The designer was ready to make a sketch, it turned into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+--------------------------------
+Idiom: kick_the_bucket
+  Idiom prompt: The old man was so tired when he kicked the bucket, it was a sad
+  Literal prompt: The old man was so tired when he kicked the football, it was a sad
+  Idiom prompt: The athlete was so exhausted that he kicked the bucket, it was a sad
+  Literal prompt: The athlete was so exhausted that he kicked the football, it was a sad
+  Idiom prompt: The team were winning when the lead scorer kicked the bucket, so it was very
+  Literal prompt: The team were winning when the lead scorer kicked the football, so it was very
+--------------------------------
+--------------------------------
+Idiom: cut_a_rug
+  Idiom prompt: The party was getting wild as she cut a rug, it was a great
+  Literal prompt: The party was getting wild as she cut a slice, it was a great
+  Idiom prompt: The band was so good that they got the crowd to cut a rug, it was a great
+  Literal prompt: The band was so good that they got the crowd to cut a slice, it was a great
+  Idiom prompt: The couple's energetic dance moves had everyone cutting a rug, it was a great
+  Literal prompt: The couple's energetic dance moves had everyone cutting a slice, it was a great
+--------------------------------
+--------------------------------
+Idiom: cut_the_mustard
+You're using a PreTrainedTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  Idiom prompt: The chef was under pressure to create a new dish but he cut the mustard, it was a big
+  Literal prompt: The chef was under pressure to create a new dish but he cut the stem, it was a big
+  Idiom prompt: The team was struggling to complete the task but in the final quarter they cut the mustard, it was a big
+  Literal prompt: The team was struggling to complete the task but in the final quarter they cut the stem, it was a big
+  Idiom prompt: The new employee was nervous to meet his first target but he cut the mustard, it was a big
+  Literal prompt: The new employee was nervous to meet his first target but he cut the stem, it was a big
+--------------------------------
+--------------------------------
+Idiom: hit_the_jackpot
+  Idiom prompt: The programmer's code struggled at first but then it hit the jackpot, it was a big
+  Literal prompt: The programmer's code struggled at first but then it hit the button, it was a big
+  Idiom prompt: After years of trying, the musician wrote his piece and then hit the jackpot, it was a big
+  Literal prompt: After years of trying, the musician wrote his piece and then hit the button, it was a big
+  Idiom prompt: The engineer's new design hit the jackpot, it was a big
+  Literal prompt: The engineer's new design hit the button, it was a big
+--------------------------------
+--------------------------------
+Idiom: call_the_shots
+  Idiom prompt: As a lifeguard she had to call the shots, it was a huge
+  Literal prompt: As a lifeguard she had to call the police, it was a huge
+  Idiom prompt: The coach had to make a choice and call the shots, it was a difficult
+  Literal prompt: The coach had to make a choice and call the police, it was a difficult
+  Idiom prompt: The project manager had the final say and called the shots, it was a big
+  Literal prompt: The project manager had the final say and called the police, it was a big
+--------------------------------
+--------------------------------
+Idiom: get_a_grip
+  Idiom prompt: After the accident she took a few deep breaths and got a grip, it was a big
+  Literal prompt: After the accident she took a few deep breaths and got a rope, it was a big
+  Idiom prompt: The athlete was emotional but the coach told him to get a grip, it was an important
+  Literal prompt: The athlete was emotional but the coach told him to get a rope, it was an important
+  Idiom prompt: They were arguing about something when he told her to get a grip, it was a silly
+  Literal prompt: They were arguing about something when he told her to get a rope, it was a silly
+--------------------------------
+--------------------------------
+Idiom: hit_the_road
+  Idiom prompt: After the concert the band decided to hit the road, it was a long
+  Literal prompt: After the concert the band decided to hit the brakes, it was a long
+  Idiom prompt: After lots of preparation the cyclist was ready to hit the road, it was a long
+  Literal prompt: After lots of preparation the cyclist was ready to hit the brakes, it was a long
+  Idiom prompt: The family were ready to go on holiday and they hit the road, it was a big
+  Literal prompt: The family were ready to go on holiday and they hit the brakes, it was a big
+--------------------------------
+--------------------------------
+Idiom: scratch_the_surface
+  Idiom prompt: The presenter was only able to scratch the surface, it was a big
+  Literal prompt: The presenter was only able to scratch the record, it was a big
+  Idiom prompt: The DJ they hired was famous but by the end he had only scratched the surface, it was a big
+  Literal prompt: The DJ they hired was famous but by the end he had only scratched the record, it was a big
+  Idiom prompt: The cleaner had to look after the archives and only scratched the surface, it was a huge
+  Literal prompt: The cleaner had to look after the archives and only scratched the record, it was a huge
+--------------------------------
+--------------------------------
+Idiom: bite_the_dust
+  Idiom prompt: The old company was about to bite the dust, it was a big
+  Literal prompt: The old company was about to bite the pickle, it was a big
+  Idiom prompt: The man with the winning streak was about to bite the dust, it was a big
+  Literal prompt: The man with the winning streak was about to bite the pickle, it was a big
+  Idiom prompt: The boastful leader had lost the election and bit the dust, it was a big
+  Literal prompt: The boastful leader had lost the election and bit the dust, it was a big
+--------------------------------
+--------------------------------
+Idiom: lift_a_finger
+  Idiom prompt: The team was struggling to lift a finger, it was a huge
+  Literal prompt: The team was struggling to lift a bag, it was a huge
+  Idiom prompt: The mum was sad that noone would lift a finger, it was a huge
+  Literal prompt: The mum was sad that noone would lift a bag, it was a huge
+  Idiom prompt: The manager was furious that no one was willing to lift a finger, it was a big
+  Literal prompt: The manager was furious that no one was willing to lift a bag, it was a big
+--------------------------------
+Running average residual stream patching
+14 14
+14
+comma token idx 9
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [01:46<05:20, 106.92s/it]Fetching 4 files: 100%|██████████| 4/4 [01:46<00:00, 26.73s/it] 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:05,  1.90s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.71s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:23<00:10, 10.16s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:26<00:00,  7.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:26<00:00,  6.57s/it]
+corrupt logit diff -1.5809431076049805
+corrupt logit diff 1.076951026916504
+corrupt logit diff -3.2619428634643555
+15 15
+15
+comma token idx 10
+corrupt logit diff -3.770589828491211
+corrupt logit diff 0.032952308654785156
+corrupt logit diff -2.347097396850586
+21 21
+21
+comma token idx 16
+corrupt logit diff -2.203679084777832
+corrupt logit diff -0.6622428894042969
+corrupt logit diff -0.1560506820678711
+20 20
+20
+comma token idx 15
+corrupt logit diff 0.04351234436035156
+corrupt logit diff -2.087723731994629
+corrupt logit diff -3.4750232696533203
+18 18
+18
+comma token idx 13
+corrupt logit diff 0.8932485580444336
+corrupt logit diff -1.3539094924926758
+corrupt logit diff -1.4705400466918945
+21 21
+21
+comma token idx 16
+corrupt logit diff -1.7881717681884766
+corrupt logit diff -1.3310213088989258
+corrupt logit diff 1.4049186706542969
+14 14
+14
+comma token idx 9
+corrupt logit diff -1.1614904403686523
+corrupt logit diff -1.3090639114379883
+corrupt logit diff -2.7478628158569336
+15 15
+15
+comma token idx 10
+corrupt logit diff -1.8338146209716797
+corrupt logit diff 0.9492387771606445
+corrupt logit diff 1.8205814361572266
+18 18
+18
+comma token idx 13
+corrupt logit diff -3.712921142578125
+corrupt logit diff -1.2856512069702148
+corrupt logit diff 1.0208568572998047
+18 18
+18
+comma token idx 13
+corrupt logit diff -1.8741092681884766
+corrupt logit diff -1.9942903518676758
+corrupt logit diff 2.3850059509277344
+21 21
+21
+comma token idx 16
+corrupt logit diff -1.8693361282348633
+corrupt logit diff 0.7319316864013672
+corrupt logit diff 1.7455272674560547
+23 23
+23
+comma token idx 18
+corrupt logit diff -2.4723711013793945
+corrupt logit diff -3.194685935974121
+corrupt logit diff 3.4132556915283203
+20 19
+19
+comma token idx 14
+corrupt logit diff -2.2248640060424805
+corrupt logit diff -0.6682777404785156
+corrupt logit diff -3.2400732040405273
+19 18
+18
+comma token idx 13
+corrupt logit diff -0.4690876007080078
+corrupt logit diff -3.936687469482422
+corrupt logit diff -0.8692436218261719
+20 19
+19
+comma token idx 14
+corrupt logit diff 0.3582115173339844
+corrupt logit diff -1.5343704223632812
+corrupt logit diff -5.499194145202637
+13 13
+13
+comma token idx 8
+corrupt logit diff 2.255575180053711
+corrupt logit diff -0.20508384704589844
+corrupt logit diff 1.8020858764648438
+20 20
+20
+comma token idx 15
+corrupt logit diff -3.482113838195801
+corrupt logit diff 0.7165470123291016
+corrupt logit diff 1.3031377792358398
+14 14
+14
+comma token idx 9
+corrupt logit diff -2.8024587631225586
+corrupt logit diff 0.42308998107910156
+corrupt logit diff -1.5902252197265625
+18 18
+18
+comma token idx 13
+corrupt logit diff -1.097747802734375
+corrupt logit diff -4.283086776733398
+corrupt logit diff -0.6979484558105469
+22 22
+22
+comma token idx 17
+corrupt logit diff 1.287740707397461
+corrupt logit diff -3.1578168869018555
+corrupt logit diff -1.3920841217041016
+19 19
+19
+comma token idx 14
+corrupt logit diff -0.6203641891479492
+corrupt logit diff -3.1472244262695312
+corrupt logit diff 0.06271171569824219
+12 12
+12
+comma token idx 7
+corrupt logit diff 1.7296295166015625
+corrupt logit diff 7.512758255004883
+corrupt logit diff -2.4469785690307617
+19 19
+19
+comma token idx 14
+corrupt logit diff 5.04863166809082
+corrupt logit diff 1.6906795501708984
+corrupt logit diff 2.6018753051757812
+14 14
+14
+comma token idx 9
+corrupt logit diff 2.099241256713867
+corrupt logit diff 7.681020736694336
+corrupt logit diff 1.3451709747314453
+13 13
+13
+comma token idx 8
+corrupt logit diff -2.3603553771972656
+corrupt logit diff 6.227519989013672
+corrupt logit diff 1.6700496673583984
+21 21
+21
+comma token idx 16
+corrupt logit diff -2.3524169921875
+corrupt logit diff -5.13259220123291
+corrupt logit diff 3.786008834838867
+13 13
+13
+comma token idx 8
+corrupt logit diff -3.878053665161133
+corrupt logit diff -8.90301513671875
+corrupt logit diff -1.8001976013183594
+16 16
+16
+comma token idx 11
+corrupt logit diff -3.974397659301758
+corrupt logit diff -6.470881462097168
+corrupt logit diff -4.993188858032227
+20 20
+20
+comma token idx 15
+corrupt logit diff -1.223252296447754
+corrupt logit diff -0.9365177154541016
+corrupt logit diff -6.109667778015137
+21 21
+21
+comma token idx 16
+corrupt logit diff 2.0683345794677734
+corrupt logit diff -3.0026111602783203
+corrupt logit diff -3.1445112228393555
+16 16
+16
+comma token idx 11
+corrupt logit diff 0.8456230163574219
+corrupt logit diff -0.39905357360839844
+corrupt logit diff -1.1738147735595703
+15 15
+15
+comma token idx 10
+corrupt logit diff 6.910131454467773
+corrupt logit diff -2.693852424621582
+corrupt logit diff -1.8685588836669922
+16 16
+16
+comma token idx 11
+corrupt logit diff 0.17899799346923828
+corrupt logit diff 1.1701860427856445
+corrupt logit diff -3.3098068237304688
+15 15
+15
+comma token idx 10
+corrupt logit diff 3.676410675048828
+19 19
+19
+comma token idx 14
+corrupt logit diff 2.3486595153808594
+corrupt logit diff -3.0399389266967773
+corrupt logit diff 1.4212465286254883
+17 17
+17
+comma token idx 12
+corrupt logit diff -2.9439010620117188
+corrupt logit diff -0.20822525024414062
+corrupt logit diff -0.3642539978027344
+20 20
+20
+comma token idx 15
+corrupt logit diff -2.9420766830444336
+corrupt logit diff 2.605954170227051
+corrupt logit diff -3.9125709533691406
+22 22
+22
+comma token idx 17
+corrupt logit diff 3.7640552520751953
+corrupt logit diff 1.8978404998779297
+corrupt logit diff 1.7882080078125
+20 20
+20
+comma token idx 15
+corrupt logit diff -0.4360628128051758
+corrupt logit diff 4.1236066818237305
+corrupt logit diff 3.037302017211914
+19 19
+19
+comma token idx 14
+corrupt logit diff 2.601625442504883
+corrupt logit diff 2.554952621459961
+corrupt logit diff 3.0939579010009766
+20 20
+20
+comma token idx 4
+corrupt logit diff -0.9395666122436523
+corrupt logit diff 2.685915946960449
+corrupt logit diff -1.127553939819336
+14 14
+14
+comma token idx 9
+corrupt logit diff 6.012696266174316
+corrupt logit diff -2.426555633544922
+corrupt logit diff 2.085367202758789
+14 14
+14
+comma token idx 9
+corrupt logit diff -4.265375137329102
+corrupt logit diff -5.02815055847168
+corrupt logit diff -1.8049402236938477
+16 16
+16
+comma token idx 11
+corrupt logit diff 2.1634912490844727
+corrupt logit diff 1.8336296081542969
+corrupt logit diff 4.559109687805176
+16 16
+16
+comma token idx 11
+corrupt logit diff -1.5040016174316406
+corrupt logit diff -0.3917379379272461
+corrupt logit diff -1.469975471496582
+18 18
+18
+comma token idx 13
+corrupt logit diff -1.9096097946166992
+corrupt logit diff -3.8645801544189453
+corrupt logit diff 0.5479831695556641
+18 18
+18
+comma token idx 13
+corrupt logit diff 3.2418289184570312
+corrupt logit diff 2.23886775970459
+corrupt logit diff -1.6714982986450195
+18 18
+18
+comma token idx 13
+corrupt logit diff 1.6772117614746094
+corrupt logit diff 0.8659877777099609
+corrupt logit diff 6.792972564697266
+15 15
+15
+comma token idx 10
+corrupt logit diff 7.976544380187988
+corrupt logit diff 2.8069095611572266
+corrupt logit diff -0.6213054656982422
+17 17
+17
+comma token idx 12
+corrupt logit diff 2.2960405349731445
+corrupt logit diff 1.2599925994873047
+corrupt logit diff -2.194025993347168
+18 18
+18
+comma token idx 13
+corrupt logit diff -0.3814687728881836
+corrupt logit diff -1.1225452423095703
+corrupt logit diff 0.09801769256591797
+14 14
+14
+comma token idx 9
+corrupt logit diff 2.5674734115600586
+corrupt logit diff 0.019449234008789062
+corrupt logit diff 0.6812267303466797
+21 21
+21
+comma token idx 16
+corrupt logit diff -1.9100589752197266
+corrupt logit diff 3.2335643768310547
+corrupt logit diff -0.5225715637207031
+18 18
+18
+comma token idx 13
+corrupt logit diff 0.8846597671508789
+corrupt logit diff -0.6602678298950195
+corrupt logit diff 1.1595735549926758
+14 14
+14
+comma token idx 9
+corrupt logit diff -0.03334522247314453
+corrupt logit diff 4.680580139160156
+corrupt logit diff 1.6819686889648438
+17 17
+17
+comma token idx 12
+corrupt logit diff 2.735719680786133
+corrupt logit diff 6.338266372680664
+corrupt logit diff 1.5362176895141602
+17 17
+17
+comma token idx 12
+corrupt logit diff 0.7261285781860352
+corrupt logit diff 7.089818954467773
+corrupt logit diff 4.31069278717041
+13 13
+13
+comma token idx 8
+corrupt logit diff -4.471391677856445
+corrupt logit diff 0.4517545700073242
+corrupt logit diff -0.5527439117431641
+16 16
+16
+comma token idx 11
+corrupt logit diff 0.04028606414794922
+corrupt logit diff -0.8604764938354492
+corrupt logit diff -1.2402210235595703
+18 18
+18
+comma token idx 13
+corrupt logit diff -0.6723384857177734
+corrupt logit diff 0.8924312591552734
+corrupt logit diff -2.9749698638916016
