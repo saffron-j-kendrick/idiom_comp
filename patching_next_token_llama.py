@@ -699,9 +699,12 @@ def average_attention_head_patching(
             for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-              
-                correct_token = model.tokenizer.encode(correct_answer)[1]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
+                if model_name == "gpt2":
+                    correct_token = model.tokenizer.encode(correct_answer)[0]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
+                else:
+                    correct_token = model.tokenizer.encode(correct_answer)[1]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
            
                 correct_answer_idx = correct_token
                 incorrect_answer_idx = incorrect_token
@@ -761,50 +764,79 @@ def average_attention_head_patching(
         raise ValueError("No combinations were processed. Check start/max arguments.")
     average_patching_results = accumulated_results / total_combinations
 
-    flat_results = average_patching_results.flatten()
-    top_values, top_indices = torch.topk(flat_results, 34)
+    if model_name =="llama3b" or model_name =="mistral7b" or model_name =="falcon7b":
+        flat_results = average_patching_results.flatten()
+        top_values, top_indices = torch.topk(flat_results, 34)
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+        # Convert flat indices back to (layer, head) tuples
+        top_heads = []
+        for idx in top_indices:
+            layer = idx.item() // N_HEADS
+            head = idx.item() % N_HEADS
+            top_heads.append((layer, head))
 
-    print(f"Top 34 heads to patch/zero: {top_heads}")
-    # save as a json file
-    with open(f"top_34_heads_{model_name}.json", "w") as f:
-        json.dump(top_heads, f)
+        print(f"Top 34 heads to patch/zero: {top_heads}")
+        # save as a json file
+        with open(f"top_34_heads_{model_name}.json", "w") as f:
+            json.dump(top_heads, f)
 
 
-    top_values, top_indices = torch.topk(flat_results, 67)
+        top_values, top_indices = torch.topk(flat_results, 67)
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+        # Convert flat indices back to (layer, head) tuples
+        top_heads = []
+        for idx in top_indices:
+            layer = idx.item() // N_HEADS
+            head = idx.item() % N_HEADS
+            top_heads.append((layer, head))
 
-    print(f"Top 67 heads to patch/zero: {top_heads}")
-    # save as a json file
-    with open(f"top_67_heads_{model_name}.json", "w") as f:
-        json.dump(top_heads, f)
+        print(f"Top 67 heads to patch/zero: {top_heads}")
+        # save as a json file
+        with open(f"top_67_heads_{model_name}.json", "w") as f:
+            json.dump(top_heads, f)
 
-    
-    top_values, top_indices = torch.topk(flat_results, 168)
+        
+        top_values, top_indices = torch.topk(flat_results, 168)
 
-    # Convert flat indices back to (layer, head) tuples
-    top_heads = []
-    for idx in top_indices:
-        layer = idx.item() // N_HEADS
-        head = idx.item() % N_HEADS
-        top_heads.append((layer, head))
+        # Convert flat indices back to (layer, head) tuples
+        top_heads = []
+        for idx in top_indices:
+            layer = idx.item() // N_HEADS
+            head = idx.item() % N_HEADS
+            top_heads.append((layer, head))
 
-    print(f"Top 168 heads to patch/zero: {top_heads}")
-    # save as a json file
-    with open(f"top_168_heads_{model_name}.json", "w") as f:
-        json.dump(top_heads, f)
+        print(f"Top 168 heads to patch/zero: {top_heads}")
+        # save as a json file
+        with open(f"top_168_heads_{model_name}.json", "w") as f:
+            json.dump(top_heads, f)
+    else:
+        flat_results = average_patching_results.flatten()
+        top_values, top_indices = torch.topk(flat_results, 14)
+
+        # Convert flat indices back to (layer, head) tuples
+        top_heads = []
+        for idx in top_indices:
+            layer = idx.item() // N_HEADS
+            head = idx.item() % N_HEADS
+            top_heads.append((layer, head))
+
+        print(f"Top 14 heads to patch/zero: {top_heads}")
+        # save as a json file
+        with open(f"top_14_heads_{model_name}.json", "w") as f:
+            json.dump(top_heads, f)
+        top_values, top_indices = torch.topk(flat_results, 36)
+
+        # Convert flat indices back to (layer, head) tuples
+        top_heads = []
+        for idx in top_indices:
+            layer = idx.item() // N_HEADS
+            head = idx.item() % N_HEADS
+            top_heads.append((layer, head))
+
+        print(f"Top 36 heads to patch/zero: {top_heads}")
+        # save as a json file
+        with open(f"top_36_heads_{model_name}.json", "w") as f:
+            json.dump(top_heads, f)
 
     return average_patching_results
 
@@ -1830,6 +1862,10 @@ if __name__ == "__main__":
             else:
                 print("Running attention head patching")
                 run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
+        elif args.intervention =="mlp":
+            if args.averaging:
+                print("Running average MLP patching")
+                run_average_mlp_patching(dataset, N_LAYERS, model_name)
         else:
             raise ValueError(f"Invalid intervention: {args.intervention}")
 
