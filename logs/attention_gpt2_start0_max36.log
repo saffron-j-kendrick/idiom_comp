@@ -1,0 +1,675 @@
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The nervous suspect finally spilled the beans, it was a
+  Literal prompt: The nervous suspect finally spilled the drink, it was a
+  Idiom prompt: He was paid to spill the beans, the information was
+  Literal prompt: He was paid to spill the water, the information was
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: He decided to tell a joke to break the ice, he was being
+  Literal prompt: He decided to tell a joke to break the bottle, he was being
+  Idiom prompt: The group was silent until he broke the ice, he was being
+  Literal prompt: The group was silent until he broke the lamp, he was being
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: The project failed so they pulled the plug, the activity
+  Literal prompt: The project failed so they pulled the rope, the activity
+  Idiom prompt: The funding ended and they pulled the plug, it was
+  Literal prompt: The funding ended and they pulled the lever, it was
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier had to bite the bullet, he was very
+  Literal prompt: The soldier had to bite the rations, he was very
+  Idiom prompt: She knew it would be hard but bit the bullet, she was
+  Literal prompt: She knew it would be hard but bit the apple, she was
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: Without telling anyone the boss moved the goalposts, he was being
+  Literal prompt: Without telling anyone the boss moved the cabinets, he was being
+  Idiom prompt: They felt cheated because he moved the goalposts, he was
+  Literal prompt: They felt cheated because he moved the cabinets, he was
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: When he saw the bill he blew a fuse, he was
+  Literal prompt: When he saw the bill he blew a bubble, he was
+  Idiom prompt: The angry man was ready to blow a fuse, he felt
+  Literal prompt: The angry man was ready to blow a whistle, he felt
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: He used the new evidence to turn the tables, he was finally
+  Literal prompt: He used the new evidence to turn the handle, he was finally
+  Idiom prompt: She outsmarted them and turned the tables, she was now
+  Literal prompt: She outsmarted them and turned the page, she was now
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, the case became
+  Literal prompt: The lawyer tried to muddy the jacket, the case became
+  Idiom prompt: The witness's lie served to muddy the waters, making things
+  Literal prompt: The witness's lie served to muddy the carpet, Birdmaking things
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, the debut was
+  Literal prompt: The new artist wanted to make a sketch, the debut was
+  Idiom prompt: The product launch made a big splash, it was very
+  Literal prompt: The product launch made a big sound, it was very
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The pilot crashed and bought the farm, he is now
+  Literal prompt: The pilot crashed and bought the ticket, he is now
+  Idiom prompt: The pilot lost control and bought the farm, he is
+  Literal prompt: The pilot lost control and bought the bread, he is
+--------------------------------
+--------------------------------
+Idiom: kick_the_bucket
+  Idiom prompt: The old man finally kicked the bucket, it was a sad
+  Literal prompt: The old man finally kicked the football, it was a sad
+  Idiom prompt: He was very ill and finally kicked the bucket, it was his
+  Literal prompt: He was very ill and finally kicked the heater, it was his
+--------------------------------
+--------------------------------
+Idiom: cut_a_rug
+  Idiom prompt: She went to the party to cut a rug, she started to
+  Literal prompt: She went to the party to cut a cake, she started to
+  Idiom prompt: They cleared a space to cut a rug, they started to
+  Literal prompt: They cleared a space to cut a cake, they started to
+--------------------------------
+--------------------------------
+Idiom: cut_the_mustard
+  Idiom prompt: The new recruit couldn't cut the mustard, he was a
+  Literal prompt: The new recruit couldn't cut the string, he was a
+  Idiom prompt: The athlete tried but couldn't cut the mustard, he lacked
+  Literal prompt: The athlete try but couldn't cut the wood, he lacked
+--------------------------------
+--------------------------------
+Idiom: hit_the_jackpot
+  Idiom prompt: With that investment he hit the jackpot, he became very
+  Literal prompt: With that investment he hit the button, he became very
+  Idiom prompt: The lucky gambler hit the jackpot, he had much
+  Literal prompt: The lucky gambler hit the table, he had much
+--------------------------------
+--------------------------------
+Idiom: call_the_shots
+  Idiom prompt: As the director she calls the shots, she makes the
+  Literal prompt: As the director she calls the police, she makes the
+  Idiom prompt: The general is the one who calls the shots, he has
+  Literal prompt: The general is the one who calls the waiter, he has
+--------------------------------
+--------------------------------
+Idiom: get_a_grip
+  Idiom prompt: She told the crying man to get a grip, he needed
+  Literal prompt: She told the crying man to get a rope, he needed
+  Idiom prompt: You need to stop panicking and get a grip, please be
+  Literal prompt: You need to stop panicking and get a coat, please be
+--------------------------------
+--------------------------------
+Idiom: hit_the_road
+  Idiom prompt: The travelers decided to hit the road, they began their
+  Literal prompt: The travelers decided to hit the alarm, they began their
+  Idiom prompt: Pack your bags and hit the road, we are
+  Literal prompt: Pack your bags and hit the wall, we are
+--------------------------------
+--------------------------------
+Idiom: scratch_the_surface
+  Idiom prompt: The cleaner only scratched the surface, the room remained
+  Literal prompt: The cleaner only scratched the record, the room remained
+  Idiom prompt: This deep problem only scratched the surface, it was
+  Literal prompt: This deep problem only scratched the paint, it was
+--------------------------------
+--------------------------------
+Idiom: bit_the_dust
+  Idiom prompt: The losing team finally bit the dust, they were
+  Literal prompt: The losing team finally bit the bread, they were
+  Idiom prompt: The failed project finally bit the dust, it is
+  Literal prompt: The failed project finally bit the cable, it is
+--------------------------------
+--------------------------------
+Idiom: lift_a_finger
+  Idiom prompt: The lazy son wouldn't lift a finger, he provided no
+  Literal prompt: The lazy son wouldn't lift a weight, he provided no
+  Idiom prompt: He is so lazy he won't lift a finger, he offers
+  Literal prompt: He is so lazy he won't lift a weight, he offers
+--------------------------------
+--------------------------------
+Idiom: do_the_honours
+  Idiom prompt: As the host of the party he was asked to do the honours, he started to
+  Literal prompt: As the host of the party he was asked to do the laundry, he started to
+  Idiom prompt: The guest was invited to do the honours, he began the
+  Literal prompt: The guest was invited to do the dishes, he began the
+--------------------------------
+--------------------------------
+Idiom: lay_a_finger_on
+  Idiom prompt: The bully was warned not to lay a finger on the boy, he shouldn't
+  Literal prompt: The bully was warned not to lay a book on the boy, he shouldn't
+  Idiom prompt: He promised he would never lay a finger on her, he was
+  Literal prompt: He promised he would never lay a blanket on her, he was
+--------------------------------
+--------------------------------
+Idiom: feel_the_pinch
+  Idiom prompt: After the stock market crash the family felt the pinch, they were now
+  Literal prompt: After the stock market crash the family felt the wind, they were now
+  Idiom prompt: With rising prices the citizens felt the pinch, they lacked
+  Literal prompt: With rising prices the citizens felt the heat, they lacked
+--------------------------------
+--------------------------------
+Idiom: make_a_killing
+  Idiom prompt: He sold his shares at the perfect time to make a killing, he became
+  Literal prompt: He sold his shares at the perfect time to make a bargain, he became
+  Idiom prompt: The business deal helped them make a killing, they were
+  Literal prompt: The business deal helped them make a friend, they were
+--------------------------------
+--------------------------------
+Idiom: join_the_club
+  Idiom prompt: You lost your job too? Well join the club, we are in this
+  Literal prompt: You lost your job too? Well join the race, we are in this
+  Idiom prompt: Failed your exam? Join the club, we both feel
+  Literal prompt: Failed your exam? Join the gym, we both feel
+--------------------------------
+--------------------------------
+Idiom: get_the_picture
+  Idiom prompt: You don't need to explain further I get the picture, I clearly
+  Literal prompt: You don't need to explain further I get the mail, I clearly
+  Idiom prompt: He described the danger until I got the picture, it was
+  Literal prompt: He described the danger until I got the box, it was
+--------------------------------
+--------------------------------
+Idiom: win_the_day
+  Idiom prompt: The politician had the charm to win the day, he was very
+  Literal prompt: The politician had the charm to win the game, he was very
+  Idiom prompt: The powerful argument won the day, the logic was
+  Literal prompt: The powerful argument won the prize, the logic was
+--------------------------------
+--------------------------------
+Idiom: get_a_life
+  Idiom prompt: He told the boring man to get a life, he needed to be more
+  Literal prompt: He told the boring man to get a taxi, he needed to be more
+  Idiom prompt: Stop spying on us and get a life, you are
+  Literal prompt: Stop spying on us and get a taxi, you are
+--------------------------------
+--------------------------------
+Idiom: run_a_mile
+  Idiom prompt: If you ask him for a favor he will run a mile, he wants to
+  Literal prompt: If you ask him for a favor he will run a race, he wants to
+  Idiom prompt: She saw the difficult task and ran a mile, she was
+  Literal prompt: She saw the difficult task and ran a marathon, she was
+--------------------------------
+--------------------------------
+Idiom: hit_the_headlines
+  Idiom prompt: The scandal caused the singer to hit the headlines, she became very
+  Literal prompt: The scandal caused the singer to hit the notes, she became very
+  Idiom prompt: The secret affair hit the headlines, the news was
+  Literal prompt: The secret affair hit the ground, the news was
+--------------------------------
+--------------------------------
+Idiom: grasp_the_nettle
+  Idiom prompt: The crisis was difficult but he grasped the nettle, he finally faced the
+  Literal prompt: The crisis was difficult but he grasped the handle, he finally faced the
+  Idiom prompt: You must be brave and grasp the nettle, take some
+  Literal prompt: You must be brave and grasp the rope, take some
+--------------------------------
+--------------------------------
+Idiom: take_the_fall
+  Idiom prompt: The CEO resigned to take the fall, he accepted the
+  Literal prompt: The CEO resigned to take the bus, he accepted the
+  Idiom prompt: He was the scapegoat and took the fall, he took the
+  Literal prompt: He was the scapegoat and took the stairs, he took the
+--------------------------------
+--------------------------------
+Idiom: take_the_plunge
+  Idiom prompt: He finally decided to take the plunge, he was ready to take a
+  Literal prompt: He finally decided to take the pill, he was ready to take a
+  Idiom prompt: They got married and took the plunge, it was a big
+  Literal prompt: They got married and took the train, it was a big
+--------------------------------
+--------------------------------
+Idiom: turn_the_corner
+  Idiom prompt: The patient's health finally turned the corner, things were getting
+  Literal prompt: The patient's health finally turned the key, things were getting
+  Idiom prompt: The business is finally turning the corner, it is
+  Literal prompt: The business is finally turning the page, it is
+--------------------------------
+--------------------------------
+Idiom: make_a_move
+  Idiom prompt: The situation was stagnant so he made a move, he finally took
+  Literal prompt: The situation was stagnant so he made a chair, he finally took
+  Idiom prompt: The chess player decided to make a move, he is
+  Literal prompt: The chess player decided to make a fire, he is
+--------------------------------
+--------------------------------
+Idiom: miss_the_boat
+  Idiom prompt: The sale ended yesterday so I missed the boat, I lost the
+  Literal prompt: The sale ended yesterday so I missed the bus, I lost the
+  Idiom prompt: He didn't apply in time and missed the boat, he was
+  Literal prompt: He didn't apply in time and missed the flight, he was
+--------------------------------
+Running average attention head patching
+Traceback (most recent call last):
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 1821, in <module>
+    run_average_attention_head_patching(
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 827, in run_average_attention_head_patching
+    average_patching_results = average_attention_head_patching(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 703, in average_attention_head_patching
+    correct_token = model.tokenizer.encode(correct_answer)[1]
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The nervous suspect finally spilled the beans, it was a
+  Literal prompt: The nervous suspect finally spilled the drink, it was a
+  Idiom prompt: He was paid to spill the beans, the information was
+  Literal prompt: He was paid to spill the water, the information was
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: He decided to tell a joke to break the ice, he was being
+  Literal prompt: He decided to tell a joke to break the bottle, he was being
+  Idiom prompt: The group was silent until he broke the ice, he was being
+  Literal prompt: The group was silent until he broke the lamp, he was being
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: The project failed so they pulled the plug, the activity
+  Literal prompt: The project failed so they pulled the rope, the activity
+  Idiom prompt: The funding ended and they pulled the plug, it was
+  Literal prompt: The funding ended and they pulled the lever, it was
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier had to bite the bullet, he was very
+  Literal prompt: The soldier had to bite the rations, he was very
+  Idiom prompt: She knew it would be hard but bit the bullet, she was
+  Literal prompt: She knew it would be hard but bit the apple, she was
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: Without telling anyone the boss moved the goalposts, he was being
+  Literal prompt: Without telling anyone the boss moved the cabinets, he was being
+  Idiom prompt: They felt cheated because he moved the goalposts, he was
+  Literal prompt: They felt cheated because he moved the cabinets, he was
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: When he saw the bill he blew a fuse, he was
+  Literal prompt: When he saw the bill he blew a bubble, he was
+  Idiom prompt: The angry man was ready to blow a fuse, he felt
+  Literal prompt: The angry man was ready to blow a whistle, he felt
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: He used the new evidence to turn the tables, he was finally
+  Literal prompt: He used the new evidence to turn the handle, he was finally
+  Idiom prompt: She outsmarted them and turned the tables, she was now
+  Literal prompt: She outsmarted them and turned the page, she was now
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, the case became
+  Literal prompt: The lawyer tried to muddy the jacket, the case became
+  Idiom prompt: The witness's lie served to muddy the waters, making things
+  Literal prompt: The witness's lie served to muddy the carpet, Birdmaking things
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, the debut was
+  Literal prompt: The new artist wanted to make a sketch, the debut was
+  Idiom prompt: The product launch made a big splash, it was very
+  Literal prompt: The product launch made a big sound, it was very
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The pilot crashed and bought the farm, he is now
+  Literal prompt: The pilot crashed and bought the ticket, he is now
+  Idiom prompt: The pilot lost control and bought the farm, he is
+  Literal prompt: The pilot lost control and bought the bread, he is
+--------------------------------
+--------------------------------
+Idiom: kick_the_bucket
+  Idiom prompt: The old man finally kicked the bucket, it was a sad
+  Literal prompt: The old man finally kicked the football, it was a sad
+  Idiom prompt: He was very ill and finally kicked the bucket, it was his
+  Literal prompt: He was very ill and finally kicked the heater, it was his
+--------------------------------
+--------------------------------
+Idiom: cut_a_rug
+  Idiom prompt: She went to the party to cut a rug, she started to
+  Literal prompt: She went to the party to cut a cake, she started to
+  Idiom prompt: They cleared a space to cut a rug, they started to
+  Literal prompt: They cleared a space to cut a cake, they started to
+--------------------------------
+--------------------------------
+Idiom: cut_the_mustard
+  Idiom prompt: The new recruit couldn't cut the mustard, he was a
+  Literal prompt: The new recruit couldn't cut the string, he was a
+  Idiom prompt: The athlete tried but couldn't cut the mustard, he lacked
+  Literal prompt: The athlete try but couldn't cut the wood, he lacked
+--------------------------------
+--------------------------------
+Idiom: hit_the_jackpot
+  Idiom prompt: With that investment he hit the jackpot, he became very
+  Literal prompt: With that investment he hit the button, he became very
+  Idiom prompt: The lucky gambler hit the jackpot, he had much
+  Literal prompt: The lucky gambler hit the table, he had much
+--------------------------------
+--------------------------------
+Idiom: call_the_shots
+  Idiom prompt: As the director she calls the shots, she makes the
+  Literal prompt: As the director she calls the police, she makes the
+  Idiom prompt: The general is the one who calls the shots, he has
+  Literal prompt: The general is the one who calls the waiter, he has
+--------------------------------
+--------------------------------
+Idiom: get_a_grip
+  Idiom prompt: She told the crying man to get a grip, he needed
+  Literal prompt: She told the crying man to get a rope, he needed
+  Idiom prompt: You need to stop panicking and get a grip, please be
+  Literal prompt: You need to stop panicking and get a coat, please be
+--------------------------------
+--------------------------------
+Idiom: hit_the_road
+  Idiom prompt: The travelers decided to hit the road, they began their
+  Literal prompt: The travelers decided to hit the alarm, they began their
+  Idiom prompt: Pack your bags and hit the road, we are
+  Literal prompt: Pack your bags and hit the wall, we are
+--------------------------------
+--------------------------------
+Idiom: scratch_the_surface
+  Idiom prompt: The cleaner only scratched the surface, the room remained
+  Literal prompt: The cleaner only scratched the record, the room remained
+  Idiom prompt: This deep problem only scratched the surface, it was
+  Literal prompt: This deep problem only scratched the paint, it was
+--------------------------------
+--------------------------------
+Idiom: bit_the_dust
+  Idiom prompt: The losing team finally bit the dust, they were
+  Literal prompt: The losing team finally bit the bread, they were
+  Idiom prompt: The failed project finally bit the dust, it is
+  Literal prompt: The failed project finally bit the cable, it is
+--------------------------------
+--------------------------------
+Idiom: lift_a_finger
+  Idiom prompt: The lazy son wouldn't lift a finger, he provided no
+  Literal prompt: The lazy son wouldn't lift a weight, he provided no
+  Idiom prompt: He is so lazy he won't lift a finger, he offers
+  Literal prompt: He is so lazy he won't lift a weight, he offers
+--------------------------------
+--------------------------------
+Idiom: do_the_honours
+  Idiom prompt: As the host of the party he was asked to do the honours, he started to
+  Literal prompt: As the host of the party he was asked to do the laundry, he started to
+  Idiom prompt: The guest was invited to do the honours, he began the
+  Literal prompt: The guest was invited to do the dishes, he began the
+--------------------------------
+--------------------------------
+Idiom: lay_a_finger_on
+  Idiom prompt: The bully was warned not to lay a finger on the boy, he shouldn't
+  Literal prompt: The bully was warned not to lay a book on the boy, he shouldn't
+  Idiom prompt: He promised he would never lay a finger on her, he was
+  Literal prompt: He promised he would never lay a blanket on her, he was
+--------------------------------
+You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+--------------------------------
+Idiom: feel_the_pinch
+  Idiom prompt: After the stock market crash the family felt the pinch, they were now
+  Literal prompt: After the stock market crash the family felt the wind, they were now
+  Idiom prompt: With rising prices the citizens felt the pinch, they lacked
+  Literal prompt: With rising prices the citizens felt the heat, they lacked
+--------------------------------
+--------------------------------
+Idiom: make_a_killing
+  Idiom prompt: He sold his shares at the perfect time to make a killing, he became
+  Literal prompt: He sold his shares at the perfect time to make a bargain, he became
+  Idiom prompt: The business deal helped them make a killing, they were
+  Literal prompt: The business deal helped them make a friend, they were
+--------------------------------
+--------------------------------
+Idiom: join_the_club
+  Idiom prompt: You lost your job too? Well join the club, we are in this
+  Literal prompt: You lost your job too? Well join the race, we are in this
+  Idiom prompt: Failed your exam? Join the club, we both feel
+  Literal prompt: Failed your exam? Join the gym, we both feel
+--------------------------------
+--------------------------------
+Idiom: get_the_picture
+  Idiom prompt: You don't need to explain further I get the picture, I clearly
+  Literal prompt: You don't need to explain further I get the mail, I clearly
+  Idiom prompt: He described the danger until I got the picture, it was
+  Literal prompt: He described the danger until I got the box, it was
+--------------------------------
+--------------------------------
+Idiom: win_the_day
+  Idiom prompt: The politician had the charm to win the day, he was very
+  Literal prompt: The politician had the charm to win the game, he was very
+  Idiom prompt: The powerful argument won the day, the logic was
+  Literal prompt: The powerful argument won the prize, the logic was
+--------------------------------
+--------------------------------
+Idiom: get_a_life
+  Idiom prompt: He told the boring man to get a life, he needed to be more
+  Literal prompt: He told the boring man to get a taxi, he needed to be more
+  Idiom prompt: Stop spying on us and get a life, you are
+  Literal prompt: Stop spying on us and get a taxi, you are
+--------------------------------
+--------------------------------
+Idiom: run_a_mile
+  Idiom prompt: If you ask him for a favor he will run a mile, he wants to
+  Literal prompt: If you ask him for a favor he will run a race, he wants to
+  Idiom prompt: She saw the difficult task and ran a mile, she was
+  Literal prompt: She saw the difficult task and ran a marathon, she was
+--------------------------------
+--------------------------------
+Idiom: hit_the_headlines
+  Idiom prompt: The scandal caused the singer to hit the headlines, she became very
+  Literal prompt: The scandal caused the singer to hit the notes, she became very
+  Idiom prompt: The secret affair hit the headlines, the news was
+  Literal prompt: The secret affair hit the ground, the news was
+--------------------------------
+--------------------------------
+Idiom: grasp_the_nettle
+  Idiom prompt: The crisis was difficult but he grasped the nettle, he finally faced the
+  Literal prompt: The crisis was difficult but he grasped the handle, he finally faced the
+  Idiom prompt: You must be brave and grasp the nettle, take some
+  Literal prompt: You must be brave and grasp the rope, take some
+--------------------------------
+--------------------------------
+Idiom: take_the_fall
+  Idiom prompt: The CEO resigned to take the fall, he accepted the
+  Literal prompt: The CEO resigned to take the bus, he accepted the
+  Idiom prompt: He was the scapegoat and took the fall, he took the
+  Literal prompt: He was the scapegoat and took the stairs, he took the
+--------------------------------
+--------------------------------
+Idiom: take_the_plunge
+  Idiom prompt: He finally decided to take the plunge, he was ready to take a
+  Literal prompt: He finally decided to take the pill, he was ready to take a
+  Idiom prompt: They got married and took the plunge, it was a big
+  Literal prompt: They got married and took the train, it was a big
+--------------------------------
+--------------------------------
+Idiom: turn_the_corner
+  Idiom prompt: The patient's health finally turned the corner, things were getting
+  Literal prompt: The patient's health finally turned the key, things were getting
+  Idiom prompt: The business is finally turning the corner, it is
+  Literal prompt: The business is finally turning the page, it is
+--------------------------------
+--------------------------------
+Idiom: make_a_move
+  Idiom prompt: The situation was stagnant so he made a move, he finally took
+  Literal prompt: The situation was stagnant so he made a chair, he finally took
+  Idiom prompt: The chess player decided to make a move, he is
+  Literal prompt: The chess player decided to make a fire, he is
+--------------------------------
+--------------------------------
+Idiom: miss_the_boat
+  Idiom prompt: The sale ended yesterday so I missed the boat, I lost the
+  Literal prompt: The sale ended yesterday so I missed the bus, I lost the
+  Idiom prompt: He didn't apply in time and missed the boat, he was
+  Literal prompt: He didn't apply in time and missed the flight, he was
+--------------------------------
+Running average attention head patching
+clean logit diff 0.151458740234375
+corrupt logit diff 0.5118637084960938
+clean logit diff 2.4544830322265625
+corrupt logit diff 2.3451690673828125
+clean logit diff 1.8244094848632812
+corrupt logit diff 1.9810333251953125
+clean logit diff 0.589874267578125
+corrupt logit diff 1.23187255859375
+clean logit diff 0.0
+corrupt logit diff 0.0
+clean logit diff -1.8760833740234375
+corrupt logit diff -2.0879058837890625
+clean logit diff 1.592041015625
+corrupt logit diff 1.227630615234375
+clean logit diff -0.00030517578125
+corrupt logit diff -0.64642333984375
+clean logit diff -2.4629898071289062
+corrupt logit diff -1.7760887145996094
+clean logit diff 1.018829345703125
+corrupt logit diff -5.122991561889648
+clean logit diff -0.1264190673828125
+corrupt logit diff -0.5406341552734375
+clean logit diff 0.7146987915039062
+corrupt logit diff 0.826080322265625
+clean logit diff 1.44854736328125
+corrupt logit diff 1.0428466796875
+clean logit diff -1.2504119873046875
+corrupt logit diff -1.4106369018554688
+clean logit diff 0.0593719482421875
+corrupt logit diff 0.1019744873046875
+clean logit diff 1.2270965576171875
+corrupt logit diff 1.8367919921875
+clean logit diff -1.740478515625
+corrupt logit diff -1.1392364501953125
+clean logit diff -0.6883163452148438
+corrupt logit diff 0.13800048828125
+clean logit diff -3.6983871459960938
+corrupt logit diff -3.528656005859375
+clean logit diff -0.5588226318359375
+corrupt logit diff -0.6910247802734375
+clean logit diff 3.7450332641601562
+corrupt logit diff 3.9112701416015625
+clean logit diff 0.0514984130859375
+corrupt logit diff 0.123138427734375
+clean logit diff -0.6822357177734375
+corrupt logit diff -0.6253662109375
+clean logit diff 0.0364990234375
+corrupt logit diff 0.033966064453125
+clean logit diff -0.41631317138671875
+corrupt logit diff -0.5412826538085938
+clean logit diff 1.6108016967773438
+corrupt logit diff 1.6017074584960938
+clean logit diff 1.4040603637695312
+corrupt logit diff -0.912017822265625
+clean logit diff 1.518890380859375
+corrupt logit diff -0.9451370239257812
+clean logit diff 1.329193115234375
+corrupt logit diff 0.7365951538085938
+clean logit diff -0.4950103759765625
+corrupt logit diff -0.26792144775390625
+clean logit diff -1.1791763305664062
+corrupt logit diff -0.9545745849609375
+clean logit diff -0.38593292236328125
+corrupt logit diff -0.5676651000976562
+clean logit diff 0.35637664794921875
+corrupt logit diff 0.0095367431640625
+clean logit diff -1.0400390625
+corrupt logit diff -0.9081878662109375
+clean logit diff 1.6936416625976562
+corrupt logit diff 1.5038070678710938
+clean logit diff -2.5917434692382812
+corrupt logit diff -2.65533447265625
+clean logit diff 0.6146697998046875
+corrupt logit diff 0.5314788818359375
+clean logit diff -1.6716079711914062
+corrupt logit diff -1.5278244018554688
+clean logit diff -0.03973388671875
+corrupt logit diff 0.1804351806640625
+clean logit diff 2.0245285034179688
+corrupt logit diff 2.3944549560546875
+clean logit diff -0.524749755859375
+corrupt logit diff 3.58697509765625
+clean logit diff 0.0
+corrupt logit diff 0.0
+clean logit diff 2.7359619140625
+corrupt logit diff 2.7654266357421875
+clean logit diff -0.5286712646484375
+corrupt logit diff -0.2951202392578125
+clean logit diff 1.0954132080078125
+corrupt logit diff 1.044219970703125
+clean logit diff 0.19771575927734375
+corrupt logit diff -0.475830078125
+clean logit diff 1.4944610595703125
+corrupt logit diff 1.3830032348632812
+clean logit diff 2.4598236083984375
+corrupt logit diff 1.5920867919921875
+clean logit diff -0.5004119873046875
+corrupt logit diff -0.32232666015625
+clean logit diff -0.09686279296875
+corrupt logit diff 0.398529052734375
+clean logit diff -0.10089111328125
+corrupt logit diff -0.626434326171875
+clean logit diff -0.7723388671875
+corrupt logit diff -0.2082977294921875
+clean logit diff 0.863800048828125
+corrupt logit diff 0.4900360107421875
+clean logit diff -0.0899810791015625
+corrupt logit diff -0.07111358642578125
+clean logit diff -0.3354339599609375
+corrupt logit diff -2.6742706298828125
+clean logit diff -1.525848388671875
+corrupt logit diff -1.5799407958984375
+clean logit diff 2.0034637451171875
+corrupt logit diff 1.95391845703125
+clean logit diff 0.479766845703125
+corrupt logit diff 0.1587066650390625
+clean logit diff -0.6168289184570312
+corrupt logit diff 0.30233001708984375
+clean logit diff 4.608612060546875
+corrupt logit diff 4.19171142578125
+clean logit diff 0.3802032470703125
+corrupt logit diff 1.6893997192382812
+clean logit diff -1.0540237426757812
+corrupt logit diff 3.6568527221679688
+clean logit diff 0.5778274536132812
+corrupt logit diff 0.27373504638671875
+clean logit diff -1.5784912109375
+corrupt logit diff -1.9225997924804688
+clean logit diff 0.0
+corrupt logit diff 0.0
+clean logit diff 0.593170166015625
+corrupt logit diff 0.2870941162109375
+clean logit diff -2.1858062744140625
+corrupt logit diff -2.7383270263671875
+clean logit diff -0.5063705444335938
+corrupt logit diff -0.19315338134765625
+clean logit diff -1.827880859375
+corrupt logit diff -2.0172958374023438
+clean logit diff 1.0143508911132812
+corrupt logit diff 1.2047348022460938
+clean logit diff 1.1761703491210938
+corrupt logit diff 0.7245559692382812
+clean logit diff 0.217742919921875
+corrupt logit diff -0.2579345703125
+Top 34 heads to patch/zero: [(0, 0), (0, 7), (5, 1), (0, 2), (0, 9), (6, 5), (6, 6), (1, 11), (9, 4), (4, 4), (11, 8), (9, 3), (1, 8), (4, 1), (9, 11), (8, 6), (11, 9), (0, 8), (7, 6), (3, 9), (1, 4), (3, 7), (5, 0), (10, 10), (7, 9), (1, 2), (4, 7), (0, 3), (9, 8), (10, 4), (6, 2), (0, 6), (2, 3), (9, 5)]
+Top 67 heads to patch/zero: [(0, 0), (0, 7), (5, 1), (0, 2), (0, 9), (6, 5), (6, 6), (1, 11), (9, 4), (4, 4), (11, 8), (9, 3), (1, 8), (4, 1), (9, 11), (8, 6), (11, 9), (0, 8), (7, 6), (3, 9), (1, 4), (3, 7), (5, 0), (10, 10), (7, 9), (1, 2), (4, 7), (0, 3), (9, 8), (10, 4), (6, 2), (0, 6), (2, 3), (9, 5), (8, 2), (6, 1), (0, 4), (5, 6), (7, 3), (3, 11), (11, 4), (5, 2), (2, 6), (3, 10), (6, 8), (3, 0), (7, 7), (5, 3), (6, 7), (10, 2), (11, 11), (11, 5), (10, 6), (3, 4), (4, 3), (9, 9), (2, 9), (1, 5), (4, 5), (5, 8), (11, 0), (5, 5), (6, 10), (9, 7), (8, 0), (11, 3), (8, 5)]
+Traceback (most recent call last):
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 1824, in <module>
+    run_average_attention_head_patching(
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 830, in run_average_attention_head_patching
+    average_patching_results = average_attention_head_patching(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 798, in average_attention_head_patching
+    top_values, top_indices = torch.topk(flat_results, 168)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: selected index k out of range

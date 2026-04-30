@@ -1,0 +1,381 @@
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it was turning into a
+  Literal prompt: The designer was ready to make a sketch, it was turning into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+Running average attention head patching
+Traceback (most recent call last):
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 2002, in <module>
+    run_average_attention_head_patching(
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 859, in run_average_attention_head_patching
+    average_patching_results = average_attention_head_patching(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/40455223@eeecs.qub.ac.uk/idiom_comp/patching_next_token_llama.py", line 706, in average_attention_head_patching
+    correct_token = model.tokenizer.encode(correct_answer)[1]
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+You're using a PreTrainedTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it was turning into a
+  Literal prompt: The designer was ready to make a sketch, it was turning into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+Running average attention head patching
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:08<00:25,  8.41s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:10<00:08,  4.41s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.00s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  2.63s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.52s/it]
+clean logit diff -1.1480293273925781
+corrupt logit diff -1.5809431076049805
+clean logit diff 1.2771377563476562
+corrupt logit diff 1.076951026916504
+clean logit diff -4.686824798583984
+corrupt logit diff -3.2619428634643555
+clean logit diff -5.682544708251953
+corrupt logit diff -3.770589828491211
+clean logit diff -0.022478103637695312
+corrupt logit diff 0.032952308654785156
+clean logit diff -4.8466644287109375
+corrupt logit diff -2.347097396850586
+clean logit diff -0.02453899383544922
+corrupt logit diff -2.203683853149414
+clean logit diff 3.291536331176758
+corrupt logit diff -0.6622533798217773
+clean logit diff -1.5502758026123047
+corrupt logit diff -0.15604019165039062
+clean logit diff -0.25898265838623047
+corrupt logit diff 0.04351234436035156
+clean logit diff -1.7838068008422852
+corrupt logit diff -2.087723731994629
+clean logit diff -1.0910520553588867
+corrupt logit diff -3.4750232696533203
+clean logit diff -1.8716869354248047
+corrupt logit diff 0.8932485580444336
+clean logit diff 0.354095458984375
+corrupt logit diff -1.3539094924926758
+clean logit diff -1.6837224960327148
+corrupt logit diff -1.4705400466918945
+clean logit diff -2.9479198455810547
+corrupt logit diff -1.7881717681884766
+clean logit diff -0.32511043548583984
+corrupt logit diff -1.3310213088989258
+clean logit diff 4.299903869628906
+corrupt logit diff 1.4049186706542969
+clean logit diff -0.6872072219848633
+corrupt logit diff -1.1614904403686523
+clean logit diff -2.2896738052368164
+corrupt logit diff -1.3090639114379883
+clean logit diff -0.20021915435791016
+corrupt logit diff -2.7478628158569336
+clean logit diff 2.3997650146484375
+corrupt logit diff -1.8338146209716797
+clean logit diff 1.9689521789550781
+corrupt logit diff 0.9492387771606445
+clean logit diff 4.598573684692383
+corrupt logit diff 1.8205814361572266
+clean logit diff -0.91033935546875
+corrupt logit diff -3.712921142578125
+clean logit diff 1.2242841720581055
+corrupt logit diff -1.2856512069702148
+clean logit diff 0.968048095703125
+corrupt logit diff 1.0208568572998047
+clean logit diff -2.168039321899414
+corrupt logit diff -1.8741092681884766
+clean logit diff -2.3457727432250977
+corrupt logit diff -1.9942903518676758
+clean logit diff 1.6224117279052734
+corrupt logit diff 2.3850059509277344
+clean logit diff -1.4657354354858398
+corrupt logit diff -1.8693361282348633
+clean logit diff 1.7326793670654297
+corrupt logit diff 0.7319316864013672
+clean logit diff 2.8700876235961914
+corrupt logit diff 1.7455272674560547
+clean logit diff -0.7948799133300781
+corrupt logit diff -2.4723711013793945
+clean logit diff 1.819101333618164
+corrupt logit diff -3.194685935974121
+clean logit diff 6.945756912231445
+corrupt logit diff 3.4132556915283203
+clean logit diff 0.2987699508666992
+corrupt logit diff -2.2248640060424805
+clean logit diff 1.8429203033447266
+corrupt logit diff -0.6682777404785156
+clean logit diff 0.5921192169189453
+corrupt logit diff -3.2400732040405273
+clean logit diff 1.1651668548583984
+corrupt logit diff -0.4690876007080078
+clean logit diff -2.4145402908325195
+corrupt logit diff -3.936687469482422
+clean logit diff -1.1623201370239258
+corrupt logit diff -0.8692436218261719
+clean logit diff 1.7592105865478516
+corrupt logit diff 0.3582115173339844
+clean logit diff -1.1377429962158203
+corrupt logit diff -1.5343704223632812
+clean logit diff -3.1015939712524414
+corrupt logit diff -5.499194145202637
+clean logit diff 5.472908020019531
+corrupt logit diff 2.255575180053711
+clean logit diff 0.7915449142456055
+corrupt logit diff -0.20508384704589844
+clean logit diff 1.608510971069336
+corrupt logit diff 1.8020858764648438
+clean logit diff -1.5854778289794922
+corrupt logit diff -3.482113838195801
+clean logit diff 3.4383296966552734
+corrupt logit diff 0.7165470123291016
+clean logit diff 1.505899429321289
+corrupt logit diff 1.3031377792358398
+clean logit diff -2.5030784606933594
+corrupt logit diff -2.8024587631225586
+clean logit diff 1.2212743759155273
+corrupt logit diff 0.42308998107910156
+clean logit diff -1.1903858184814453
+corrupt logit diff -1.5902252197265625
+clean logit diff 4.408445358276367
+corrupt logit diff -1.097747802734375
+clean logit diff -3.0856380462646484
+corrupt logit diff -4.283086776733398
+clean logit diff 0.9274826049804688
+corrupt logit diff -0.6979484558105469
+clean logit diff 2.249155044555664
+corrupt logit diff 1.287740707397461
+clean logit diff -0.905369758605957
+corrupt logit diff -3.1578168869018555
+clean logit diff 0.6384830474853516
+corrupt logit diff -1.3920841217041016
+clean logit diff 2.6265363693237305
+corrupt logit diff -0.6203641891479492
+clean logit diff 1.786031723022461
+corrupt logit diff -3.1472244262695312
+clean logit diff 0.007418632507324219
+corrupt logit diff 0.06271171569824219
+clean logit diff 3.3193359375
+corrupt logit diff 1.7296295166015625
+clean logit diff 9.30213737487793
+corrupt logit diff 7.512758255004883
+clean logit diff 0.6366901397705078
+corrupt logit diff -2.4469785690307617
+clean logit diff 3.8901500701904297
+corrupt logit diff 5.04863166809082
+clean logit diff 3.0074501037597656
+corrupt logit diff 1.6906795501708984
+clean logit diff 5.514941215515137
+corrupt logit diff 2.6018753051757812
+clean logit diff 3.494344711303711
+corrupt logit diff 2.099241256713867
+clean logit diff 7.254977226257324
+corrupt logit diff 7.681020736694336
+clean logit diff 3.17758846282959
+corrupt logit diff 1.3451709747314453
+clean logit diff 2.6493263244628906
+corrupt logit diff -2.3603553771972656
+clean logit diff 10.250452995300293
+corrupt logit diff 6.227519989013672
+clean logit diff 2.7007789611816406
+corrupt logit diff 1.6700496673583984
+clean logit diff 2.4258995056152344
+corrupt logit diff -2.3524169921875
+clean logit diff 0.7595329284667969
+corrupt logit diff -5.13259220123291
+clean logit diff 7.397695541381836
+corrupt logit diff 3.786008834838867
+clean logit diff -1.0345611572265625
+corrupt logit diff -0.40848731994628906
+clean logit diff 0.11491775512695312
+corrupt logit diff -3.4099035263061523
+clean logit diff 7.234025955200195
+corrupt logit diff 1.0980567932128906
+clean logit diff 0.7186260223388672
+corrupt logit diff -3.974397659301758
+clean logit diff 0.8033180236816406
+corrupt logit diff -6.470881462097168
+clean logit diff -2.025594711303711
+corrupt logit diff -4.993188858032227
+clean logit diff 1.5761566162109375
+corrupt logit diff -1.223252296447754
+clean logit diff 1.7735042572021484
+corrupt logit diff -0.9365177154541016
+clean logit diff -1.4672355651855469
+corrupt logit diff -6.109667778015137
+clean logit diff 4.019833564758301
+corrupt logit diff 2.0683345794677734
+clean logit diff 0.7804183959960938
+corrupt logit diff -3.0026111602783203
+clean logit diff -2.8499832153320312
+corrupt logit diff -3.1445112228393555
+Top 34 heads to patch/zero: [(3, 9), (20, 7), (0, 17), (1, 7), (3, 8), (18, 11), (18, 9), (3, 1), (24, 6), (6, 5), (27, 5), (17, 22), (27, 3), (21, 0), (1, 20), (17, 9), (1, 14), (26, 1), (25, 2), (9, 19), (24, 7), (18, 16), (17, 11), (0, 15), (8, 12), (10, 15), (20, 18), (25, 17), (1, 21), (20, 15), (1, 15), (17, 16), (9, 5), (11, 6)]
+Top 67 heads to patch/zero: [(3, 9), (20, 7), (0, 17), (1, 7), (3, 8), (18, 11), (18, 9), (3, 1), (24, 6), (6, 5), (27, 5), (17, 22), (27, 3), (21, 0), (1, 20), (17, 9), (1, 14), (26, 1), (25, 2), (9, 19), (24, 7), (18, 16), (17, 11), (0, 15), (8, 12), (10, 15), (20, 18), (25, 17), (1, 21), (20, 15), (1, 15), (17, 16), (9, 5), (11, 6), (11, 11), (18, 14), (27, 11), (1, 8), (20, 4), (18, 15), (7, 3), (27, 4), (10, 14), (9, 11), (17, 14), (2, 6), (7, 4), (25, 13), (18, 17), (21, 1), (21, 6), (2, 5), (16, 21), (4, 3), (9, 20), (17, 19), (1, 6), (2, 22), (16, 4), (15, 10), (19, 0), (14, 5), (11, 3), (26, 20), (12, 3), (16, 10), (16, 13)]
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+Top 168 heads to patch/zero: [(3, 9), (20, 7), (0, 17), (1, 7), (3, 8), (18, 11), (18, 9), (3, 1), (24, 6), (6, 5), (27, 5), (17, 22), (27, 3), (21, 0), (1, 20), (17, 9), (1, 14), (26, 1), (25, 2), (9, 19), (24, 7), (18, 16), (17, 11), (0, 15), (8, 12), (10, 15), (20, 18), (25, 17), (1, 21), (20, 15), (1, 15), (17, 16), (9, 5), (11, 6), (11, 11), (18, 14), (27, 11), (1, 8), (20, 4), (18, 15), (7, 3), (27, 4), (10, 14), (9, 11), (17, 14), (2, 6), (7, 4), (25, 13), (18, 17), (21, 1), (21, 6), (2, 5), (16, 21), (4, 3), (9, 20), (17, 19), (1, 6), (2, 22), (16, 4), (15, 10), (19, 0), (14, 5), (11, 3), (26, 20), (12, 3), (16, 10), (16, 13), (16, 2), (26, 12), (2, 19), (21, 2), (10, 16), (20, 23), (24, 8), (1, 22), (24, 12), (13, 19), (7, 7), (11, 2), (3, 16), (19, 4), (12, 2), (13, 16), (19, 11), (18, 10), (16, 5), (14, 11), (8, 19), (8, 3), (15, 13), (9, 15), (23, 1), (3, 0), (25, 16), (25, 1), (1, 18), (20, 2), (7, 23), (11, 8), (19, 21), (25, 12), (18, 1), (26, 18), (4, 16), (15, 12), (18, 20), (16, 22), (14, 10), (11, 10), (9, 0), (12, 11), (4, 20), (8, 15), (15, 4), (4, 21), (0, 8), (12, 9), (16, 15), (22, 20), (14, 3), (0, 16), (2, 10), (13, 9), (25, 23), (13, 22), (15, 17), (25, 19), (11, 18), (10, 5), (5, 20), (14, 7), (9, 12), (10, 18), (21, 11), (10, 7), (21, 19), (17, 2), (13, 15), (27, 6), (3, 4), (2, 18), (2, 21), (14, 4), (25, 15), (12, 0), (26, 14), (16, 8), (12, 19), (13, 5), (21, 21), (15, 11), (6, 15), (21, 18), (16, 20), (25, 0), (7, 19), (19, 12), (5, 2), (13, 20), (10, 1), (17, 6), (26, 6), (21, 17), (6, 6), (22, 12), (1, 11), (11, 7), (15, 9)]
