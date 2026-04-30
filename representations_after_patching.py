@@ -629,7 +629,7 @@ def get_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_ma
 
 
 def load_significant_neurons(
-    path="data/top_67_heads_falcon_from_accumulator.json",
+    path="data/top_168_heads_falcon_from_accumulator.json",
 ):
     """Load JSON of (layer, head) pairs into {layer: [heads,...]} (0-based layers/heads)."""
     with open(path, "r") as f:
@@ -818,8 +818,8 @@ def attention_head_masking():
     hidden_size = model.config.hidden_size
     print(f"Hidden size: {hidden_size}")
 
-    sentences = data_utils.get_context_sentences()
-    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_context_and()
+    sentences = data_utils.get_standard_sentences()
+    corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
     
     inputs = tokeniser(sentences.tolist(), max_length=512, return_tensors="pt", truncation=True, padding=True)
     input_ids = inputs["input_ids"]
@@ -834,7 +834,7 @@ def attention_head_masking():
     top_mlp_dict = None
     
 
-    rep_type = f'final_word_context_attention_head_masked_significant_67'
+    rep_type = f'final_word_standard_attention_head_masked_significant_168'
 
     get_final_word_token_from_layers(
         model_name,
@@ -857,9 +857,9 @@ def attention_head_masking():
 
 
 def random_attention_head_masking():
-    model_name = "openai-community/gpt2"
+    model_name = "tiiuae/Falcon3-7B-Base"
     batch_size = 1
-    layers = list(range(1, 13))
+    layers = list(range(1, 29))
     torch_device = "cuda" if torch.cuda.is_available() else "cpu"
     rep_loc = "./data"
     
@@ -889,7 +889,7 @@ def random_attention_head_masking():
     attention_mask = attention_mask.to(torch_device)
     model.to(torch_device)
 
-    significant_path = "data/top_36_heads_gpt2_from_accumulator.json"
+    significant_path = "data/top_168_heads_falcon_from_accumulator.json"
     num_random_runs = 5
     base_random_seed = 10042
 
@@ -899,7 +899,7 @@ def random_attention_head_masking():
             significant_path, model, seed=seed
         )
         top_mlp_dict = None
-        rep_type = f"final_word_standard_attention_head_masked_36_random_run{run_idx + 1}"
+        rep_type = f"final_word_standard_attention_head_masked_168_random_run{run_idx + 1}"
 
         print(
             "Random head masking run %d/%d (seed=%s); layers -> head counts: %s"
