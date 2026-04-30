@@ -42,7 +42,9 @@ import data_utils
 ## DATA
 
 df = pd.read_excel("data/standard_sentences.xlsx")
-corr_metric = 'kendalltau'
+#corr_metric = 'kendalltau'
+corr_metric = 'spearmanr'
+
 order_dict = dict(zip(["openai-community/gpt2", 'mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", 'deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B', 'Qwen/Qwen2.5-7B' ], range(0, 6)))
 model_name_map = {'mistralai/Mistral-7B-v0.1': 'Mistral-7B', 'meta-llama/Llama-3.2-3B' : 'Llama-3.2-3B', "tiiuae/Falcon3-7B-Base" : "Falcon3-7B", "openai-community/gpt2" : "GPT2",'deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B' : 'DeepSeek-R1-1.5B', 'Qwen/Qwen2.5-7B' : 'Qwen2.5-7B'}
 

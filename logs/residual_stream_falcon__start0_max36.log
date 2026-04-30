@@ -1,0 +1,814 @@
+You're using a PreTrainedTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Device map: cuda
+--------------------------------
+Idiom: spill_the_beans
+  Idiom prompt: The suspect was nervous as he spilled the beans, it was a big
+  Literal prompt: The suspect was nervous as he spilled the drink, it was a big
+  Idiom prompt: The suspect hesitated during questioning before he spilled the beans, it was a big
+  Literal prompt: The suspect hesitated during questioning before he spilled the drink, it was a big
+  Idiom prompt: The suspect felt a lot of pressure from the staring officer and he spilled the beans, it was a
+  Literal prompt: The suspect felt a lot of pressure from the staring officer and he spilled the drink, it was a big
+--------------------------------
+--------------------------------
+Idiom: break_the_ice
+  Idiom prompt: The meeting was not going so well when the man decided to break the ice, it was a big
+  Literal prompt: The meeting was not going so well when the man decided to break the bottle, it was a big
+  Idiom prompt: It was an awkward party until the host chose to break the ice, it was a big
+  Literal prompt: It was an awkward party until the host chose to break the bottle, it was a big
+  Idiom prompt: The dinner party was going really well until the man thought he could break the ice, it was a big
+  Literal prompt: The dinner party was going really well until the man thought he could break the bottle, it was a big
+--------------------------------
+--------------------------------
+Idiom: pull_the_plug
+  Idiom prompt: Everyone agreed it was time to pull the plug, the task was a
+  Literal prompt: Everyone agreed it was time to pull the rope, the task was a
+  Idiom prompt: The director decided it was time to pull the plug, the show was a
+  Literal prompt: The director decided it was time to pull the rope, the show was a
+  Idiom prompt: After a lot of planning the manager finally agreed to pull the plug, the project was a
+  Literal prompt: After a lot of planning the manager finally agreed to pull the rope, the project was a
+--------------------------------
+--------------------------------
+Idiom: bite_the_bullet
+  Idiom prompt: The soldier decided he had no other option but to bite the bullet, he was being very
+  Literal prompt: The soldier decided he had no other option but to bite the cookie, he was being very
+  Idiom prompt: It was a horrible project but the team had no choice but to bite the bullet, they were being very
+  Literal prompt: It was a horrible project but the team had no choice but to bite the cookie, they were being very
+  Idiom prompt: At the end of the day no one wanted it but the man chose to bite the bullet, he was being very
+  Literal prompt: At the end of the day no one wanted it but the man chose to bite the cookie, he was being very
+--------------------------------
+--------------------------------
+Idiom: move_the_goalposts
+  Idiom prompt: The boss decided it was time for a change and slowly moved the goalposts, he was being very
+  Literal prompt: The boss decided it was time for a change and slowly moved the cabinets, he was being very
+  Idiom prompt: The team had just reached every target before the boss moved the goalposts, he was being very
+  Literal prompt: The team had just reached every target before the boss moved the cabinets, he was being very
+  Idiom prompt: They had worked overnight to complete the tasks before the boss moved the goalposts, he was being very
+  Literal prompt: They had worked overnight to complete the tasks before the boss moved the cabinets, he was being very
+--------------------------------
+--------------------------------
+Idiom: blow_a_fuse
+  Idiom prompt: After the party the man blew a fuse, he had become very
+  Literal prompt: After the party the man blew a candle, he had become very
+  Idiom prompt: Seeing the state of the house after the new year the man blew a fuse, he was being very
+  Literal prompt: Seeing the state of the house after the new year the man blew a candle, he was being very
+  Idiom prompt: When the test failed the man blew a fuse, he was being very
+  Literal prompt: When the test failed the man blew a candle, he was being very
+--------------------------------
+--------------------------------
+Idiom: turn_the_tables
+  Idiom prompt: After a period of bad luck he was able to turn the tables, the man was finally
+  Literal prompt: After a period of bad luck he was able to turn the handle, the man was finally
+  Idiom prompt: Everyone thought that he was not trying his best but he was able to turn the tables, the man was finally
+  Literal prompt: Everyone thought that he was not trying his best but he was able to turn the handle, the man was finally
+  Idiom prompt: After struggling to pass the first obstacle he was able to turn the tables, the man was finally
+  Literal prompt: After struggling to pass the first obstacle he was able to turn the handle, the man was finally
+--------------------------------
+--------------------------------
+Idiom: muddy_the_waters
+  Idiom prompt: The lawyer tried to muddy the waters, making the important case
+  Literal prompt: The lawyer tried to muddy the weapon, making the important case
+  Idiom prompt: The suspect was not being very honest when he tried to muddy the waters, making the important case
+  Literal prompt: The suspect was not being very honest when he tried to muddy the weapon, making the important case
+  Idiom prompt: The lawyer paid a criminal to muddy the waters, he made the case
+  Literal prompt: The lawyer paid a criminal to muddy the weapon, he made the case
+--------------------------------
+--------------------------------
+Idiom: make_a_splash
+  Idiom prompt: The new artist wanted to make a splash, it was becoming a
+  Literal prompt: The new artist wanted to make a sketch, it was becoming a
+  Idiom prompt: The painter thought long and hard about his work so that he would make a splash, it was becoming a
+  Literal prompt: The painter thought long and hard about his work so that he would make a sketch, it was becoming a
+  Idiom prompt: The designer was ready to make a splash, it was turning into a
+  Literal prompt: The designer was ready to make a sketch, it was turning into a
+--------------------------------
+--------------------------------
+Idiom: buy_the_farm
+  Idiom prompt: The brave man bought a motorbike and immediately bought the farm, so he is now
+  Literal prompt: The brave man bought a motorbike and immediately bought the helmet, so he is now
+  Idiom prompt: The young man rode a bulldozer for the first time and bought the farm, so he is now
+  Literal prompt: The young man rode a bulldozer for the first time and bought the helmet, so he is now
+  Idiom prompt: The unlucky man tried to learn how to ride a bike but he bought the farm, so he is now
+  Literal prompt: The unlucky man tried to learn how to ride a bike but he bought the helmet, so he is now
+--------------------------------
+Running average residual stream patching
+14 14
+14
+comma token idx 9
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  2.21it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  2.23it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  2.40it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.41it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  2.90it/s]
+clean logit diff -1.1480293273925781
+corrupt logit diff -1.5809431076049805
+--------------------------------
+clean diff -1.1480293273925781
+corrupt diff -1.5809431076049805
+diff 0.43291378021240234
+--------------------------------
+clean logit diff 1.2771377563476562
+corrupt logit diff 1.076951026916504
+--------------------------------
+clean diff 1.2771377563476562
+corrupt diff 1.076951026916504
+diff 0.20018672943115234
+--------------------------------
+clean logit diff -4.686824798583984
+corrupt logit diff -3.2619428634643555
+--------------------------------
+clean diff -4.686824798583984
+corrupt diff -3.2619428634643555
+diff -1.424881935119629
+--------------------------------
+15 15
+15
+comma token idx 10
+clean logit diff -5.682544708251953
+corrupt logit diff -3.770589828491211
+--------------------------------
+clean diff -5.682544708251953
+corrupt diff -3.770589828491211
+diff -1.9119548797607422
+--------------------------------
+clean logit diff -0.022478103637695312
+corrupt logit diff 0.032952308654785156
+--------------------------------
+clean diff -0.022478103637695312
+corrupt diff 0.032952308654785156
+diff -0.05543041229248047
+--------------------------------
+clean logit diff -4.8466644287109375
+corrupt logit diff -2.347097396850586
+--------------------------------
+clean diff -4.8466644287109375
+corrupt diff -2.347097396850586
+diff -2.4995670318603516
+--------------------------------
+20 21
+20
+comma token idx 16
+clean logit diff -0.02453899383544922
+corrupt logit diff -2.203683853149414
+--------------------------------
+clean diff -0.02453899383544922
+corrupt diff -2.203683853149414
+diff 2.179144859313965
+--------------------------------
+clean logit diff 3.291536331176758
+corrupt logit diff -0.6622533798217773
+--------------------------------
+clean diff 3.291536331176758
+corrupt diff -0.6622533798217773
+diff 3.953789710998535
+--------------------------------
+clean logit diff -1.5502758026123047
+corrupt logit diff -0.15604019165039062
+--------------------------------
+clean diff -1.5502758026123047
+corrupt diff -0.15604019165039062
+diff -1.394235610961914
+--------------------------------
+20 20
+20
+comma token idx 15
+clean logit diff -0.25898265838623047
+corrupt logit diff 0.04351234436035156
+--------------------------------
+clean diff -0.25898265838623047
+corrupt diff 0.04351234436035156
+diff -0.30249500274658203
+--------------------------------
+clean logit diff -1.7838068008422852
+corrupt logit diff -2.087723731994629
+--------------------------------
+clean diff -1.7838068008422852
+corrupt diff -2.087723731994629
+diff 0.30391693115234375
+--------------------------------
+clean logit diff -1.0910520553588867
+corrupt logit diff -3.4750232696533203
+--------------------------------
+clean diff -1.0910520553588867
+corrupt diff -3.4750232696533203
+diff 2.3839712142944336
+--------------------------------
+18 18
+18
+comma token idx 13
+clean logit diff -1.8716869354248047
+corrupt logit diff 0.8932485580444336
+--------------------------------
+clean diff -1.8716869354248047
+corrupt diff 0.8932485580444336
+diff -2.7649354934692383
+--------------------------------
+clean logit diff 0.354095458984375
+corrupt logit diff -1.3539094924926758
+--------------------------------
+clean diff 0.354095458984375
+corrupt diff -1.3539094924926758
+diff 1.7080049514770508
+--------------------------------
+clean logit diff -1.6837224960327148
+corrupt logit diff -1.4705400466918945
+--------------------------------
+clean diff -1.6837224960327148
+corrupt diff -1.4705400466918945
+diff -0.2131824493408203
+--------------------------------
+21 21
+21
+comma token idx 16
+clean logit diff -2.9479198455810547
+corrupt logit diff -1.7881717681884766
+--------------------------------
+clean diff -2.9479198455810547
+corrupt diff -1.7881717681884766
+diff -1.1597480773925781
+--------------------------------
+clean logit diff -0.32511043548583984
+corrupt logit diff -1.3310213088989258
+--------------------------------
+clean diff -0.32511043548583984
+corrupt diff -1.3310213088989258
+diff 1.005910873413086
+--------------------------------
+clean logit diff 4.299903869628906
+corrupt logit diff 1.4049186706542969
+--------------------------------
+clean diff 4.299903869628906
+corrupt diff 1.4049186706542969
+diff 2.8949851989746094
+--------------------------------
+14 14
+14
+comma token idx 9
+clean logit diff -0.6872072219848633
+corrupt logit diff -1.1614904403686523
+--------------------------------
+clean diff -0.6872072219848633
+corrupt diff -1.1614904403686523
+diff 0.47428321838378906
+--------------------------------
+clean logit diff -2.2896738052368164
+corrupt logit diff -1.3090639114379883
+--------------------------------
+clean diff -2.2896738052368164
+corrupt diff -1.3090639114379883
+diff -0.9806098937988281
+--------------------------------
+clean logit diff -0.20021915435791016
+corrupt logit diff -2.7478628158569336
+--------------------------------
+clean diff -0.20021915435791016
+corrupt diff -2.7478628158569336
+diff 2.5476436614990234
+--------------------------------
+15 15
+15
+comma token idx 10
+clean logit diff 2.3997650146484375
+corrupt logit diff -1.8338146209716797
+--------------------------------
+clean diff 2.3997650146484375
+corrupt diff -1.8338146209716797
+diff 4.233579635620117
+--------------------------------
+clean logit diff 1.9689521789550781
+corrupt logit diff 0.9492387771606445
+--------------------------------
+clean diff 1.9689521789550781
+corrupt diff 0.9492387771606445
+diff 1.0197134017944336
+--------------------------------
+clean logit diff 4.598573684692383
+corrupt logit diff 1.8205814361572266
+--------------------------------
+clean diff 4.598573684692383
+corrupt diff 1.8205814361572266
+diff 2.7779922485351562
+--------------------------------
+18 18
+18
+comma token idx 13
+clean logit diff -0.91033935546875
+corrupt logit diff -3.712921142578125
+--------------------------------
+clean diff -0.91033935546875
+corrupt diff -3.712921142578125
+diff 2.802581787109375
+--------------------------------
+clean logit diff 1.2242841720581055
+corrupt logit diff -1.2856512069702148
+--------------------------------
+clean diff 1.2242841720581055
+corrupt diff -1.2856512069702148
+diff 2.5099353790283203
+--------------------------------
+clean logit diff 0.968048095703125
+corrupt logit diff 1.0208568572998047
+--------------------------------
+clean diff 0.968048095703125
+corrupt diff 1.0208568572998047
+diff -0.05280876159667969
+--------------------------------
+18 18
+18
+comma token idx 13
+clean logit diff -2.168039321899414
+corrupt logit diff -1.8741092681884766
+--------------------------------
+clean diff -2.168039321899414
+corrupt diff -1.8741092681884766
+diff -0.2939300537109375
+--------------------------------
+clean logit diff -2.3457727432250977
+corrupt logit diff -1.9942903518676758
+--------------------------------
+clean diff -2.3457727432250977
+corrupt diff -1.9942903518676758
+diff -0.3514823913574219
+--------------------------------
+clean logit diff 1.6224117279052734
+corrupt logit diff 2.3850059509277344
+--------------------------------
+clean diff 1.6224117279052734
+corrupt diff 2.3850059509277344
+diff -0.7625942230224609
+--------------------------------
+21 21
+21
+comma token idx 16
+clean logit diff -1.4657354354858398
+corrupt logit diff -1.8693361282348633
+--------------------------------
+clean diff -1.4657354354858398
+corrupt diff -1.8693361282348633
+diff 0.40360069274902344
+--------------------------------
+clean logit diff 1.7326793670654297
+corrupt logit diff 0.7319316864013672
+--------------------------------
+clean diff 1.7326793670654297
+corrupt diff 0.7319316864013672
+diff 1.0007476806640625
+--------------------------------
+clean logit diff 2.8700876235961914
+corrupt logit diff 1.7455272674560547
+--------------------------------
+clean diff 2.8700876235961914
+corrupt diff 1.7455272674560547
+diff 1.1245603561401367
+--------------------------------
+23 23
+23
+comma token idx 18
+clean logit diff -0.7948799133300781
+corrupt logit diff -2.4723711013793945
+--------------------------------
+clean diff -0.7948799133300781
+corrupt diff -2.4723711013793945
+diff 1.6774911880493164
+--------------------------------
+clean logit diff 1.819101333618164
+corrupt logit diff -3.194685935974121
+--------------------------------
+clean diff 1.819101333618164
+corrupt diff -3.194685935974121
+diff 5.013787269592285
+--------------------------------
+clean logit diff 6.945756912231445
+corrupt logit diff 3.4132556915283203
+--------------------------------
+clean diff 6.945756912231445
+corrupt diff 3.4132556915283203
+diff 3.532501220703125
+--------------------------------
+20 19
+19
+comma token idx 14
+clean logit diff 0.2987699508666992
+corrupt logit diff -2.2248640060424805
+--------------------------------
+clean diff 0.2987699508666992
+corrupt diff -2.2248640060424805
+diff 2.5236339569091797
+--------------------------------
+clean logit diff 1.8429203033447266
+corrupt logit diff -0.6682777404785156
+--------------------------------
+clean diff 1.8429203033447266
+corrupt diff -0.6682777404785156
+diff 2.511198043823242
+--------------------------------
+clean logit diff 0.5921192169189453
+corrupt logit diff -3.2400732040405273
+--------------------------------
+clean diff 0.5921192169189453
+corrupt diff -3.2400732040405273
+diff 3.8321924209594727
+--------------------------------
+19 18
+18
+comma token idx 13
+clean logit diff 1.1651668548583984
+corrupt logit diff -0.4690876007080078
+--------------------------------
+clean diff 1.1651668548583984
+corrupt diff -0.4690876007080078
+diff 1.6342544555664062
+--------------------------------
+clean logit diff -2.4145402908325195
+corrupt logit diff -3.936687469482422
+--------------------------------
+clean diff -2.4145402908325195
+corrupt diff -3.936687469482422
+diff 1.5221471786499023
+--------------------------------
+clean logit diff -1.1623201370239258
+corrupt logit diff -0.8692436218261719
+--------------------------------
+clean diff -1.1623201370239258
+corrupt diff -0.8692436218261719
+diff -0.2930765151977539
+--------------------------------
+20 19
+19
+comma token idx 14
+clean logit diff 1.7592105865478516
+corrupt logit diff 0.3582115173339844
+--------------------------------
+clean diff 1.7592105865478516
+corrupt diff 0.3582115173339844
+diff 1.4009990692138672
+--------------------------------
+clean logit diff -1.1377429962158203
+corrupt logit diff -1.5343704223632812
+--------------------------------
+clean diff -1.1377429962158203
+corrupt diff -1.5343704223632812
+diff 0.39662742614746094
+--------------------------------
+clean logit diff -3.1015939712524414
+corrupt logit diff -5.499194145202637
+--------------------------------
+clean diff -3.1015939712524414
+corrupt diff -5.499194145202637
+diff 2.3976001739501953
+--------------------------------
+13 13
+13
+comma token idx 8
+clean logit diff 5.472908020019531
+corrupt logit diff 2.255575180053711
+--------------------------------
+clean diff 5.472908020019531
+corrupt diff 2.255575180053711
+diff 3.2173328399658203
+--------------------------------
+clean logit diff 0.7915449142456055
+corrupt logit diff -0.20508384704589844
+--------------------------------
+clean diff 0.7915449142456055
+corrupt diff -0.20508384704589844
+diff 0.9966287612915039
+--------------------------------
+clean logit diff 1.608510971069336
+corrupt logit diff 1.8020858764648438
+--------------------------------
+clean diff 1.608510971069336
+corrupt diff 1.8020858764648438
+diff -0.1935749053955078
+--------------------------------
+20 20
+20
+comma token idx 15
+clean logit diff -1.5854778289794922
+corrupt logit diff -3.482113838195801
+--------------------------------
+clean diff -1.5854778289794922
+corrupt diff -3.482113838195801
+diff 1.8966360092163086
+--------------------------------
+clean logit diff 3.4383296966552734
+corrupt logit diff 0.7165470123291016
+--------------------------------
+clean diff 3.4383296966552734
+corrupt diff 0.7165470123291016
+diff 2.721782684326172
+--------------------------------
+clean logit diff 1.505899429321289
+corrupt logit diff 1.3031377792358398
+--------------------------------
+clean diff 1.505899429321289
+corrupt diff 1.3031377792358398
+diff 0.20276165008544922
+--------------------------------
+14 14
+14
+comma token idx 9
+clean logit diff -2.5030784606933594
+corrupt logit diff -2.8024587631225586
+--------------------------------
+clean diff -2.5030784606933594
+corrupt diff -2.8024587631225586
+diff 0.2993803024291992
+--------------------------------
+clean logit diff 1.2212743759155273
+corrupt logit diff 0.42308998107910156
+--------------------------------
+clean diff 1.2212743759155273
+corrupt diff 0.42308998107910156
+diff 0.7981843948364258
+--------------------------------
+clean logit diff -1.1903858184814453
+corrupt logit diff -1.5902252197265625
+--------------------------------
+clean diff -1.1903858184814453
+corrupt diff -1.5902252197265625
+diff 0.3998394012451172
+--------------------------------
+18 18
+18
+comma token idx 13
+clean logit diff 4.408445358276367
+corrupt logit diff -1.097747802734375
+--------------------------------
+clean diff 4.408445358276367
+corrupt diff -1.097747802734375
+diff 5.506193161010742
+--------------------------------
+clean logit diff -3.0856380462646484
+corrupt logit diff -4.283086776733398
+--------------------------------
+clean diff -3.0856380462646484
+corrupt diff -4.283086776733398
+diff 1.19744873046875
+--------------------------------
+clean logit diff 0.9274826049804688
+corrupt logit diff -0.6979484558105469
+--------------------------------
+clean diff 0.9274826049804688
+corrupt diff -0.6979484558105469
+diff 1.6254310607910156
+--------------------------------
+22 22
+22
+comma token idx 17
+clean logit diff 2.249155044555664
+corrupt logit diff 1.287740707397461
+--------------------------------
+clean diff 2.249155044555664
+corrupt diff 1.287740707397461
+diff 0.9614143371582031
+--------------------------------
+clean logit diff -0.905369758605957
+corrupt logit diff -3.1578168869018555
+--------------------------------
+clean diff -0.905369758605957
+corrupt diff -3.1578168869018555
+diff 2.2524471282958984
+--------------------------------
+clean logit diff 0.6384830474853516
+corrupt logit diff -1.3920841217041016
+--------------------------------
+clean diff 0.6384830474853516
+corrupt diff -1.3920841217041016
+diff 2.030567169189453
+--------------------------------
+19 19
+19
+comma token idx 14
+clean logit diff 2.6265363693237305
+corrupt logit diff -0.6203641891479492
+--------------------------------
+clean diff 2.6265363693237305
+corrupt diff -0.6203641891479492
+diff 3.2469005584716797
+--------------------------------
+clean logit diff 1.786031723022461
+corrupt logit diff -3.1472244262695312
+--------------------------------
+clean diff 1.786031723022461
+corrupt diff -3.1472244262695312
+diff 4.933256149291992
+--------------------------------
+clean logit diff 0.007418632507324219
+corrupt logit diff 0.06271171569824219
+--------------------------------
+clean diff 0.007418632507324219
+corrupt diff 0.06271171569824219
+diff -0.05529308319091797
+--------------------------------
+12 12
+12
+comma token idx 7
+clean logit diff 3.3193359375
+corrupt logit diff 1.7296295166015625
+--------------------------------
+clean diff 3.3193359375
+corrupt diff 1.7296295166015625
+diff 1.5897064208984375
+--------------------------------
+clean logit diff 9.30213737487793
+corrupt logit diff 7.512758255004883
+--------------------------------
+clean diff 9.30213737487793
+corrupt diff 7.512758255004883
+diff 1.7893791198730469
+--------------------------------
+clean logit diff 0.6366901397705078
+corrupt logit diff -2.4469785690307617
+--------------------------------
+clean diff 0.6366901397705078
+corrupt diff -2.4469785690307617
+diff 3.0836687088012695
+--------------------------------
+19 19
+19
+comma token idx 14
+clean logit diff 3.8901500701904297
+corrupt logit diff 5.04863166809082
+--------------------------------
+clean diff 3.8901500701904297
+corrupt diff 5.04863166809082
+diff -1.1584815979003906
+--------------------------------
+clean logit diff 3.0074501037597656
+corrupt logit diff 1.6906795501708984
+--------------------------------
+clean diff 3.0074501037597656
+corrupt diff 1.6906795501708984
+diff 1.3167705535888672
+--------------------------------
+clean logit diff 5.514941215515137
+corrupt logit diff 2.6018753051757812
+--------------------------------
+clean diff 5.514941215515137
+corrupt diff 2.6018753051757812
+diff 2.9130659103393555
+--------------------------------
+14 14
+14
+comma token idx 9
+clean logit diff 3.494344711303711
+corrupt logit diff 2.099241256713867
+--------------------------------
+clean diff 3.494344711303711
+corrupt diff 2.099241256713867
+diff 1.3951034545898438
+--------------------------------
+clean logit diff 7.254977226257324
+corrupt logit diff 7.681020736694336
+--------------------------------
+clean diff 7.254977226257324
+corrupt diff 7.681020736694336
+diff -0.4260435104370117
+--------------------------------
+clean logit diff 3.17758846282959
+corrupt logit diff 1.3451709747314453
+--------------------------------
+clean diff 3.17758846282959
+corrupt diff 1.3451709747314453
+diff 1.8324174880981445
+--------------------------------
+13 13
+13
+comma token idx 8
+clean logit diff 2.6493263244628906
+corrupt logit diff -2.3603553771972656
+--------------------------------
+clean diff 2.6493263244628906
+corrupt diff -2.3603553771972656
+diff 5.009681701660156
+--------------------------------
+clean logit diff 10.250452995300293
+corrupt logit diff 6.227519989013672
+--------------------------------
+clean diff 10.250452995300293
+corrupt diff 6.227519989013672
+diff 4.022933006286621
+--------------------------------
+clean logit diff 2.7007789611816406
+corrupt logit diff 1.6700496673583984
+--------------------------------
+clean diff 2.7007789611816406
+corrupt diff 1.6700496673583984
+diff 1.0307292938232422
+--------------------------------
+21 21
+21
+comma token idx 16
+clean logit diff 2.4258995056152344
+corrupt logit diff -2.3524169921875
+--------------------------------
+clean diff 2.4258995056152344
+corrupt diff -2.3524169921875
+diff 4.778316497802734
+--------------------------------
+clean logit diff 0.7595329284667969
+corrupt logit diff -5.13259220123291
+--------------------------------
+clean diff 0.7595329284667969
+corrupt diff -5.13259220123291
+diff 5.892125129699707
+--------------------------------
+clean logit diff 7.397695541381836
+corrupt logit diff 3.786008834838867
+--------------------------------
+clean diff 7.397695541381836
+corrupt diff 3.786008834838867
+diff 3.6116867065429688
+--------------------------------
+14 14
+14
+comma token idx 8
+clean logit diff -1.0345611572265625
+corrupt logit diff -0.40848731994628906
+--------------------------------
+clean diff -1.0345611572265625
+corrupt diff -0.40848731994628906
+diff -0.6260738372802734
+--------------------------------
+clean logit diff 0.11491775512695312
+corrupt logit diff -3.4099035263061523
+--------------------------------
+clean diff 0.11491775512695312
+corrupt diff -3.4099035263061523
+diff 3.5248212814331055
+--------------------------------
+clean logit diff 7.234025955200195
+corrupt logit diff 1.0980567932128906
+--------------------------------
+clean diff 7.234025955200195
+corrupt diff 1.0980567932128906
+diff 6.135969161987305
+--------------------------------
+16 16
+16
+comma token idx 11
+clean logit diff 0.7186260223388672
+corrupt logit diff -3.974397659301758
+--------------------------------
+clean diff 0.7186260223388672
+corrupt diff -3.974397659301758
+diff 4.693023681640625
+--------------------------------
+clean logit diff 0.8033180236816406
+corrupt logit diff -6.470881462097168
+--------------------------------
+clean diff 0.8033180236816406
+corrupt diff -6.470881462097168
+diff 7.274199485778809
+--------------------------------
+clean logit diff -2.025594711303711
+corrupt logit diff -4.993188858032227
+--------------------------------
+clean diff -2.025594711303711
+corrupt diff -4.993188858032227
+diff 2.9675941467285156
+--------------------------------
+20 20
+20
+comma token idx 15
+clean logit diff 1.5761566162109375
+corrupt logit diff -1.223252296447754
+--------------------------------
+clean diff 1.5761566162109375
+corrupt diff -1.223252296447754
+diff 2.7994089126586914
+--------------------------------
+clean logit diff 1.7735042572021484
+corrupt logit diff -0.9365177154541016
+--------------------------------
+clean diff 1.7735042572021484
+corrupt diff -0.9365177154541016
+diff 2.71002197265625
+--------------------------------
+clean logit diff -1.4672355651855469
+corrupt logit diff -6.109667778015137
+--------------------------------
+clean diff -1.4672355651855469
+corrupt diff -6.109667778015137
+diff 4.64243221282959
+--------------------------------
+21 21
+21
+comma token idx 16
+clean logit diff 4.019833564758301
+corrupt logit diff 2.0683345794677734
+--------------------------------
+clean diff 4.019833564758301
+corrupt diff 2.0683345794677734
+diff 1.9514989852905273
+--------------------------------
+clean logit diff 0.7804183959960938
+corrupt logit diff -3.0026111602783203
+--------------------------------
+clean diff 0.7804183959960938
+corrupt diff -3.0026111602783203
+diff 3.783029556274414
+--------------------------------
+clean logit diff -2.8499832153320312
+corrupt logit diff -3.1445112228393555
+--------------------------------
+clean diff -2.8499832153320312
+corrupt diff -3.1445112228393555
+diff 0.2945280075073242
+--------------------------------
