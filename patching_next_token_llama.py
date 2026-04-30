@@ -699,7 +699,7 @@ def average_attention_head_patching(
             for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-                if model_name == "gpt2":
+                if model_name == "gpt2" or model_name == "falcon7b":
                     correct_token = model.tokenizer.encode(correct_answer)[0]
                     incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
                 else:
