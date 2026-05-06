@@ -24,7 +24,7 @@ import gc
 ### PARSER ARGUMENTS
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default="llama3b", help="Model to use: gpt2, llama-3.2-3b, mistral7b, falcon7b")
+parser.add_argument("--model", type=str, default="llama3b", help="Model to use: gpt2, llama-3.2-3b, mistral7b, falcon7b, qwen7b")
 parser.add_argument("--intervention", type=str, default="residual_stream", help="Intervention to use: residual_stream, attention_heads")
 parser.add_argument("--dataset", type=str, default="extended_dataset.json", help="Dataset to use: data/combined_dataset.json")
 parser.add_argument("--averaging", type=bool, default=True, help="Whether to average the intervention results over the dataset")
@@ -131,7 +131,7 @@ def plot_ioi_patching_results(model, model_name,
                               plot_title="Normalized Logit Difference"):
     if model_name == "gpt2":
         N_LAYERS = len(model.transformer.h)
-    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
         N_LAYERS = len(model.model.layers)
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -187,7 +187,7 @@ def plot_ioi_patching_results_attention(model, model_name,
 
     if model_name == "gpt2":
         N_LAYERS = len(model.transformer.h)
-    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
         N_LAYERS = len(model.model.layers)
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -242,7 +242,7 @@ def visualize_attention(model, model_name, prompt, layer, head, prompt_idiom):
         # in the output tuple of the GPT2Attention module.
         if model_name == "gpt2":
             attn_weights = model.transformer.h[layer].attn.output[1][0, head].save()
-        elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+        elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
             attn_weights = model.model.layers[layer].self_attn.output[1][0, head].save()
         else:
             raise ValueError(f"Invalid model: {model_name}")
@@ -277,7 +277,7 @@ def residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal,
         clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
         if model_name == "gpt2":
             clean_hs = [model.transformer.h[i].output[0].save() for i in range(N_LAYERS)]
-        elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+        elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
             clean_hs = [model.model.layers[i].output[0].save() for i in range(N_LAYERS)]
         else:
             raise ValueError(f"Invalid model: {model_name}")
@@ -305,7 +305,7 @@ def residual_stream_patching(N_LAYERS, model_name, prompt_idiom, prompt_literal,
             with model.trace(prompt_literal) as tracer:
                 if model_name == "gpt2":
                     model.transformer.h[layer_idx].output[0][:, token_idx, :] = clean_hs[:, token_idx, :]
-                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                     model.model.layers[layer_idx].output[0][ token_idx, :] = clean_hs[ token_idx, :]
                 else:
                     raise ValueError(f"Invalid model: {model_name}")
@@ -414,7 +414,7 @@ def average_residual_stream_patching(
             for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-                if model_name == "gpt2" or model_name == "falcon7b":
+                if model_name == "gpt2" or model_name == "falcon7b" or model_name == "qwen7b":
                     correct_token = model.tokenizer.encode(correct_answer)[0]
                     incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
                 else:
@@ -456,7 +456,7 @@ def average_residual_stream_patching(
                     with model.trace(prompt_idiom):
                         if model_name == "gpt2":
                             clean_layer_saved = model.transformer.h[layer_idx].output[0].save()
-                        elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                        elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                             clean_layer_saved = model.model.layers[layer_idx].output[0].save()
                         else:
                             raise ValueError(f"Invalid model: {model_name}")
@@ -471,7 +471,7 @@ def average_residual_stream_patching(
                                 if model_name == "gpt2":
                                     layer_out = model.transformer.h[layer_idx].output[0]
                                     layer_out[:, token_idx, :] = clean_hs[:, token_idx, :].to(layer_out.dtype)
-                                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                                     layer_out = model.model.layers[layer_idx].output[0]
                                     if clean_hs.ndim == 3:
                                         layer_out[token_idx, :] = clean_hs[0, token_idx, :].to(layer_out.dtype)
@@ -572,7 +572,7 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
             for layer_idx in range(N_LAYERS):
                 if model_name == "gpt2":
                     z = model.transformer.h[layer_idx].attn.c_proj.input
-                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                     z = model.model.layers[layer_idx].self_attn.o_proj.input
                 else:
                     raise ValueError(f"Invalid model: {model_name}")
@@ -622,7 +622,7 @@ def attention_head_patching(N_LAYERS, N_HEADS, D_HEADS, model_name, prompt_idiom
                 with tracer.invoke(prompt_literal) as invoker:
                     if model_name == "gpt2":
                         z = model.transformer.h[layer_idx].attn.c_proj.input
-                    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                         z = model.model.layers[layer_idx].self_attn.o_proj.input
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -699,7 +699,7 @@ def average_attention_head_patching(
             for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-                if model_name == "gpt2" or model_name == "falcon7b":
+                if model_name == "gpt2" or model_name == "falcon7b" or model_name == "qwen7b":
                     correct_token = model.tokenizer.encode(correct_answer)[0]
                     incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
                 else:
@@ -729,7 +729,7 @@ def average_attention_head_patching(
                             with tracer.invoke(prompt_idiom) as invoker:
                                 if model_name == "gpt2":
                                     z_clean = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                                     z_clean = model.model.layers[layer_idx].self_attn.o_proj.input
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -740,7 +740,7 @@ def average_attention_head_patching(
                             with tracer.invoke(prompt_literal) as invoker:
                                 if model_name == "gpt2":
                                     z = model.transformer.h[layer_idx].attn.c_proj.input
-                                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                                     z = model.model.layers[layer_idx].self_attn.o_proj.input
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -764,7 +764,7 @@ def average_attention_head_patching(
         raise ValueError("No combinations were processed. Check start/max arguments.")
     average_patching_results = accumulated_results / total_combinations
 
-    if model_name =="llama3b" or model_name =="mistral7b" or model_name =="falcon7b":
+    if model_name =="llama3b" or model_name =="mistral7b" or model_name =="falcon7b" or model_name =="qwen7b":
         flat_results = average_patching_results.flatten()
         top_values, top_indices = torch.topk(flat_results, 34)
 
@@ -945,7 +945,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
             try:
                 if model_name == "gpt2":
                     and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                     and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
                     print(f"and token idx {and_token_idx}")
                 else:
@@ -968,7 +968,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                     clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
                     if model_name == "gpt2":
                         clean_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                         clean_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -987,7 +987,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                     corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
                     if model_name == "gpt2":
                         corrupted_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                         corrupted_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
                     else:
                         raise ValueError(f"Invalid model: {model_name}")
@@ -1022,7 +1022,7 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                             with model.trace(prompt_literal) as tracer:
                                 if model_name == "gpt2":
                                     model.transformer.h[layer_idx].mlp.c_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
-                                elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+                                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
                                     model.model.layers[layer_idx].mlp.down_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
                                 else:
                                     raise ValueError(f"Invalid model: {model_name}")
@@ -1129,7 +1129,7 @@ def run_average_mlp_patching(dataset, N_LAYERS, model_name):
     idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
     if model_name == "gpt2":
         and_token = model.tokenizer.encode(",")[0]
-    elif model_name in ("llama3b", "mistral7b", "falcon7b"):
+    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
         and_token = model.tokenizer.encode(",")[1]
     else:
         raise ValueError(f"Invalid model: {model_name}")
@@ -1976,6 +1976,54 @@ if __name__ == "__main__":
         N_LAYERS = len(model.model.layers)
         N_HEADS = 24
         D_MODEL = 3072
+        D_HEADS = D_MODEL // N_HEADS
+        if args.intervention == "residual_stream":
+            if args.averaging:
+                print("Running average residual stream patching")
+                run_average_residual_stream_patching(
+                    dataset, N_LAYERS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
+            else:
+                print("Running residual stream patching")
+                run_residual_stream_patching(dataset, N_LAYERS, model_name)
+        elif args.intervention == "mlp":
+            if args.averaging:
+                print("Running average MLP patching")
+                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+        elif args.intervention == "attention_head":
+            if args.averaging:
+                print("Running average attention head patching")
+                run_average_attention_head_patching(
+                    dataset, N_LAYERS, N_HEADS, D_HEADS, model_name,
+                    cache_dtype=cache_dtype,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
+            else:
+                print("Running attention head patching")
+                run_attention_head_patching(dataset, N_LAYERS, N_HEADS, D_HEADS, model_name)
+        else:
+            raise ValueError(f"Invalid intervention: {args.intervention}")
+    elif args.model == "qwen7b":
+        model_name = "qwen7b"
+        # token
+
+        access_token = os.environ.get('HF_TOKEN_LLAMA')
+        if access_token is None:
+            raise ValueError("HF_TOKEN_LLAMA is not set")
+        model = LanguageModel("Qwen/Qwen2.5-7B", device_map=device_map, token = access_token)
+        N_LAYERS = len(model.model.layers)
+        N_HEADS = 28
+        D_MODEL = 3584
         D_HEADS = D_MODEL // N_HEADS
         if args.intervention == "residual_stream":
             if args.averaging:

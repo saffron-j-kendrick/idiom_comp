@@ -71,3 +71,6 @@ coverage.xml
 # OS files
 .DS_Store
 Thumbs.db
+
+# Large data files (representations)
+data/representations/
