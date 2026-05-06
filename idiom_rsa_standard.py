@@ -108,7 +108,8 @@ process_sent = lambda x: [y for y in nltk.word_tokenize(x.strip().lower()) if y.
 
 
 
-model_names = ["openai-community/gpt2", 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "Qwen/Qwen2.5-7B","mistralai/Mistral-7B-v0.1"]
+# model_names = ["openai-community/gpt2", 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "Qwen/Qwen2.5-7B","mistralai/Mistral-7B-v0.1"]
+
 ## RDMS
 phrases = np.array(df['expression'].tolist())
 
@@ -239,6 +240,17 @@ def corr_within_group(rdm_a, rdm_b):
 
 
 
+
+
+
+
+### 
+
+model_names = ["openai-community/gpt2", "meta-llama/Llama-3.2-3B"]
+
+
+
+
 load = False
 
 if load:
@@ -280,15 +292,15 @@ else:
                 
                     if rep == 'final_word':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'final_noun':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_head_standard/{}_layer_{}_final_head_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_head_standard_v2/{}_layer_{}_final_head_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'final_verb':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_modifier_standard/{}_layer_{}_final_modifier_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_modifier_standard_v2/{}_layer_{}_final_modifier_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -333,6 +345,8 @@ for y, ylim in zip(['same_relation_group_rdm_corr'], [(-0.4, 1)]):
     print(y)
     single_fig_size = 4
     fig = plt.figure(figsize=(fig_shape[1] * 3.25, fig_shape[0] * 3.25, ))
+    fig.suptitle('Standard, full region', fontsize=12)
+
 
     grid_height = fig_shape[0] * single_fig_size
     grid_width = fig_shape[1] * single_fig_size
@@ -370,8 +384,8 @@ for y, ylim in zip(['same_relation_group_rdm_corr'], [(-0.4, 1)]):
 
         g.set_title(model, fontsize = 9);
     plt.tight_layout()
-    plt.savefig('figures/idioms_standard.png', format = 'png')
-    plt.savefig('figures/idioms_standard.eps', format='eps')
+    plt.savefig('figures/idioms_standard_v2.png', format = 'png')
+    plt.savefig('figures/idioms_standard_v2.eps', format='eps')
     fig.show()
     
 plt.tight_layout()
@@ -381,21 +395,19 @@ plt.show()
 
 
 
-
-
 load = False
 
 if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_standard_with_mask.csv')
-    with open('idiom_correlation_dict_standard_with_mask.pkl', 'rb') as f:
-        idiom_correlation_dict6 = pickle.load(f)
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_standard.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
 else:
     rows = []
     i = 0
     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
 
     representations = ["final_verb", "final_noun", "final_word"]
-    idiom_correlation_dict6 = {}
+    idiom_correlation_dict5 = {}
 
     for model_name in model_names:
         print(model_name)
@@ -424,15 +436,15 @@ else:
                 
                     if rep == 'final_word':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'final_noun':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_head_standard/{}_layer_{}_final_head_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_head_standard_v2/{}_layer_{}_final_head_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'final_verb':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_modifier_standard/{}_layer_{}_final_modifier_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_modifier_standard_v2/{}_layer_{}_final_modifier_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -456,16 +468,16 @@ else:
                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'final_word':
-                            idiom_correlation_dict6['{}_{}'.format(model_name, layer)] = corrs 
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard_with_mask.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict6, f, pickle.HIGHEST_PROTOCOL)
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_standard_with_mask.csv')
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_standard.csv')
 
 
 for y, ylim in zip(['same_relation_group_rdm_corr'], [(-0.4, 1)]):
@@ -477,6 +489,8 @@ for y, ylim in zip(['same_relation_group_rdm_corr'], [(-0.4, 1)]):
     print(y)
     single_fig_size = 4
     fig = plt.figure(figsize=(fig_shape[1] * 3.25, fig_shape[0] * 3.25, ))
+    fig.suptitle('Standard, outlined region', fontsize=12)
+
 
     grid_height = fig_shape[0] * single_fig_size
     grid_width = fig_shape[1] * single_fig_size
@@ -514,9 +528,10 @@ for y, ylim in zip(['same_relation_group_rdm_corr'], [(-0.4, 1)]):
 
         g.set_title(model, fontsize = 9);
     plt.tight_layout()
-    plt.savefig('figures/idioms_standard_with_mask.png', format = 'png')
-    plt.savefig('figures/idioms_standard_with_mask.eps', format='eps')
+    plt.savefig('figures/idioms_standard_v2_with_mask.png', format = 'png')
+    plt.savefig('figures/idioms_standard_v2_with_mask.eps', format='eps')
     fig.show()
     
 plt.tight_layout()
 plt.show()
+
