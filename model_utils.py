@@ -13,7 +13,7 @@ access_token = os.environ.get('HF_TOKEN_LLAMA')
 
 # dev_model_configs = {"tiiuae/Falcon3-7B-Base": (AutoConfig.from_pretrained("tiiuae/Falcon3-7B-Base"), AutoModelForCausalLM.from_pretrained("tiiuae/Falcon3-7B-Base"), AutoTokenizer.from_pretrained("tiiuae/Falcon3-7B-Base"), "tiiuae/Falcon3-7B-Base")    }
 
-dev_model_configs = {"Qwen/Qwen2.5-7B" : (AutoConfig.from_pretrained("Qwen/Qwen2.5-7B"), AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-7B"), AutoTokenizer.from_pretrained("Qwen/Qwen2.5-7B"), "Qwen/Qwen2.5-7B")}
+# dev_model_configs = {"Qwen/Qwen2.5-7B" : (AutoConfig.from_pretrained("Qwen/Qwen2.5-7B"), AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-7B"), AutoTokenizer.from_pretrained("Qwen/Qwen2.5-7B"), "Qwen/Qwen2.5-7B")}
 
 # dev_model_configs = {"deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" : (AutoConfig.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"), AutoModelForCausalLM.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"), AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"), "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B")}
 

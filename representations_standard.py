@@ -423,7 +423,7 @@ def get_tokens_from_layers(
 def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=None, load_if_available=False, layers=None, torch_device="cpu", representations=["mean_pooled"], rep_loc='./data', save_attention=False):
 
     if representations == None:
-        representations = ["final_word_standard"]
+        representations = ["final_head_standard", "final_modifier_standard", "final_word_standard"]
 
 
     sentences = data_utils.get_standard_sentences()
@@ -464,7 +464,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence = data_utils.load_correct_form_standard()
-            get_final_mod_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_modifier_standard', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_mod_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_modifier_standard_v2', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
         
         if "final_head_standard" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
@@ -472,7 +472,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence = data_utils.load_correct_form_standard()
-            get_final_head_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_head_standard', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_head_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_head_standard_v2', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
 
         if "final_word_standard" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)
@@ -480,7 +480,7 @@ def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=N
             attention_mask = inputs["attention_mask"]
             #input_ids, attention_mask = unpack_dict(tokeniser.batch_encode_plus(sentences.tolist(), max_length=512, return_tensors='pt', pad_to_max_length=True))
             corrected_form_compounds_per_sentence_and = data_utils.load_correct_form_standard_and()
-            get_final_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_and, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_word_standard', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
+            get_final_word_token_from_layers(model_name, model, tokeniser, input_ids, attention_mask, corrected_form_compounds_per_sentence_and, layers=layers, load_if_available=load_if_available, batch_size=batch_size, rep_type='final_word_standard_v2', rep_loc=rep_loc, torch_device=torch_device, save_attention=save_attention)
 
         if "b_word_standard" in representations:
             inputs = tokeniser(sentences.tolist(),  max_length = 512, return_tensors="pt", truncation=True, padding=True)

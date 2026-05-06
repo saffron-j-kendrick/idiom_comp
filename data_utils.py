@@ -8,11 +8,11 @@ import rsa_utils
 
 
 def load_correct_form_standard(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_standard.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_standard_v2.xlsx'.format(data_loc))
     return list(zip(df.verb_match.tolist(), df.noun_match.tolist()))
 
 def load_correct_form_standard_and(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_standard.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_standard_and_v2.xlsx'.format(data_loc))
     return list(zip(df.noun_match.tolist(), df.and_match.tolist()))
 
 def load_correct_form_standard_bs(data_loc='data'):
@@ -20,17 +20,17 @@ def load_correct_form_standard_bs(data_loc='data'):
     return list(zip(df.b1_match.tolist(), df.b2_match.tolist()))
 
 def get_standard_sentences(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_v2.xlsx'.format(data_loc))
     sentences = np.array(df['sentence'].tolist())
     return sentences
 
 def get_idiom_modifier_head_words_per_sentence_standard(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['verb'].tolist(), df['noun'].tolist())))
     return mod_head_tuples_per_sentence
 
 def get_idiom_modifier_head_words_per_sentence_standard_and(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['noun'].tolist(), df['and'].tolist())))
     return mod_head_tuples_per_sentence
 
