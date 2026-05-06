@@ -42,68 +42,68 @@ def get_idiom_modifier_head_words_per_sentence_standard_bs(data_loc='data'):
 
 
 def load_correct_form_context(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_context_v2.xlsx'.format(data_loc))
     return list(zip(df.verb_match.tolist(), df.noun_match.tolist()))
 
 def load_correct_form_context_and(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_context_v2.xlsx'.format(data_loc))
     return list(zip(df.noun_match.tolist(), df.and_match.tolist()))
 
 def load_correct_form_context_bs(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_context_v2.xlsx'.format(data_loc))
     return list(zip(df.b1_match.tolist(), df.b2_match.tolist()))
 
 def get_context_sentences(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_context_v2.xlsx'.format(data_loc))
     sentences = np.array(df['sentence'].tolist())
     return sentences
 
 def get_idiom_modifier_head_words_per_sentence_context(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['verb'].tolist(), df['noun'].tolist())))
     return mod_head_tuples_per_sentence
 
 def get_idiom_modifier_head_words_per_sentence_context_and(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['noun'].tolist(), df['and'].tolist())))
     return mod_head_tuples_per_sentence
 
 def get_idiom_modifier_head_words_per_sentence_context_bs(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['b1'].tolist(), df['b2'].tolist())))
     return mod_head_tuples_per_sentence
 
 
 
 def load_correct_form_no_context(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_no_context_v2.xlsx'.format(data_loc))
     return list(zip(df.verb_match.tolist(), df.noun_match.tolist()))
 
 def load_correct_form_no_context_and(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_no_context_v2.xlsx'.format(data_loc))
     return list(zip(df.noun_match.tolist(), df.and_match.tolist()))
 
 def load_correct_form_no_context_bs(data_loc='data'):
-    df = pd.read_excel('{}/correct_form_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/correct_form_no_context_v2.xlsx'.format(data_loc))
     return list(zip(df.b1_match.tolist(), df.b2_match.tolist()))
 
 def get_no_context_sentences(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_no_context_v2.xlsx'.format(data_loc))
     sentences = np.array(df['sentence'].tolist())
     return sentences
 
 def get_idiom_modifier_head_words_per_sentence_no_context(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_no_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['verb'].tolist(), df['noun'].tolist())))
     return mod_head_tuples_per_sentence
 
 def get_idiom_modifier_head_words_per_sentence_no_context_and(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_no_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['noun'].tolist(), df['and'].tolist())))
     return mod_head_tuples_per_sentence
 
 def get_idiom_modifier_head_words_per_sentence_no_context_bs(data_loc='data'):
-    df = pd.read_excel('{}/standard_sentences_no_context.xlsx'.format(data_loc))
+    df = pd.read_excel('{}/standard_sentences_no_context_v2.xlsx'.format(data_loc))
     mod_head_tuples_per_sentence = np.array(list(zip(df['b1'].tolist(), df['b2'].tolist())))
     return mod_head_tuples_per_sentence
 
