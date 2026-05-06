@@ -341,7 +341,7 @@ def mean_pool_selector(model, model_name, tokeniser, token_reps, input_ids, laye
 def get_tokens_from_layers(
     model_name, model, tokeniser, input_ids, attention_mask, layers,
     token_selector=final_word_selector, load_if_available=True, batch_size=1,
-    rep_type="sentence_pair_cls", torch_device="cuda", save_reps=True,
+    rep_type="sentence_pair_cls", torch_device="cpu", save_reps=True,
     data_loc='./data', add_arg_dict={}, middle_dim=None, save_attention=False
 ):
     """
@@ -416,7 +416,7 @@ def get_tokens_from_layers(
 
 
 
-def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=None, load_if_available=False, layers=None, torch_device="cuda", representations=["mean_pooled"], rep_loc='./data', save_attention=False):
+def extract_and_save_representations(amount_of_dataset=1, batch_size=1, models=None, load_if_available=False, layers=None, torch_device="cpu", representations=["mean_pooled"], rep_loc='./data', save_attention=False):
 
     if representations == None:
         representations = ["final_word_context"]

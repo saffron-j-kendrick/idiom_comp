@@ -362,9 +362,7 @@ def _register_attention_head_o_proj_hooks(model, layer_to_heads):
     if not hasattr(model, "model") or not hasattr(model.model, "layers"):
         raise AttributeError("Expected a CausalLM with model.model.layers (e.g. Llama).")
     cfg = model.config
-    default_head_dim = getattr(
-        cfg, "head_dim", cfg.hidden_size // cfg.num_attention_heads
-    )
+    default_head_dim = getattr(cfg, "head_dim", None) or (cfg.hidden_size // cfg.num_attention_heads)
     handles = []
     # Ensure deterministic intervention order by registering hooks
     # from lowest -> highest layer index.
@@ -629,7 +627,7 @@ def get_tokens_from_layers(model_name, model, tokeniser, input_ids, attention_ma
 
 
 def load_significant_neurons(
-    path="data/top_168_heads_falcon_from_accumulator.json",
+    path="data/top_256_heads_mistral_from_accumulator.json",
 ):
     """Load JSON of (layer, head) pairs into {layer: [heads,...]} (0-based layers/heads)."""
     with open(path, "r") as f:
@@ -798,10 +796,11 @@ def generate_random_mlp_components_by_layer_from_significant_file(significant_pa
 
 
 def attention_head_masking():
-    model_name = "tiiuae/Falcon3-7B-Base"
+    model_name = "mistralai/Mistral-7B-v0.1"
     batch_size = 1
-    layers = list(range(1, 29))
-    torch_device = "cuda" if torch.cuda.is_available() else "cpu"
+    layers = list(range(1, 33))
+    #torch_device = "cuda" if torch.cuda.is_available() else "cpu"
+    torch_device = "cpu"
     rep_loc = "./data"
     
     print(f"Model: {model_name}")
@@ -834,7 +833,7 @@ def attention_head_masking():
     top_mlp_dict = None
     
 
-    rep_type = f'final_word_standard_attention_head_masked_significant_168'
+    rep_type = f'final_word_standard_attention_head_masked_significant_256'
 
     get_final_word_token_from_layers(
         model_name,
@@ -857,10 +856,11 @@ def attention_head_masking():
 
 
 def random_attention_head_masking():
-    model_name = "tiiuae/Falcon3-7B-Base"
+    model_name = "mistralai/Mistral-7B-v0.1"
     batch_size = 1
-    layers = list(range(1, 29))
-    torch_device = "cuda" if torch.cuda.is_available() else "cpu"
+    layers = list(range(1, 33))
+    # torch_device = "cuda" if torch.cuda.is_available() else "cpu"
+    torch_device = "cpu"
     rep_loc = "./data"
     
     print(f"Model: {model_name}")
@@ -889,7 +889,7 @@ def random_attention_head_masking():
     attention_mask = attention_mask.to(torch_device)
     model.to(torch_device)
 
-    significant_path = "data/top_168_heads_falcon_from_accumulator.json"
+    significant_path = "data/top_102_heads_mistral_from_accumulator.json"
     num_random_runs = 5
     base_random_seed = 10042
 
@@ -899,7 +899,7 @@ def random_attention_head_masking():
             significant_path, model, seed=seed
         )
         top_mlp_dict = None
-        rep_type = f"final_word_standard_attention_head_masked_168_random_run{run_idx + 1}"
+        rep_type = f"final_word_standard_attention_head_masked_102_random_run{run_idx + 1}"
 
         print(
             "Random head masking run %d/%d (seed=%s); layers -> head counts: %s"
@@ -1067,4 +1067,4 @@ def random_mlp_attention_masking():
         )
 
 if __name__ == "__main__":
-    attention_head_masking()
+    random_attention_head_masking()
