@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForMasked
 
 access_token = os.environ.get('HF_TOKEN_LLAMA')
 
-# dev_model_configs = {'meta-llama/Llama-3.2-3B' : (AutoConfig.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token), AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token), AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token) , 'meta-llama/Llama-3.2-3B')}
+dev_model_configs = {'meta-llama/Llama-3.2-3B' : (AutoConfig.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token), AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token), AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token = access_token) , 'meta-llama/Llama-3.2-3B')}
 
 # dev_model_configs = {'mistralai/Mistral-7B-v0.1' : (AutoConfig.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", token = access_token), "mistralai/Mistral-7B-v0.1")}
 
