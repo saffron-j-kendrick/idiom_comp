@@ -42,6 +42,9 @@ parser.add_argument("--accumulator_path", type=str, default="", help="Path to .n
 def _to_numpy(saved_or_tensor):
     """Resolve nnsight-saved objects or tensors to a CPU numpy array."""
     tensor = saved_or_tensor.value if hasattr(saved_or_tensor, "value") else saved_or_tensor
+    # nnsight resolves module .input as a tuple (tensor,) — unwrap if needed
+    if isinstance(tensor, (tuple, list)) and len(tensor) == 1:
+        tensor = tensor[0]
     if isinstance(tensor, np.ndarray):
         return tensor
     if not torch.is_tensor(tensor):
@@ -123,6 +126,25 @@ def _save_residual_accumulator(path, total_results, counts):
         total_results=total_results,
         counts=counts,
     )
+
+def _load_mlp_accumulator(path, n_layers, window_size):
+    if not path or not os.path.exists(path):
+        return np.zeros((n_layers, window_size)), np.zeros((n_layers, window_size)), None, None
+    data = np.load(path)
+    total_results = data["total_results"] if "total_results" in data else np.zeros((n_layers, window_size))
+    counts = data["counts"] if "counts" in data else np.zeros((n_layers, window_size))
+    mlp_dim_totals = data["mlp_dim_totals"] if "mlp_dim_totals" in data else None
+    mlp_dim_counts = data["mlp_dim_counts"] if "mlp_dim_counts" in data else None
+    return total_results, counts, mlp_dim_totals, mlp_dim_counts
+
+def _save_mlp_accumulator(path, total_results, counts, mlp_dim_totals, mlp_dim_counts):
+    if not path:
+        return
+    save_dict = dict(total_results=total_results, counts=counts)
+    if mlp_dim_totals is not None:
+        save_dict["mlp_dim_totals"] = mlp_dim_totals
+        save_dict["mlp_dim_counts"] = mlp_dim_counts
+    np.savez(path, **save_dict)
 
 def plot_ioi_patching_results(model, model_name,
                               ioi_patching_results,
@@ -898,35 +920,51 @@ def run_average_attention_head_patching(
     fig = plot_ioi_patching_results_attention(model, model_name, average_patching_results.tolist(), x_labels, prompt_idiom, f"Average {model_name} Attention Head Patching across {len(dataset)} Idioms")
     return fig
 
-def average_mlp_patching(N_LAYERS, dataset, model_name):
+def average_mlp_patching(
+    N_LAYERS,
+    dataset,
+    model_name,
+    cache_dtype=torch.bfloat16,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
     """ patch the MLP layers"""
 
-    
     BEFORE = 8
     AFTER = 4
     WINDOW_SIZE = BEFORE + AFTER + 1
 
-    total_results = np.zeros((N_LAYERS, WINDOW_SIZE))
-    counts = np.zeros((N_LAYERS, WINDOW_SIZE))
-    mlp_dim_totals = None
-    mlp_dim_counts = None
-    
+    total_results, counts, mlp_dim_totals, mlp_dim_counts = _load_mlp_accumulator(
+        accumulator_path, N_LAYERS, WINDOW_SIZE
+    )
 
+    is_gpt2_family = model_name == "gpt2"
+    is_llama_style_family = model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b")
+    if not (is_gpt2_family or is_llama_style_family):
+        raise ValueError(
+            f"Invalid model for average_mlp_patching: {model_name}. "
+            "Expected one of: gpt2, llama3b, mistral7b, falcon7b, qwen7b."
+        )
 
-    # for pair in dataset:
-    #     prompt_idiom = pair["prompt_idiom"]
-    #     prompt_literal = pair["prompt_literal"]
-    #     correct_answer = pair["correct_answer"]
-    #     incorrect_answer = pair["incorrect_answer"]
-    for idiom_entry in dataset:
+    processed_idioms = 0
+    for idiom_idx, idiom_entry in enumerate(dataset):
+        if idiom_idx < start_idiom:
+            continue
+        if max_idioms > 0 and processed_idioms >= max_idioms:
+            break
+        processed_idioms += 1
         idiom_id = idiom_entry["id"]
         pairs = idiom_entry["pairs"]
-        for pair in pairs:
+        for pair_idx, pair in enumerate(pairs):
+            if max_pairs_per_idiom > 0 and pair_idx >= max_pairs_per_idiom:
+                break
             prompt_idiom = pair["prompt_idiom"]
             prompt_literal = pair["prompt_literal"]
             idiom_answers = pair["idiom_answers"]
             literal_answers = pair["literal_answers"]
-          
 
             # tokens
             idiom_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
@@ -935,64 +973,67 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
             min_token_len = min(len(idiom_tokens), len(literal_tokens))
             print(min_token_len)
 
-            if model_name == "gpt2":
-                and_token = model.tokenizer.encode(",")[0]
-            else:
-                and_token = model.tokenizer.encode(",")[1]
-                print(f"and token {and_token}")
-
-            # Find position of "and"
             try:
-                if model_name == "gpt2":
-                    and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
-                    and_token_idx = (literal_tokens == and_token).nonzero(as_tuple=True)[0].item()
-                    print(f"and token idx {and_token_idx}")
-                else:
-                    raise ValueError(f"Invalid model: {model_name}")
+                and_token_idx = _find_delimiter_token_index(model.tokenizer, prompt_literal, delimiter=",")
+                print(f"comma token idx {and_token_idx}")
             except (RuntimeError, ValueError, IndexError):
-                print(f"Skipping {pair['id']}: 'and' not found.")
+                print(f"Skipping idiom={idiom_id}, pair_idx={pair_idx}: comma delimiter not found.")
                 continue
 
-
-            for answer_idx in range(3):
+            n_answers = min(max_answers, len(idiom_answers), len(literal_answers))
+            for answer_idx in range(n_answers):
                 correct_answer = idiom_answers[answer_idx]
                 incorrect_answer = literal_answers[answer_idx]
-                correct_token = model.tokenizer.encode(correct_answer)[1]
-                incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
+                if model_name == "gpt2" or model_name == "falcon7b" or model_name == "qwen7b":
+                    correct_token = model.tokenizer.encode(correct_answer)[0]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[0]
+                else:
+                    correct_token = model.tokenizer.encode(correct_answer)[1]
+                    incorrect_token = model.tokenizer.encode(incorrect_answer)[1]
                 correct_answer_idx = correct_token
                 incorrect_answer_idx = incorrect_token
-                
+
                 # clean run
+                clean_mlp = []
                 with model.trace(prompt_idiom) as tracer:
-                    clean_tokens = model.tokenizer(prompt_idiom, return_tensors="pt")["input_ids"][0]
-                    if model_name == "gpt2":
-                        clean_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
-                        clean_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
-                    else:
-                        raise ValueError(f"Invalid model: {model_name}")
+                    if is_gpt2_family:
+                        for i in range(N_LAYERS):
+                            clean_mlp.append(model.transformer.h[i].mlp.c_proj.input.save())
+                    elif is_llama_style_family:
+                        for i in range(N_LAYERS):
+                            clean_mlp.append(model.model.layers[i].mlp.down_proj.input.save())
                     clean_logits = model.lm_head.output.save()
-                    clean_logit_diff = (clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]).save()
-                
-                clean_logits_value = clean_logits[0, :min_token_len, :].detach().cpu().numpy()
-                np.save(f"data/clean_logits_value_{model_name}.npy", clean_logits_value)
-                # Convert Proxy objects to numpy arrays after trace context exits
+                    clean_logit_diff = (
+                        clean_logits[0, -1, correct_answer_idx] - clean_logits[0, -1, incorrect_answer_idx]
+                    ).save()
+                if not clean_mlp:
+                    raise RuntimeError(
+                        f"Failed to capture clean MLP activations for model={model_name}. "
+                        "The trace block completed without setting clean_mlp."
+                    )
+
                 clean_mlp_np = [_to_numpy(act) for act in clean_mlp]
                 for layer_idx, act in enumerate(clean_mlp_np):
                     np.save(f"data/clean_mlp_{layer_idx}_{model_name}.npy", act)
-                
+
                 # corrupted run
+                corrupted_mlp = []
                 with model.trace(prompt_literal) as tracer:
-                    corrupted_tokens = model.tokenizer(prompt_literal, return_tensors="pt")["input_ids"][0]
-                    if model_name == "gpt2":
-                        corrupted_mlp = [model.transformer.h[i].mlp.c_proj.input.save() for i in range(N_LAYERS)]
-                    elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
-                        corrupted_mlp = [model.model.layers[i].mlp.down_proj.input.save() for i in range(N_LAYERS)]
-                    else:
-                        raise ValueError(f"Invalid model: {model_name}")
+                    if is_gpt2_family:
+                        for i in range(N_LAYERS):
+                            corrupted_mlp.append(model.transformer.h[i].mlp.c_proj.input.save())
+                    elif is_llama_style_family:
+                        for i in range(N_LAYERS):
+                            corrupted_mlp.append(model.model.layers[i].mlp.down_proj.input.save())
                     corrupted_logits = model.lm_head.output
-                    corrupted_logit_diff = (corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]).save()
+                    corrupted_logit_diff = (
+                        corrupted_logits[0, -1, correct_answer_idx] - corrupted_logits[0, -1, incorrect_answer_idx]
+                    ).save()
+                if not corrupted_mlp:
+                    raise RuntimeError(
+                        f"Failed to capture corrupted MLP activations for model={model_name}. "
+                        "The trace block completed without setting corrupted_mlp."
+                    )
 
                 if answer_idx == 0:
                     corrupted_mlp_np = [_to_numpy(act) for act in corrupted_mlp]
@@ -1009,38 +1050,67 @@ def average_mlp_patching(N_LAYERS, dataset, model_name):
                             mlp_dim_counts[layer_idx, :] += 1
 
                 # patching within the window
-                
                 for layer_idx in range(N_LAYERS):
-                    clean_mlp_np = np.load(f"data/clean_mlp_{layer_idx}_{model_name}.npy")
-                    clean_mlp = torch.from_numpy(clean_mlp_np)
-                    
+                    clean_mlp_layer = np.load(f"data/clean_mlp_{layer_idx}_{model_name}.npy")
+                    clean_mlp_tensor = torch.from_numpy(clean_mlp_layer).to(cache_dtype)
+
                     for offset in range(-BEFORE, AFTER + 1):
                         token_idx = and_token_idx + offset
                         matrix_col = offset + BEFORE
-                        if 0<= token_idx < min_token_len:
-
+                        if 0 <= token_idx < min_token_len:
                             with model.trace(prompt_literal) as tracer:
-                                if model_name == "gpt2":
-                                    model.transformer.h[layer_idx].mlp.c_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
-                                elif model_name in ("llama3b", "mistral7b", "falcon7b", "qwen7b"):
-                                    model.model.layers[layer_idx].mlp.down_proj.input[:, token_idx, :] = clean_mlp[:, token_idx, :]
-                                else:
-                                    raise ValueError(f"Invalid model: {model_name}")
-                                patched_logits = model.lm_head.output.save()
-                                patched_logit_diff = (patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx])
-                                patched_result = (patched_logit_diff - corrupted_logit_diff) / (clean_logit_diff - corrupted_logit_diff)
+                                if is_gpt2_family:
+                                    model.transformer.h[layer_idx].mlp.c_proj.input[:, token_idx, :] = \
+                                        clean_mlp_tensor[:, token_idx, :].to(
+                                            model.transformer.h[layer_idx].mlp.c_proj.input.dtype
+                                        )
+                                elif is_llama_style_family:
+                                    model.model.layers[layer_idx].mlp.down_proj.input[:, token_idx, :] = \
+                                        clean_mlp_tensor[:, token_idx, :].to(
+                                            model.model.layers[layer_idx].mlp.down_proj.input.dtype
+                                        )
+                                patched_logits = model.lm_head.output
+                                patched_logit_diff = (
+                                    patched_logits[0, -1, correct_answer_idx] - patched_logits[0, -1, incorrect_answer_idx]
+                                )
+                                patched_result = (
+                                    (patched_logit_diff - corrupted_logit_diff)
+                                    / (clean_logit_diff - corrupted_logit_diff)
+                                )
                                 patched_result_saved = patched_result.save()
-                                
-                        
 
-                            # Extract the value after the trace context exits
-                            total_results[layer_idx, matrix_col] += patched_result_saved.item()
+                            total_results[layer_idx, matrix_col] += _to_scalar(patched_result_saved)
                             counts[layer_idx, matrix_col] += 1
-    
+
+                    del clean_mlp_tensor
+                    gc.collect()
+                _save_mlp_accumulator(accumulator_path, total_results, counts, mlp_dim_totals, mlp_dim_counts)
+
     return total_results, counts, mlp_dim_totals, mlp_dim_counts
 
-def run_average_mlp_patching(dataset, N_LAYERS, model_name):
-    total_results, counts, mlp_dim_totals, mlp_dim_counts = average_mlp_patching(N_LAYERS, dataset, model_name)
+
+def run_average_mlp_patching(
+    dataset,
+    N_LAYERS,
+    model_name,
+    cache_dtype=torch.bfloat16,
+    max_idioms=0,
+    max_pairs_per_idiom=0,
+    max_answers=3,
+    start_idiom=0,
+    accumulator_path="",
+):
+    total_results, counts, mlp_dim_totals, mlp_dim_counts = average_mlp_patching(
+        N_LAYERS,
+        dataset,
+        model_name,
+        cache_dtype=cache_dtype,
+        max_idioms=max_idioms,
+        max_pairs_per_idiom=max_pairs_per_idiom,
+        max_answers=max_answers,
+        start_idiom=start_idiom,
+        accumulator_path=accumulator_path,
+    )
     avg_results = np.divide(total_results, counts, out=np.zeros_like(total_results), where=counts!=0)
     avg_mlp_dim_scores = np.divide(
         mlp_dim_totals,
@@ -1055,71 +1125,33 @@ def run_average_mlp_patching(dataset, N_LAYERS, model_name):
     WINDOW_SIZE = BEFORE + AFTER + 1
     #flat_results = avg_results.flatten()
     flat_results = torch.from_numpy(avg_results.flatten()).float()
-    top_values, top_indices = torch.topk(flat_results, 34)
-    top_components = []
-    for idx in top_indices:
-        layer = idx.item() // WINDOW_SIZE
-        component = idx.item() % WINDOW_SIZE
-        top_components.append((layer, component))
-    print(f"Top 34 components to patch: {top_components}")
-    # save
-    with open(f"top_34_mlp_components_{model_name}.json", "w") as f:
-        json.dump(top_components, f)
-
-    top_values, top_indices = torch.topk(flat_results, 67)
-    top_components = []
-    for idx in top_indices:
-        layer = idx.item() // WINDOW_SIZE
-        component = idx.item() % WINDOW_SIZE
-        top_components.append((layer, component))
-    print(f"Top 67 components to patch: {top_components}")
-    # save
-    with open(f"top_67_mlp_components_{model_name}.json", "w") as f:
-        json.dump(top_components, f)
-
-    top_values, top_indices = torch.topk(flat_results, 168)
-    top_components = []
-    for idx in top_indices:
-        layer = idx.item() // WINDOW_SIZE
-        component = idx.item() % WINDOW_SIZE
-        top_components.append((layer, component))
-    print(f"Top 168 components to patch: {top_components}")
-    # save
-    with open(f"top_168_mlp_components_{model_name}.json", "w") as f:
-        json.dump(top_components, f)
-
+    
     # Top actual MLP neuron dimensions: [layer, mlp_component]
     flat_dim_scores = torch.from_numpy(avg_mlp_dim_scores.flatten()).float()
     mlp_dim_size = avg_mlp_dim_scores.shape[1]
 
-    top_values, top_indices = torch.topk(flat_dim_scores, 34)
+    # get 10% of mlp diimensions
+    num_mlp_dimensions = int(mlp_dim_size * 0.1)
+
+    top_values, top_indices = torch.topk(flat_dim_scores, num_mlp_dimensions)
     top_mlp_dimensions = []
     for idx in top_indices:
         layer = idx.item() // mlp_dim_size
         mlp_component = idx.item() % mlp_dim_size
         top_mlp_dimensions.append((layer, mlp_component))
-    print(f"Top 34 MLP neuron dimensions: {top_mlp_dimensions}")
-    with open(f"top_34_mlp_dimensions_{model_name}.json", "w") as f:
+    print(f"Top 10% MLP neuron dimensions: {top_mlp_dimensions}")
+    with open(f"top_10_percent_mlp_dimensions_{model_name}.json", "w") as f:
         json.dump(top_mlp_dimensions, f)
 
-    top_values, top_indices = torch.topk(flat_dim_scores, 67)
+    num_mlp_dimensions = int(mlp_dim_size * 0.25)
+    top_values, top_indices = torch.topk(flat_dim_scores, num_mlp_dimensions)
     top_mlp_dimensions = []
     for idx in top_indices:
         layer = idx.item() // mlp_dim_size
         mlp_component = idx.item() % mlp_dim_size
         top_mlp_dimensions.append((layer, mlp_component))
-    print(f"Top 67 MLP neuron dimensions: {top_mlp_dimensions}")
-    with open(f"top_67_mlp_dimensions_{model_name}.json", "w") as f:
-        json.dump(top_mlp_dimensions, f)
-
-    top_values, top_indices = torch.topk(flat_dim_scores, 168)
-    top_mlp_dimensions = []
-    for idx in top_indices:
-        layer = idx.item() // mlp_dim_size
-        mlp_component = idx.item() % mlp_dim_size
-        top_mlp_dimensions.append((layer, mlp_component))
-    print(f"Top 168 MLP neuron dimensions: {top_mlp_dimensions}")
-    with open(f"top_168_mlp_dimensions_{model_name}.json", "w") as f:
+    print(f"Top 25% MLP neuron dimensions: {top_mlp_dimensions}")
+    with open(f"top_25_percent_mlp_dimensions_{model_name}.json", "w") as f:
         json.dump(top_mlp_dimensions, f)
 
 
@@ -1865,7 +1897,16 @@ if __name__ == "__main__":
         elif args.intervention =="mlp":
             if args.averaging:
                 print("Running average MLP patching")
-                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+                run_average_mlp_patching(
+                    dataset,
+                    N_LAYERS,
+                    model_name,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
         else:
             raise ValueError(f"Invalid intervention: {args.intervention}")
 
@@ -1899,7 +1940,16 @@ if __name__ == "__main__":
         elif args.intervention == "mlp":
             if args.averaging:
                 print("Running average MLP patching")
-                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+                run_average_mlp_patching(
+                    dataset,
+                    N_LAYERS,
+                    model_name,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
         elif args.intervention == "attention_head":
             if args.averaging:
                 print("Running average attention head patching")
@@ -1947,7 +1997,16 @@ if __name__ == "__main__":
         elif args.intervention == "mlp":
             if args.averaging:
                 print("Running average MLP patching")
-                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+                run_average_mlp_patching(
+                    dataset,
+                    N_LAYERS,
+                    model_name,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
         elif args.intervention == "attention_head":
             if args.averaging:
                 print("Running average attention head patching")
@@ -1995,7 +2054,16 @@ if __name__ == "__main__":
         elif args.intervention == "mlp":
             if args.averaging:
                 print("Running average MLP patching")
-                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+                run_average_mlp_patching(
+                    dataset,
+                    N_LAYERS,
+                    model_name,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
         elif args.intervention == "attention_head":
             if args.averaging:
                 print("Running average attention head patching")
@@ -2043,7 +2111,16 @@ if __name__ == "__main__":
         elif args.intervention == "mlp":
             if args.averaging:
                 print("Running average MLP patching")
-                run_average_mlp_patching(dataset, N_LAYERS, model_name)
+                run_average_mlp_patching(
+                    dataset,
+                    N_LAYERS,
+                    model_name,
+                    max_idioms=args.max_idioms,
+                    max_pairs_per_idiom=args.max_pairs_per_idiom,
+                    max_answers=args.max_answers,
+                    start_idiom=args.start_idiom,
+                    accumulator_path=args.accumulator_path,
+                )
         elif args.intervention == "attention_head":
             if args.averaging:
                 print("Running average attention head patching")

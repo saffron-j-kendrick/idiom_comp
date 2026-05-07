@@ -372,15 +372,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -1054,15 +1054,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -1426,15 +1426,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -1805,15 +1805,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -2487,15 +2487,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -2859,15 +2859,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -3189,6 +3189,1513 @@ plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_168.p
 plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_168.eps', format='eps')
 plt.show()
 
+# mlp for llama
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Llama 3.2 Attention Head Ablation 10%, MLP Ablation 10%, full region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'ttest'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_10_percent_mlp_10_percent.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_10_percent_mlp_10_percent.eps', format='eps')
+plt.show()
+
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Llama 3.2 Attention Head Ablation 10%, MLP Ablation 10%, outlined region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'wilcoxon'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_10_percent_mlp_10_percent_with_mask.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_10_percent_mlp_10_percent_with_mask.eps', format='eps')
+plt.show()
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Llama 3.2 Attention Head Ablation 25%, MLP Ablation 25%, full region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'ttest'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_25_percent_mlp_25_percent.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_25_percent_mlp_25_percent.eps', format='eps')
+plt.show()
+
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('Llama 3.2 Attention Head Ablation 25%, MLP Ablation 25%, outlined region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'wilcoxon'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_25_percent_mlp_25_percent_with_mask.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_llama_attention_head_25_percent_mlp_25_percent_with_mask.eps', format='eps')
+plt.show()
+
+
+
+
+
+
+
+
+
+
 
 
 ## need to add a signifcance test to the figure but use the wilcoxon test for the outlined region as this is non parametric. change the FDR to 'indep'
@@ -3283,15 +4790,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -3658,15 +5165,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -4032,15 +5539,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -4407,15 +5914,15 @@ else:
                 
                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
                     elif rep == 'no_context':
                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
@@ -4736,6 +6243,1507 @@ fig.tight_layout(rect=[0, 0, 1, 0.93])
 plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_36_with_mask.png', format='png')
 plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_36_with_mask.eps', format='eps')
 plt.show()
+
+
+# gpt with MLP masking
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('GPT Attention Head Ablation 10%, MLP Ablation 10%, full region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'ttest'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_10_percent_mlp_10_percent.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_10_percent_mlp_10_percent.eps', format='eps')
+plt.show()
+
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_standard_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_context_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent/{}_layer_{}_final_word_literal_attention_head_masked_10_percent_mlp_masked_10_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_10_percent_mlp_masked_10_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('GPT Attention Head Ablation 10%, MLP Ablation 10%, outlined region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'wilcoxon'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_10_percent_mlp_10_percent_with_mask.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_10_percent_mlp_10_percent_with_mask.eps', format='eps')
+plt.show()
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('GPT Attention Head Ablation 25%, MLP Ablation 25%, full region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'ttest'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_25_percent_mlp_25_percent.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_25_percent_mlp_25_percent.eps', format='eps')
+plt.show()
+
+
+
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_v2/{}_layer_{}_final_word_standard_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_v2/{}_layer_{}_final_word_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context_v2/{}_layer_{}_final_word_no_context_v2.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                       
+                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_standard_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                     
+                    elif rep == 'context':
+                        
+                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_context_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent/{}_layer_{}_final_word_literal_attention_head_masked_25_percent_mlp_masked_25_percent.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+                      
+
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+
+
+load = False
+
+if load:
+    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+        idiom_correlation_dict5 = pickle.load(f)
+else:
+    rows = []
+    i = 0
+    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+    representations = ["standard", "context", "no_context"]
+    idiom_correlation_dict5 = {}
+
+    for model_name in model_names:
+        print(model_name)
+        for layer in tqdm.tqdm(range(1, 33)):
+
+            if layer > 12 and 'gpt' in model_name:
+                continue
+            if layer > 12 and 'bert' in model_name:
+                continue
+            elif layer > 28 and 'llama' in model_name:
+                continue
+            elif layer > 28 and 'tiiuae' in model_name:
+                continue
+            elif layer > 28 and 'deepseek' in model_name:
+                continue
+            elif layer > 28 and 'Qwen2.5' in model_name:
+                continue
+
+
+            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+                
+            
+                for rep in representations:
+                
+                
+                
+                    if rep == 'standard':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_standard_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                     
+                    elif rep == 'context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_context_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+                       
+                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+                    elif rep == 'no_context':
+                        run_arrays = []
+                        for run_idx in range(1, 6):
+                            path = (
+                                'data/representations/{}/layer_{}/final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}/'
+                                '{}_layer_{}_final_literal_attention_head_masked_25_percent_mlp_masked_25_percent_random_run{}.npy'
+                            ).format(
+                                model_name.split('-')[0],
+                                layer,
+                                run_idx,
+                                model_name,
+                                layer,
+                                run_idx,
+                            )
+                            run_arrays.append(np.load(path))
+                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+
+                    rdm = rsa_utils.get_rdm(reps)
+                    # if layer==15:
+                    #     if model_name == 'meta-llama/Llama-3.2-3B':
+                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+                    #         plt.close()
+                  
+
+                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+
+                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
+                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+                       
+                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+                                                                                          corr_metric=corr_metric, keep_corrs=True)
+
+                        row = {**row, **res}
+                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+                        
+                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+                        
+                        rows.append(row)
+
+    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
+
+
+    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+
+
+
+# 3-panel comparison figure: normal vs ablation vs random ablation
+# Each panel overlays standard/context/no_context curves.
+normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# Keep plotting consistent with the selected model(s) in this run.
+selected_models = set(model_names)
+normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# create directory for figures if it doesn't exist
+os.makedirs('figures', exist_ok=True)
+
+label_map = {
+    'standard': 'Neutral',
+    'context': 'Figurative',
+    'no_context': 'Literal',
+}
+
+condition_palette = {
+    'No Ablation': '#8E44AD',
+    'Idiomaticity Ablation': '#A6761D',
+    'Random Ablation': '#D81B60',
+}
+
+for df in (normal_df, ablation_df, random_ablation_df):
+    df['Representation'] = df['representation'].map(label_map)
+    # drop any rows with unexpected representation labels
+    df.dropna(subset=['Representation'], inplace=True)
+
+normal_df['Condition'] = 'No Ablation'
+ablation_df['Condition'] = 'Idiomaticity Ablation'
+random_ablation_df['Condition'] = 'Random Ablation'
+
+plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+metric = 'same_relation_group_rdm_corr'
+fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+fig.suptitle('GPT Attention Head Ablation 25%, MLP Ablation 25%, outlined region')
+panel_order = ['Neutral', 'Figurative', 'Literal']
+region_test = 'wilcoxon'
+
+for i, rep_name in enumerate(panel_order):
+    ax = axes[i]
+    panel_df = plot_df[plot_df['Representation'] == rep_name]
+    significant_layers = get_significant_layers_for_panel(
+        normal_df,
+        ablation_df,
+        rep_name,
+        metric,
+        test_kind=region_test,
+    )
+    sns.lineplot(
+        data=panel_df,
+        x='layer',
+        y=metric,
+        hue='Condition',
+        style='Condition',
+        markers=True,
+        dashes=False,
+        palette=condition_palette,
+        ax=ax,
+    )
+    add_significance_markers(ax, panel_df, metric, significant_layers)
+    ax.set_title(rep_name)
+    ax.set_xlabel('Layer')
+    if i == 0:
+        ax.set_ylabel('Correlation')
+    else:
+        ax.set_ylabel('')
+    ax.axhline(0, color='black', linestyle='--', linewidth=1)
+    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+    configure_panel_legend(ax, i)
+
+fig.tight_layout(rect=[0, 0, 1, 0.93])
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_25_percent_mlp_25_percent_with_mask.png', format='png')
+plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_25_percent_mlp_25_percent_with_mask.eps', format='eps')
+plt.show()
+
+
+
 
 
 
@@ -6249,3006 +9257,3006 @@ plt.show()
 ####
 
 
-model_names = ["mistralai/Mistral-7B-v0.1"]
+# model_names = ["mistralai/Mistral-7B-v0.1"]
 
 
-load = False
+# load = False
 
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
 
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
 
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
 
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_102/{}_layer_{}_final_word_standard_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_102/{}_layer_{}_final_word_standard_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_102/{}_layer_{}_final_word_context_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_102/{}_layer_{}_final_word_literal_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_102/{}_layer_{}_final_word_context_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_102/{}_layer_{}_final_word_literal_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Mistral Attention Head Ablation 10%, full region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'ttest'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
+
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
+
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
+
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Mistral Attention Head Ablation 10%, full region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'ttest'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102.eps', format='eps')
+# plt.show()
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_102/{}_layer_{}_final_word_standard_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_102/{}_layer_{}_final_word_standard_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_102/{}_layer_{}_final_word_context_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_102/{}_layer_{}_final_word_literal_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_102/{}_layer_{}_final_word_context_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_102/{}_layer_{}_final_word_literal_attention_head_masked_significant_102.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_102_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_102_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_102_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_102_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Mistral Attention Head Ablation 10%, outlined region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'wilcoxon'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102_with_mask.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102_with_mask.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-load = False
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
 
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
 
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
 
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Mistral Attention Head Ablation 10%, outlined region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'wilcoxon'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102_with_mask.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_102_with_mask.eps', format='eps')
+# plt.show()
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_256/{}_layer_{}_final_word_standard_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_256/{}_layer_{}_final_word_standard_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_256/{}_layer_{}_final_word_context_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_256/{}_layer_{}_final_word_literal_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_256/{}_layer_{}_final_word_context_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_256/{}_layer_{}_final_word_literal_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Mistral Attention Head Ablation 25%, full region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'ttest'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
+
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
+
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
+
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Mistral Attention Head Ablation 25%, full region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'ttest'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256.eps', format='eps')
+# plt.show()
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_256/{}_layer_{}_final_word_standard_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_256/{}_layer_{}_final_word_standard_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_256/{}_layer_{}_final_word_context_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_256/{}_layer_{}_final_word_literal_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_256/{}_layer_{}_final_word_context_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_256/{}_layer_{}_final_word_literal_attention_head_masked_significant_256.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_256_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_256_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_256_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_256_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
 
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
 
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
 
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
 
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Mistral Attention Head Ablation 25%, outlined region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'wilcoxon'
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
 
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
 
-    configure_panel_legend(ax, i)
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Mistral Attention Head Ablation 25%, outlined region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'wilcoxon'
 
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256_with_mask.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256_with_mask.eps', format='eps')
-plt.show()
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256_with_mask.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_mistral_256_with_mask.eps', format='eps')
+# plt.show()
 
 
 
 #####
 
 
-model_names = ["tiiuae/Falcon3-7B-Base"]
+# model_names = ["tiiuae/Falcon3-7B-Base"]
 
 
-load = False
+# load = False
 
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
 
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
 
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
 
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_67/{}_layer_{}_final_word_standard_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_67/{}_layer_{}_final_word_standard_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_67/{}_layer_{}_final_word_context_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_67/{}_layer_{}_final_word_literal_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_67/{}_layer_{}_final_word_context_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_67/{}_layer_{}_final_word_literal_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Falcon Attention Head Ablation 10%, full region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'ttest'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
+
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
+
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
+
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Falcon Attention Head Ablation 10%, full region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'ttest'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67.eps', format='eps')
+# plt.show()
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_67/{}_layer_{}_final_word_standard_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_67/{}_layer_{}_final_word_standard_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_67/{}_layer_{}_final_word_context_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_67/{}_layer_{}_final_word_literal_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_67/{}_layer_{}_final_word_context_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_67/{}_layer_{}_final_word_literal_attention_head_masked_significant_67.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_67_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_67_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_67_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_67_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Falcon Attention Head Ablation 10%, outlined region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'wilcoxon'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67_with_mask.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67_with_mask.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-load = False
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
 
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
 
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
 
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Falcon Attention Head Ablation 10%, outlined region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'wilcoxon'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67_with_mask.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_67_with_mask.eps', format='eps')
+# plt.show()
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_168/{}_layer_{}_final_word_standard_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_168/{}_layer_{}_final_word_standard_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_168/{}_layer_{}_final_word_context_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_168/{}_layer_{}_final_word_literal_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_168/{}_layer_{}_final_word_context_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_168/{}_layer_{}_final_word_literal_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_and_rows(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
-
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
-
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
-
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
-
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
-
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
-
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
-
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
-
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Falcon Attention Head Ablation 25%, full region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'ttest'
-
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
-
-    configure_panel_legend(ax, i)
-
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168.eps', format='eps')
-plt.show()
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
 
 
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
+
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
+
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
+
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
+
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
+
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
+
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
+
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Falcon Attention Head Ablation 25%, full region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'ttest'
+
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168.eps', format='eps')
+# plt.show()
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df = pd.read_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard/{}_layer_{}_final_word_standard.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context/{}_layer_{}_final_word_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_no_context/{}_layer_{}_final_word_no_context.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
+#                     rdm = rsa_utils.get_rdm(reps)
                 
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_normal.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
+#                     if rep == 'standard':
                        
-                        reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_168/{}_layer_{}_final_word_standard_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_standard_attention_head_masked_significant_168/{}_layer_{}_final_word_standard_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                      
-                    elif rep == 'context':
+#                     elif rep == 'context':
                         
-                        reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_168/{}_layer_{}_final_word_context_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
-                        reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_168/{}_layer_{}_final_word_literal_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_context_attention_head_masked_significant_168/{}_layer_{}_final_word_context_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         #reps = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_modifier/{}_layer_{}_final_modifier_tokens.npy'.format(model_name.split('-')[0], layer, model_name, layer))
+#                         reps = np.load('data/representations/{}/layer_{}/final_word_literal_attention_head_masked_significant_168/{}_layer_{}_final_word_literal_attention_head_masked_significant_168.npy'.format(model_name.split('-')[0], layer, model_name, layer))
                       
 
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
-load = False
-
-if load:
-    relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
-    with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
-        idiom_correlation_dict5 = pickle.load(f)
-else:
-    rows = []
-    i = 0
-    corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
-
-    representations = ["standard", "context", "no_context"]
-    idiom_correlation_dict5 = {}
-
-    for model_name in model_names:
-        print(model_name)
-        for layer in tqdm.tqdm(range(1, 33)):
-
-            if layer > 12 and 'gpt' in model_name:
-                continue
-            if layer > 12 and 'bert' in model_name:
-                continue
-            elif layer > 28 and 'llama' in model_name:
-                continue
-            elif layer > 28 and 'tiiuae' in model_name:
-                continue
-            elif layer > 28 and 'deepseek' in model_name:
-                continue
-            elif layer > 28 and 'Qwen2.5' in model_name:
-                continue
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation.csv')
 
 
-            if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
+# load = False
+
+# if load:
+#     relation_results_within_compound_groups_per_word_df_ablation = pd.read_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'rb') as f:
+#         idiom_correlation_dict5 = pickle.load(f)
+# else:
+#     rows = []
+#     i = 0
+#     corr = lambda x,y: rsa_utils.correlate_rdms(x, y, correlation=corr_metric)
+
+#     representations = ["standard", "context", "no_context"]
+#     idiom_correlation_dict5 = {}
+
+#     for model_name in model_names:
+#         print(model_name)
+#         for layer in tqdm.tqdm(range(1, 33)):
+
+#             if layer > 12 and 'gpt' in model_name:
+#                 continue
+#             if layer > 12 and 'bert' in model_name:
+#                 continue
+#             elif layer > 28 and 'llama' in model_name:
+#                 continue
+#             elif layer > 28 and 'tiiuae' in model_name:
+#                 continue
+#             elif layer > 28 and 'deepseek' in model_name:
+#                 continue
+#             elif layer > 28 and 'Qwen2.5' in model_name:
+#                 continue
+
+
+#             if model_name in ['mistralai/Mistral-7B-v0.1', 'meta-llama/Llama-3.2-3B', "tiiuae/Falcon3-7B-Base", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", 'openai-community/gpt2', "Qwen/Qwen2.5-7B"]:
                 
             
-                for rep in representations:
+#                 for rep in representations:
                 
                 
                 
-                    if rep == 'standard':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_standard_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     if rep == 'standard':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_standard_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_standard_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
                      
-                    elif rep == 'context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_context_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_context_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                     elif rep == 'context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_context_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_context_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
                        
-                        # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
-                    elif rep == 'no_context':
-                        run_arrays = []
-                        for run_idx in range(1, 6):
-                            path = (
-                                'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_168_random_run{}/'
-                                '{}_layer_{}_final_word_literal_attention_head_masked_168_random_run{}.npy'
-                            ).format(
-                                model_name.split('-')[0],
-                                layer,
-                                run_idx,
-                                model_name,
-                                layer,
-                                run_idx,
-                            )
-                            run_arrays.append(np.load(path))
-                        reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
+#                         # reps_but = np.load('/Volumes/My Passport/NOUN-NOUN-COMPOUNDS-V1/data/representations/{}/layer_{}/final_head/{}_layer_{}_final
+#                     elif rep == 'no_context':
+#                         run_arrays = []
+#                         for run_idx in range(1, 6):
+#                             path = (
+#                                 'data/representations/{}/layer_{}/final_word_literal_attention_head_masked_168_random_run{}/'
+#                                 '{}_layer_{}_final_word_literal_attention_head_masked_168_random_run{}.npy'
+#                             ).format(
+#                                 model_name.split('-')[0],
+#                                 layer,
+#                                 run_idx,
+#                                 model_name,
+#                                 layer,
+#                                 run_idx,
+#                             )
+#                             run_arrays.append(np.load(path))
+#                         reps = np.mean(np.stack(run_arrays, axis=0), axis=0)
 
-                    rdm = rsa_utils.get_rdm(reps)
-                    # if layer==15:
-                    #     if model_name == 'meta-llama/Llama-3.2-3B':
-                    #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
-                    #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
-                    #         plt.close()
+#                     rdm = rsa_utils.get_rdm(reps)
+#                     # if layer==15:
+#                     #     if model_name == 'meta-llama/Llama-3.2-3B':
+#                     #         rsa_utils.plot_mtx(rdm[:15, :15], '{} {} {}'.format(model_name, layer, rep))
+#                     #         plt.savefig('figures/rdm_meta_{}_{}.png'.format(layer, rep), format='png')
+#                     #         plt.close()
                   
 
-                    row = {'model': model_name, 'layer': layer, 'representation': rep}
+#                     row = {'model': model_name, 'layer': layer, 'representation': rep}
 
-                    for target_rdm_name, target_rdm in group_rdms_to_correlate:
-                        second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
+#                     for target_rdm_name, target_rdm in group_rdms_to_correlate:
+#                         second_rdm_group_level_already = target_rdm_name == 'same_relation_group_rdm'
                        
-                        res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
-                                                                                          corr_metric=corr_metric, keep_corrs=True)
+#                         res, corrs = rsa_utils.correlation_outlined_only(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already,
+#                                                                                           corr_metric=corr_metric, keep_corrs=True)
 
-                        row = {**row, **res}
-                        #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
+#                         row = {**row, **res}
+#                         #row = {**row, **rsa_utils.correlate_over_groups_and_get_row_values(rdm, target_rdm, target_rdm_name, second_rdm_group_level_already=second_rdm_group_level_already, corr_metric=corr_metric)}
                         
-                        if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
-                            idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
+#                         if target_rdm_name == 'same_relation_group_rdm' and rep == 'standard':
+#                             idiom_correlation_dict5['{}_{}'.format(model_name, layer)] = corrs 
                         
-                        rows.append(row)
+#                         rows.append(row)
 
-    with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
-        pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
-
-
-    relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
-    relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
+#     with open('idiom_correlation_dict_standard.pkl', 'wb') as f:
+#         pickle.dump(idiom_correlation_dict5, f, pickle.HIGHEST_PROTOCOL)
 
 
+#     relation_results_within_compound_groups_per_word_df = pd.DataFrame(rows)
+#     relation_results_within_compound_groups_per_word_df.to_csv('results/idiom_representations_ablation_random.csv')
 
-# 3-panel comparison figure: normal vs ablation vs random ablation
-# Each panel overlays standard/context/no_context curves.
-normal_df = pd.read_csv('results/idiom_representations_normal.csv')
-ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
-random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-# Keep plotting consistent with the selected model(s) in this run.
-selected_models = set(model_names)
-normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
-ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
-random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-# create directory for figures if it doesn't exist
-os.makedirs('figures', exist_ok=True)
+# # 3-panel comparison figure: normal vs ablation vs random ablation
+# # Each panel overlays standard/context/no_context curves.
+# normal_df = pd.read_csv('results/idiom_representations_normal.csv')
+# ablation_df = pd.read_csv('results/idiom_representations_ablation.csv')
+# random_ablation_df = pd.read_csv('results/idiom_representations_ablation_random.csv')
 
-label_map = {
-    'standard': 'Neutral',
-    'context': 'Figurative',
-    'no_context': 'Literal',
-}
+# # Keep plotting consistent with the selected model(s) in this run.
+# selected_models = set(model_names)
+# normal_df = normal_df[normal_df['model'].isin(selected_models)].copy()
+# ablation_df = ablation_df[ablation_df['model'].isin(selected_models)].copy()
+# random_ablation_df = random_ablation_df[random_ablation_df['model'].isin(selected_models)].copy()
 
-condition_palette = {
-    'No Ablation': '#8E44AD',
-    'Idiomaticity Ablation': '#A6761D',
-    'Random Ablation': '#D81B60',
-}
+# # create directory for figures if it doesn't exist
+# os.makedirs('figures', exist_ok=True)
 
-for df in (normal_df, ablation_df, random_ablation_df):
-    df['Representation'] = df['representation'].map(label_map)
-    # drop any rows with unexpected representation labels
-    df.dropna(subset=['Representation'], inplace=True)
+# label_map = {
+#     'standard': 'Neutral',
+#     'context': 'Figurative',
+#     'no_context': 'Literal',
+# }
 
-normal_df['Condition'] = 'No Ablation'
-ablation_df['Condition'] = 'Idiomaticity Ablation'
-random_ablation_df['Condition'] = 'Random Ablation'
+# condition_palette = {
+#     'No Ablation': '#8E44AD',
+#     'Idiomaticity Ablation': '#A6761D',
+#     'Random Ablation': '#D81B60',
+# }
 
-plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
+# for df in (normal_df, ablation_df, random_ablation_df):
+#     df['Representation'] = df['representation'].map(label_map)
+#     # drop any rows with unexpected representation labels
+#     df.dropna(subset=['Representation'], inplace=True)
 
-metric = 'same_relation_group_rdm_corr'
-fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
-fig.suptitle('Falcon Attention Head Ablation 25%, outlined region')
-panel_order = ['Neutral', 'Figurative', 'Literal']
-region_test = 'wilcoxon'
+# normal_df['Condition'] = 'No Ablation'
+# ablation_df['Condition'] = 'Idiomaticity Ablation'
+# random_ablation_df['Condition'] = 'Random Ablation'
 
-for i, rep_name in enumerate(panel_order):
-    ax = axes[i]
-    panel_df = plot_df[plot_df['Representation'] == rep_name]
-    significant_layers = get_significant_layers_for_panel(
-        normal_df,
-        ablation_df,
-        rep_name,
-        metric,
-        test_kind=region_test,
-    )
-    sns.lineplot(
-        data=panel_df,
-        x='layer',
-        y=metric,
-        hue='Condition',
-        style='Condition',
-        markers=True,
-        dashes=False,
-        palette=condition_palette,
-        ax=ax,
-    )
-    add_significance_markers(ax, panel_df, metric, significant_layers)
-    ax.set_title(rep_name)
-    ax.set_xlabel('Layer')
-    if i == 0:
-        ax.set_ylabel('Correlation')
-    else:
-        ax.set_ylabel('')
-    ax.axhline(0, color='black', linestyle='--', linewidth=1)
-    ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+# plot_df = pd.concat([normal_df, ablation_df, random_ablation_df], ignore_index=True)
 
-    configure_panel_legend(ax, i)
+# metric = 'same_relation_group_rdm_corr'
+# fig, axes = plt.subplots(1, 3, figsize=(15, 4), sharey=True)
+# fig.suptitle('Falcon Attention Head Ablation 25%, outlined region')
+# panel_order = ['Neutral', 'Figurative', 'Literal']
+# region_test = 'wilcoxon'
 
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168_with_mask.png', format='png')
-plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168_with_mask.eps', format='eps')
-plt.show()
+# for i, rep_name in enumerate(panel_order):
+#     ax = axes[i]
+#     panel_df = plot_df[plot_df['Representation'] == rep_name]
+#     significant_layers = get_significant_layers_for_panel(
+#         normal_df,
+#         ablation_df,
+#         rep_name,
+#         metric,
+#         test_kind=region_test,
+#     )
+#     sns.lineplot(
+#         data=panel_df,
+#         x='layer',
+#         y=metric,
+#         hue='Condition',
+#         style='Condition',
+#         markers=True,
+#         dashes=False,
+#         palette=condition_palette,
+#         ax=ax,
+#     )
+#     add_significance_markers(ax, panel_df, metric, significant_layers)
+#     ax.set_title(rep_name)
+#     ax.set_xlabel('Layer')
+#     if i == 0:
+#         ax.set_ylabel('Correlation')
+#     else:
+#         ax.set_ylabel('')
+#     ax.axhline(0, color='black', linestyle='--', linewidth=1)
+#     ax.set_xticks([x for x in sorted(panel_df['layer'].unique()) if x % 4 == 0])
+
+#     configure_panel_legend(ax, i)
+
+# fig.tight_layout(rect=[0, 0, 1, 0.93])
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168_with_mask.png', format='png')
+# plt.savefig('figures/idioms_ablation_three_panel_comparison_attention_head_falcon_168_with_mask.eps', format='eps')
+# plt.show()
 
 
 
