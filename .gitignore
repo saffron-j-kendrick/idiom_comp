@@ -74,3 +74,4 @@ Thumbs.db
 
 # Large data files (representations)
 data/representations/
+data/
